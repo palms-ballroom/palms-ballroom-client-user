@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-export default function HeaderComponent() {
+export default function HeaderComponent1() {
   const [show, setShow] = useState(null);
   const [profile, setProfile] = useState(false);
   const [product, setProduct] = useState(false);
@@ -10,16 +10,15 @@ export default function HeaderComponent() {
         {/* Code block starts */}
 
         {/* Start Web Responsive */}
-        <nav className="bg-white shadow xl:block hidden xl:h-[700px] 2xl:h-[800px] bg-no-repeat bg-left bg-[url('https://img.freepik.com/free-vector/happy-tourists-choosing-hotel-booking-room-online-flat-illustration_74855-10811.jpg?t=st=1649761179~exp=1649761779~hmac=386a053b3f887fa1d8480fd277e92f5850985f60dcf44041144266f5301dab9f&w=996')] relative">
+        <nav className="bg-white shadow xl:block hidden p-5 lg:h-[800px] xl:h-[700px] bg-no-repeat bg-center bg-[url('https://img.freepik.com/free-vector/happy-tourists-choosing-hotel-booking-room-online-flat-illustration_74855-10811.jpg?t=st=1649761179~exp=1649761779~hmac=386a053b3f887fa1d8480fd277e92f5850985f60dcf44041144266f5301dab9f&w=996')]">
           <div className="flex flex-col items-end justify-end">
-            <p className="xl:text-2xl 2xl:text-4xl text-bold text-slate-800 absolute flex justify-center items-center xl:top-[32%] xl:right-5 2xl:top-[30%] 2xl:right-10 font-title font-bold">
-              Palms Ballroom
+            <p className="text-4xl text-bold text-slate-800 absolute flex justify-center items-center lg:top-[50%] xl:top-[5%] xl:left-[50%] font-title">
+              Palms
             </p>
-            <p className="xl:text-2xl 2xl:text-4xl font-bold text-slate-800 absolute flex justify-center items-center xl:top-[40%] xl:right-5 2xl:top-[36%] 2xl:right-10 font-title">
-              Get ballroom in your&ensp;
-              <span className="text-blue-600 font-bold underline">Palms!</span>
+            <p className="text-4xl text-bold text-slate-800 absolute flex justify-center items-center lg:top-[50%] xl:top-[5%] xl:left-[40%] mt-14 font-title">
+              Get ballroom in your palm!
             </p>
-            <div className="bg-[#eaf3fa] xl:top-[55%] xl:right-3 2xl:top-[45%] 2xl:right-10 absolute rounded-full flex flex-row p-4 ">
+            <div className="bg-[#eaf3fa] lg:top-1/2 xl:top-[40%] mt-[170px] xl:left-[31%] absolute rounded-full flex flex-row p-4 ">
               <p className="ml-2 flex items-center">
                 <i className="fas fa-map-marker-alt text-slate-700"></i>
               </p>
@@ -46,7 +45,7 @@ export default function HeaderComponent() {
                 <p className="text-xs text-stone-400">&ensp;Location</p>
                 <p className="text-xs ml-1">Where are you going?</p>
               </div>
-              <div className="flex flex-row justify-center items-center bg-blue-600 rounded-full px-7 py-2 ml-4 gap-2">
+              <div className="flex flex-row justify-center items-center bg-indigo-600 rounded-full px-7 py-2 ml-4 gap-2">
                 <i className="fas fa-search text-zinc-200 text-xs"></i>
                 <p className="text-zinc-200">Search</p>
               </div>
@@ -142,27 +141,25 @@ export default function HeaderComponent() {
                           </li>
                         </ul>
                       )}
-                      <div className="px-6 py-2 flex flex-row bg-blue-200 rounded-full">
-                        <div className="cursor-pointer flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-white transition duration-150 ease-in-out ">
-                          <i className="fas fa-bars text-gray-800"></i>
-                        </div>
-                        <div className="ml-2 text-gray-800">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="icon icon-tabler icon-tabler-chevron-down cursor-pointer"
-                            width={20}
-                            height={20}
-                            viewBox="0 0 24 24"
-                            strokeWidth="1.5"
-                            stroke="currentColor"
-                            fill="none"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <path stroke="none" d="M0 0h24v24H0z" />
-                            <polyline points="6 9 12 15 18 9" />
-                          </svg>
-                        </div>
+                      <div className="cursor-pointer flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-white transition duration-150 ease-in-out">
+                        <i className="fas fa-bars text-slate-30"></i>
+                      </div>
+                      <div className="ml-2 text-gray-600">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="icon icon-tabler icon-tabler-chevron-down cursor-pointer"
+                          width={20}
+                          height={20}
+                          viewBox="0 0 24 24"
+                          strokeWidth="1.5"
+                          stroke="currentColor"
+                          fill="none"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" />
+                          <polyline points="6 9 12 15 18 9" />
+                        </svg>
                       </div>
                     </div>
                   </div>
