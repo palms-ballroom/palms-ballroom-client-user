@@ -2,6 +2,8 @@ import HeaderComponent from "./components/HeaderComponent";
 import CityCard from "./components/CityCard";
 import ExploreCard from "./components/ExploreCard";
 import FooterComponent from "./components/FooterComponent";
+import DetailPage from "./views/DetailPage";
+import PartnerComponent from "./components/PartnerComponent";
 import "./App.css";
 require("aframe");
 function App() {
@@ -10,7 +12,9 @@ function App() {
       <HeaderComponent></HeaderComponent>
       <CityCard></CityCard>
       <ExploreCard></ExploreCard>
+      {/* <PartnerComponent></PartnerComponent> */}
       <FooterComponent></FooterComponent>
+      <DetailPage></DetailPage>
       {/* <a-scene>
         {" "}
         <a-sky

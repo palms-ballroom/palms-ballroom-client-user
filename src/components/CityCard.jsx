@@ -1,5 +1,5 @@
 import React from "react";
-export default function IndexPage() {
+export default function CityCard() {
   return (
     <>
       <div className="bg-gray-100">
