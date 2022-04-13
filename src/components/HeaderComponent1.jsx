@@ -16,8 +16,8 @@ export default function HeaderComponent1() {
         >
           {/* <img src="./assets/hero-banner.png" /> */}
           <div className="flex flex-col items-end justify-end">
-            <p className="text-4xl 2xl:text-6xl tracking-widest font-bold text-slate-50 absolute flex justify-center items-center xl:top-[50%] xl:left-[50%] 2xl:top-[21%] 2xl:left-[46%] font-title">
-              <span className="text-4xl 2xl:text-[100px] tracking-widest font-bold text-[#023d3a] flex justify-center items-center xl:top-[50%] xl:left-[50%] 2xl:top-[21%] 2xl:left-[46%] font-title">
+            <p className="text-4xl 2xl:text-6xl tracking-wider font-bold text-slate-50 absolute flex justify-center items-center xl:top-[50%] xl:left-[50%] 2xl:top-[21%] 2xl:left-[46%] font-title">
+              <span className="text-4xl 2xl:text-[100px] tracking-widest font-bold text-[#023d3a] flex justify-center items-center xl:top-[50%] xl:left-[50%] 2xl:top-[21%] 2xl:left-[46%] font-title -mr-3">
                 P
               </span>
               alms
@@ -150,25 +150,28 @@ export default function HeaderComponent1() {
                           </li>
                         </ul>
                       )}
-                      <div className="cursor-pointer flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-white transition duration-150 ease-in-out">
-                        <i className="fas fa-bars text-slate-30"></i>
-                      </div>
-                      <div className="ml-2 text-gray-600">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="icon icon-tabler icon-tabler-chevron-down cursor-pointer"
-                          width={20}
-                          height={20}
-                          viewBox="0 0 24 24"
-                          strokeWidth="1.5"
-                          stroke="currentColor"
-                          fill="none"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path stroke="none" d="M0 0h24v24H0z" />
-                          <polyline points="6 9 12 15 18 9" />
-                        </svg>
+                      <div className="bg-[#e5f6f0] p-3 flex flex-row rounded-full">
+                        <div className="cursor-pointer flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-white transition duration-150 ease-in-out">
+                          <i className="fas fa-bars text-slate-30"></i>
+                        </div>
+
+                        <div className="ml-2 text-gray-600">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="icon icon-tabler icon-tabler-chevron-down cursor-pointer"
+                            width={20}
+                            height={20}
+                            viewBox="0 0 24 24"
+                            strokeWidth="1.5"
+                            stroke="currentColor"
+                            fill="none"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path stroke="none" d="M0 0h24v24H0z" />
+                            <polyline points="6 9 12 15 18 9" />
+                          </svg>
+                        </div>
                       </div>
                     </div>
                   </div>
