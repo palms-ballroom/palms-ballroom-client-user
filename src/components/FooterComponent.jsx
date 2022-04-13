@@ -20,23 +20,23 @@ export default function FooterComponent() {
             <div className="w-11/12 xl:w-2/6 mx-auto lg:mx-0 xl:mx-0 mb-6 lg:mb-0 xl:mb-0">
               <ul className="xl:flex lg:flex md:flex sm:flex justify-between">
                 <li className="text-gray-800 hover:text-gray-900 text-base mb-4 sm:mb-0">
-                  <a href="javascript:void(0)">Terms of service</a>
+                  <a>Terms of service</a>
                 </li>
                 <li className="text-gray-800 hover:text-gray-900 text-base mb-4 sm:mb-0">
-                  <a href="javascript:void(0)">Privacy Policy</a>
+                  <a>Privacy Policy</a>
                 </li>
                 <li className="text-gray-800 hover:text-gray-900 text-base mb-4 sm:mb-0">
-                  <a href="javascript:void(0)">Security</a>
+                  <a>Security</a>
                 </li>
                 <li className="text-gray-800 hover:text-gray-900 text-base mb-4 sm:mb-0">
-                  <a href="javascript:void(0)">Sitemap</a>
+                  <a>Sitemap</a>
                 </li>
               </ul>
             </div>
             <div className="w-11/12 xl:w-1/6 lg:w-1/6 sm:w-11/12 mx-auto lg:mx-0 xl:mx-0 mb-6 lg:mb-0 xl:mb-0 mt-8 lg:mt-8 xl:mt-0">
               <div className="flex justify-start sm:justify-start xl:justify-end space-x-6 pr-2 xl:pr-0 lg:pr-0 md:pr-0 sm:pr-0">
                 <div>
-                  <a href="javascript:void(0)">
+                  <a href="#">
                     <svg
                       aria-label="Twitter"
                       xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +55,7 @@ export default function FooterComponent() {
                   </a>
                 </div>
                 <div>
-                  <a href="javascript:void(0)">
+                  <a href="#">
                     <svg
                       aria-label="Instagram"
                       xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +76,7 @@ export default function FooterComponent() {
                   </a>
                 </div>
                 <div>
-                  <a href="javascript:void(0)">
+                  <a href="#">
                     <svg
                       aria-label="Dribble"
                       xmlns="http://www.w3.org/2000/svg"
@@ -99,7 +99,7 @@ export default function FooterComponent() {
                   </a>
                 </div>
                 <div>
-                  <a href="javascript:void(0)">
+                  <a href="#">
                     <svg
                       aria-label="Github"
                       xmlns="http://www.w3.org/2000/svg"

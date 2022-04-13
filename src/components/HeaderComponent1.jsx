@@ -10,15 +10,24 @@ export default function HeaderComponent1() {
         {/* Code block starts */}
 
         {/* Start Web Responsive */}
-        <nav className="bg-white shadow xl:block hidden p-5 lg:h-[800px] xl:h-[700px] bg-no-repeat bg-center bg-[url('https://img.freepik.com/free-vector/happy-tourists-choosing-hotel-booking-room-online-flat-illustration_74855-10811.jpg?t=st=1649761179~exp=1649761779~hmac=386a053b3f887fa1d8480fd277e92f5850985f60dcf44041144266f5301dab9f&w=996')]">
+        <nav
+          className="bg-white shadow xl:block hidden p-5 lg:h-[800px] xl:h-[700px] bg-cover bg-center"
+          style={{ backgroundImage: "assets/hero-banner.png" }}
+        >
+          {/* <img src="./assets/hero-banner.png" /> */}
           <div className="flex flex-col items-end justify-end">
-            <p className="text-4xl text-bold text-slate-800 absolute flex justify-center items-center lg:top-[50%] xl:top-[5%] xl:left-[50%] font-title">
-              Palms
+            <p className="text-4xl 2xl:text-6xl tracking-widest font-bold text-slate-50 absolute flex justify-center items-center xl:top-[50%] xl:left-[50%] 2xl:top-[21%] 2xl:left-[46%] font-title">
+              <span className="text-4xl 2xl:text-[100px] tracking-widest font-bold text-[#023d3a] flex justify-center items-center xl:top-[50%] xl:left-[50%] 2xl:top-[21%] 2xl:left-[46%] font-title">
+                P
+              </span>
+              alms
             </p>
-            <p className="text-4xl text-bold text-slate-800 absolute flex justify-center items-center lg:top-[50%] xl:top-[5%] xl:left-[40%] mt-14 font-title">
-              Get ballroom in your palm!
+            <p className="text-4xl text-bold text-slate-100 absolute flex justify-center items-center xl:top-[50%] 2xl:top-[24%] xl:left-[42%] mt-14 font-title">
+              Get ballroom in&ensp;
+              <span className="text-[#023d3a] font-semibold">your</span>
+              &ensp;palm!
             </p>
-            <div className="bg-[#eaf3fa] lg:top-1/2 xl:top-[40%] mt-[170px] xl:left-[31%] absolute rounded-full flex flex-row p-4 ">
+            <div className="bg-[#e5f6f0] lg:top-1/2 xl:top-[40%] xl:left-[31%] 2xl:top-[22%] 2xl:left-[35%] mt-[170px] absolute rounded-full flex flex-row p-4 ">
               <p className="ml-2 flex items-center">
                 <i className="fas fa-map-marker-alt text-slate-700"></i>
               </p>
@@ -45,7 +54,7 @@ export default function HeaderComponent1() {
                 <p className="text-xs text-stone-400">&ensp;Location</p>
                 <p className="text-xs ml-1">Where are you going?</p>
               </div>
-              <div className="flex flex-row justify-center items-center bg-indigo-600 rounded-full px-7 py-2 ml-4 gap-2">
+              <div className="flex flex-row justify-center items-center bg-[#023d3a] hover:bg-opacity-95 hover:cursor-pointer rounded-full px-7 py-2 ml-4 gap-2">
                 <i className="fas fa-search text-zinc-200 text-xs"></i>
                 <p className="text-zinc-200">Search</p>
               </div>

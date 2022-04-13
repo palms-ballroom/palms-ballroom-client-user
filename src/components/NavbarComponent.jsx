@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 export default function NavbarComponent() {
   let arr = [true, false, false, false, false, false];
   const [style, setStyle] = useState(arr);
@@ -24,16 +24,18 @@ export default function NavbarComponent() {
     <div className="2xl:container 2xl:mx-auto">
       <div className="bg-white rounded shadow-lg py-5 px-2">
         <nav className="flex justify-between items-center gap-3">
-          <div className="flex justify-center items-center">
-            <img src="./assets/logo-palm.png" className="2xl:w-28 xl:w-28" />
-          </div>
+          <Link to="/">
+            <div className="flex justify-center items-center">
+              <img src="./assets/logo-palm.png" className="2xl:w-28 xl:w-28" />
+            </div>
+          </Link>
           {/* For medium and plus sized devices */}
           <ul className="hidden md:flex 2xl:space-x-2 xl:space-x-1 h-8">
             <li
               onClick={() => selected(0)}
               className={`${
                 style[0]
-                  ? "text-white bg-indigo-600"
+                  ? "text-white bg-[#023d3a]"
                   : "text-gray-600 border border-white bg-gray-50"
               }  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800  cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}
             >
@@ -43,7 +45,7 @@ export default function NavbarComponent() {
               onClick={() => selected(1)}
               className={`${
                 style[1]
-                  ? "text-white bg-indigo-600"
+                  ? "text-white bg-[#023d3a]"
                   : "text-gray-600 border border-white bg-gray-50"
               } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}
             >
@@ -53,7 +55,7 @@ export default function NavbarComponent() {
               onClick={() => selected(2)}
               className={`${
                 style[2]
-                  ? "text-white bg-indigo-600"
+                  ? "text-white bg-[#023d3a]"
                   : "text-gray-600 border border-white bg-gray-50"
               } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}
             >
@@ -63,7 +65,7 @@ export default function NavbarComponent() {
               onClick={() => selected(3)}
               className={`${
                 style[3]
-                  ? "text-white bg-indigo-600"
+                  ? "text-white bg-[#023d3a]"
                   : "text-gray-600 border border-white bg-gray-50"
               } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}
             >
@@ -73,7 +75,7 @@ export default function NavbarComponent() {
               onClick={() => selected(4)}
               className={`${
                 style[4]
-                  ? "text-white bg-indigo-600"
+                  ? "text-white bg-[#023d3a]"
                   : "text-gray-600 border border-white bg-gray-50"
               } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}
             >
@@ -129,7 +131,7 @@ export default function NavbarComponent() {
         <div className="block md:hidden w-full mt-5 ">
           <div
             onClick={() => setDropDown(!dropDown)}
-            className="cursor-pointer px-4 py-3 text-white bg-indigo-600 rounded flex justify-between items-center w-full"
+            className="cursor-pointer px-4 py-3 text-white bg-[#023d3a] rounded flex justify-between items-center w-full"
           >
             <div className="flex space-x-2">
               <span

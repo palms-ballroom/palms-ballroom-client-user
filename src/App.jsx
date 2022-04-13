@@ -1,20 +1,15 @@
-import HeaderComponent from "./components/HeaderComponent";
-import CityCard from "./components/CityCard";
-import ExploreCard from "./components/ExploreCard";
-import FooterComponent from "./components/FooterComponent";
-import ListHotel from "./views/ListHotel";
-import PartnerComponent from "./components/PartnerComponent";
 import "./App.css";
+import { Routes, Route, Link } from "react-router-dom";
+import HomePage from "./views/HomePage";
+import ListHotel from "./views/ListHotel";
 require("aframe");
 function App() {
   return (
     <>
-      <HeaderComponent></HeaderComponent>
-      <CityCard></CityCard>
-      <ExploreCard></ExploreCard>
-      {/* <PartnerComponent></PartnerComponent> */}
-      <FooterComponent></FooterComponent>
-      <ListHotel></ListHotel>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/hotels" element={<ListHotel />} />
+      </Routes>
       {/* <a-scene>
         {" "}
         <a-sky
