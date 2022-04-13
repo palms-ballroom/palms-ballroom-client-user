@@ -2,6 +2,7 @@ import React from "react";
 import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
 import HotelCard from "../components/HotelCard";
+import { Outlet } from "react-router-dom";
 export default function ListHotel() {
   return (
     <>
@@ -17,6 +18,7 @@ export default function ListHotel() {
         </div>
       </div>
       <FooterComponent></FooterComponent>
+      <Outlet></Outlet>
     </>
   );
 }
