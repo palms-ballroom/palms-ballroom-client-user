@@ -174,7 +174,7 @@ export default function HeaderComponent1() {
 
         {/* Start Mobile responsive */}
         <nav>
-          <div className="py-4 px-6 w-full flex xl:hidden justify-between fixed top-0 z-40 bg-[url('https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')] h-[250px] bg-cover bg-bottom">
+          <div className="py-4 px-6 w-full flex xl:hidden justify-between fixed top-0 z-40 bg-[url('https://img.freepik.com/free-vector/happy-tourists-choosing-hotel-booking-room-online-flat-illustration_74855-10811.jpg?t=st=1649761179~exp=1649761779~hmac=386a053b3f887fa1d8480fd277e92f5850985f60dcf44041144266f5301dab9f&w=996')] h-[250px] bg-no-repeat bg-center">
             <div className="w-24">
               <img src="./assets/logo-palm.png" className="w-14" />
             </div>

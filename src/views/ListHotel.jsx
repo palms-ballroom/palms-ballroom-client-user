@@ -2,7 +2,7 @@ import React from "react";
 import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
 import HotelCard from "../components/HotelCard";
-export default function DetailPage() {
+export default function ListHotel() {
   return (
     <>
       <div className="flex flex-row justify-between h-200">
