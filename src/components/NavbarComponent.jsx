@@ -21,7 +21,7 @@ export default function NavbarComponent() {
   };
 
   return (
-    <div className="2xl:container 2xl:mx-auto">
+    <div className="2xl:container 2xl:mx-auto 2xl:w-full">
       <div className="bg-white rounded shadow-lg py-5 px-2">
         <nav className="flex justify-between items-center gap-3">
           <Link to="/">
