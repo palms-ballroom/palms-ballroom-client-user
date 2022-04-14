@@ -9,7 +9,7 @@ export default function CityCard() {
         </p>
         {/* Remove py-8 */}
         <div className="mx-auto container py-8 px-6">
-          <div className="flex flex-wrap items-center lg:justify-evenly justify-center gap-12">
+          <div className="flex flex-wrap items-center lg:justify-evenly justify-center gap-12 ">
             {/* Card 1 */}
             <Link to="/hotels">
               <div className="mx-3 w-72 lg:mb-0 mb-8 hover:cursor-pointer">

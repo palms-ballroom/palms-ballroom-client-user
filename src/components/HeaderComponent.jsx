@@ -11,47 +11,6 @@ export default function HeaderComponent() {
 
         {/* Start Web Responsive */}
         <nav className="bg-white shadow xl:block hidden xl:h-[700px] 2xl:h-[800px] bg-no-repeat bg-left bg-[url('https://img.freepik.com/free-vector/happy-tourists-choosing-hotel-booking-room-online-flat-illustration_74855-10811.jpg?t=st=1649761179~exp=1649761779~hmac=386a053b3f887fa1d8480fd277e92f5850985f60dcf44041144266f5301dab9f&w=996')] relative">
-          <div className="flex flex-col items-end justify-end">
-            <p className="xl:text-2xl 2xl:text-4xl text-bold text-slate-800 absolute flex justify-center items-center xl:top-[32%] xl:right-5 2xl:top-[30%] 2xl:right-10 font-title font-bold">
-              Palms Ballroom
-            </p>
-            <p className="xl:text-2xl 2xl:text-4xl font-bold text-slate-800 absolute flex justify-center items-center xl:top-[40%] xl:right-5 2xl:top-[36%] 2xl:right-10 font-title">
-              Get ballroom in your&ensp;
-              <span className="text-blue-600 font-bold underline">Palms!</span>
-            </p>
-            <div className="bg-[#eaf3fa] xl:top-[55%] xl:right-3 2xl:top-[45%] 2xl:right-10 absolute rounded-full flex flex-row p-4 ">
-              <p className="ml-2 flex items-center">
-                <i className="fas fa-map-marker-alt text-slate-700"></i>
-              </p>
-              <div className="flex flex-col justify-center">
-                <p className="text-xs text-stone-400 ml-1">&ensp;Location</p>
-                <p className="text-xs ml-2 justify-center">
-                  Where are you going?
-                </p>
-              </div>
-              <hr className="border-[1px] border-black ml-2" />
-              <p className="ml-4 flex items-center text-slate-700">
-                <i className="fas fa-map-marker-alt"></i>
-              </p>
-              <div className="flex flex-col ml-2 justify-center">
-                <p className="text-xs text-stone-400">&ensp;Location</p>
-                <p className="text-xs ml-1 justify-center">
-                  Where are you going?
-                </p>
-              </div>
-              <p className="ml-4 flex items-center">
-                <i className="fas fa-map-marker-alt text-slate-700"></i>
-              </p>
-              <div className="flex flex-col ml-2 justify-center">
-                <p className="text-xs text-stone-400">&ensp;Location</p>
-                <p className="text-xs ml-1">Where are you going?</p>
-              </div>
-              <div className="flex flex-row justify-center items-center bg-blue-600 rounded-full px-7 py-2 ml-4 gap-2">
-                <i className="fas fa-search text-zinc-200 text-xs"></i>
-                <p className="text-zinc-200">Search</p>
-              </div>
-            </div>
-          </div>
           <div className="mx-auto container px-6 py-2 xl:py-0">
             <div className="flex items-center justify-between">
               {/* Start logo */}

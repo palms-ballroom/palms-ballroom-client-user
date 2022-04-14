@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 // import backGround from "./assets/hero-banner.png";
+import { Link } from "react-router-dom";
 export default function HeaderComponent1() {
   const [show, setShow] = useState(null);
   const [profile, setProfile] = useState(false);
@@ -18,11 +19,17 @@ export default function HeaderComponent1() {
           <div className="mx-auto container px-6 py-2 xl:py-0">
             <div className="flex items-center justify-between">
               {/* Start logo */}
-              <div className="flex w-full sm:w-auto items-center sm:items-stretch justify-end sm:justify-start">
-                <div className="flex items-center">
-                  <img src="assets/logo-palm.png" alt="Palm" className="w-28" />
+              <Link to="/">
+                <div className="flex w-full sm:w-auto items-center sm:items-stretch justify-end sm:justify-start">
+                  <div className="flex items-center">
+                    <img
+                      src="assets/logo-palm.png"
+                      alt="Palm"
+                      className="w-28"
+                    />
+                  </div>
                 </div>
-              </div>
+              </Link>
               {/* End logo */}
 
               {/* Start Navbar */}
@@ -33,6 +40,12 @@ export default function HeaderComponent1() {
                       <i className="fas fa-hotel"></i>
                     </span>
                     Ballroom
+                  </a>
+                  <a className="flex px-5 items-center py-6 text-sm leading-5 text-gray-800 hover:bg-opacity-100 focus:opacity-90 focus:outline-none transition duration-150 ease-in-out">
+                    <span className="mr-2">
+                      <i className="far fa-handshake"></i>
+                    </span>
+                    Become a partner
                   </a>
                 </div>
                 {/* Start My profile */}

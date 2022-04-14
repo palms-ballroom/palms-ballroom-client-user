@@ -14,20 +14,6 @@ function App() {
         <Route path="/detail" element={<DetailPage />} />
         <Route path="/3d" element={<View />} />
       </Routes>
-      {/* <a-scene>
-        {" "}
-        <a-sky
-          src="https://raw.githubusercontent.com/aframevr/aframe/v1.0.4/examples/boilerplate/panorama/puydesancy.jpg"
-          rotation="0 -130 0"
-        ></a-sky>
-        <a-text
-          font="kelsonsans"
-          value="Puy de Sancy, France"
-          width="6"
-          position="-2.5 0.25 -1.5"
-          rotation="0 15 0"
-        ></a-text>
-      </a-scene> */}
     </>
   );
 }

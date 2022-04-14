@@ -7,8 +7,8 @@ export default function HeroComponent() {
         <img src="./assets/img/banner-2.png" />
         <div>
           <div className="flex flex-col items-end justify-end">
-            <p className="text-4xl 2xl:text-6xl tracking-wider font-bold text-slate-50 absolute flex justify-center items-center xl:top-[50%] xl:left-[46%] 2xl:top-[21%] 2xl:left-[46%] font-title">
-              <span className="text-4xl 2xl:text-[100px] tracking-widest font-bold text-slate-100 flex justify-center items-center xl:top-[50%] xl:left-[50%] 2xl:top-[21%] 2xl:left-[46%] font-title">
+            <p className="text-4xl 2xl:text-6xl tracking-wider text-slate-50 absolute flex justify-center items-center xl:top-[50%] xl:left-[46%] 2xl:top-[21%] 2xl:left-[46%] font-title">
+              <span className="text-4xl 2xl:text-[100px] tracking-widest text-slate-100 flex justify-center items-center xl:top-[50%] xl:left-[50%] 2xl:top-[21%] 2xl:left-[46%] font-title">
                 P
               </span>
               alms

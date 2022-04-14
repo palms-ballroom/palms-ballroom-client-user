@@ -13,7 +13,7 @@ export default function ListHotel() {
             <HotelCard></HotelCard>
           </div>
         </div>
-        <div className="bg-[#023d3a] w-1/2 flex justify-center items-center">
+        <div className="bg-[#023d3a] w-1/2 flex h-64 justify-center items-center">
           <h1 className="text-center text-2xl">Halo ini ntar tampilan maps</h1>
         </div>
       </div>
