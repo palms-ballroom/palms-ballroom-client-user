@@ -10,43 +10,7 @@ export default function HeaderComponent() {
         {/* Code block starts */}
 
         {/* Start Web Responsive */}
-        <nav className="bg-white shadow xl:block hidden bg-[url('https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')] h-[700px] bg-cover bg-bottom">
-          <div className="flex flex-col items-center justify-center">
-            <p className="text-2xl text-bold text-slate-800 absolute flex justify-center top-1/2">
-              Palms Ballroom
-            </p>
-            <p className="text-2xl text-bold text-slate-800 absolute flex justify-center top-1/2 mt-10">
-              Get ballroom in your palm!
-            </p>
-            <div className="bg-slate-50 top-1/2 mt-20 absolute rounded-full flex flex-row p-4">
-              <p className="ml-2">
-                <i className="fas fa-map-marker-alt"></i>
-              </p>
-              <div className="flex flex-col">
-                <p className="text-xs text-stone-400">&ensp;Location</p>
-                <p className="text-xs ml-2">Where are you going?</p>
-              </div>
-              <hr className="border-[1px] border-black ml-2" />
-              <p className="ml-4">
-                <i className="fas fa-map-marker-alt"></i>
-              </p>
-              <div className="flex flex-col ml-2">
-                <p className="text-xs text-stone-400">&ensp;Location</p>
-                <p className="text-xs ml-1">Where are you going?</p>
-              </div>
-              <p className="ml-4">
-                <i className="fas fa-map-marker-alt"></i>
-              </p>
-              <div className="flex flex-col ml-2">
-                <p className="text-xs text-stone-400">&ensp;Location</p>
-                <p className="text-xs ml-1">Where are you going?</p>
-              </div>
-              <div className="flex flex-row justify-center items-center bg-blue-500 rounded-full px-7 py-1 ml-4 gap-2">
-                <i className="fas fa-search"></i>
-                <p className="text-zinc-200">Search</p>
-              </div>
-            </div>
-          </div>
+        <nav className="bg-white shadow xl:block hidden xl:h-[700px] 2xl:h-[800px] bg-no-repeat bg-left bg-[url('https://img.freepik.com/free-vector/happy-tourists-choosing-hotel-booking-room-online-flat-illustration_74855-10811.jpg?t=st=1649761179~exp=1649761779~hmac=386a053b3f887fa1d8480fd277e92f5850985f60dcf44041144266f5301dab9f&w=996')] relative">
           <div className="mx-auto container px-6 py-2 xl:py-0">
             <div className="flex items-center justify-between">
               {/* Start logo */}
@@ -59,31 +23,16 @@ export default function HeaderComponent() {
 
               {/* Start Navbar */}
               <div className="flex">
-                <div className="hidden xl:flex md:mr-6 xl:mr-5">
-                  <a className="flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-opacity-100 focus:opacity-90 focus:outline-none transition duration-150 ease-in-out">
+                <div className="hidden xl:flex">
+                  <a className="flex px-5 items-center py-6 text-sm leading-5 text-gray-800 hover:bg-opacity-100 focus:opacity-90 focus:outline-none transition duration-150 ease-in-out">
                     <span className="mr-2">
                       <i className="fas fa-hotel"></i>
                     </span>
                     Ballroom
                   </a>
-                  <a className="flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
-                    <span className="mr-2">
-                      <i className="far fa-registered"></i>
-                    </span>
-                    Register
-                  </a>
-                  <a
-                    href="javascript: void(0)"
-                    className="flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out"
-                  >
-                    <span className="mr-2">
-                      <i className="fas fa-sign-in-alt"></i>
-                    </span>
-                    Login
-                  </a>
                 </div>
                 {/* Start My profile */}
-                {/* <div className="hidden xl:flex items-center">
+                <div className="hidden xl:flex items-center">
                   <div className="relative md:mr-6 my-2"></div>
                   <div className="ml-6 relative">
                     <div
@@ -114,24 +63,16 @@ export default function HeaderComponent() {
                             </div>
                           </li>
                           <li className="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="icon icon-tabler icon-tabler-help"
-                              width={20}
-                              height={20}
-                              viewBox="0 0 24 24"
-                              strokeWidth="1.5"
-                              stroke="currentColor"
-                              fill="none"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            >
-                              <path stroke="none" d="M0 0h24v24H0z" />
-                              <circle cx={12} cy={12} r={9} />
-                              <line x1={12} y1={17} x2={12} y2="17.01" />
-                              <path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4" />
-                            </svg>
-                            <span className="ml-2">Help Center</span>
+                            <div className="flex items-center ml-1">
+                              <i className="far fa-registered"></i>
+                              <span className="ml-2">Register</span>
+                            </div>
+                          </li>
+                          <li className="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
+                            <div className="flex items-center ml-1">
+                              <i className="fas fa-sign-in-alt"></i>
+                              <span className="ml-2">Login</span>
+                            </div>
                           </li>
                           <li className="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none">
                             <svg
@@ -152,35 +93,39 @@ export default function HeaderComponent() {
                             </svg>
                             <span className="ml-2">Account Settings</span>
                           </li>
+                          <li className="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
+                            <div className="flex items-center ml-1">
+                              <i className="fas fa-sign-in-alt"></i>
+                              <span className="ml-2">Logout</span>
+                            </div>
+                          </li>
                         </ul>
                       )}
-                      <div className="cursor-pointer flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-white transition duration-150 ease-in-out">
-                        <img
-                          className="rounded-full h-10 w-10 object-cover"
-                          src="https://th.bing.com/th/id/OIP.HAlzz7_SUXjXKwsKkyBmJQHaHa?pid=ImgDet&rs=1"
-                          alt="logo"
-                        />
-                      </div>
-                      <div className="ml-2 text-gray-600">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="icon icon-tabler icon-tabler-chevron-down cursor-pointer"
-                          width={20}
-                          height={20}
-                          viewBox="0 0 24 24"
-                          strokeWidth="1.5"
-                          stroke="currentColor"
-                          fill="none"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path stroke="none" d="M0 0h24v24H0z" />
-                          <polyline points="6 9 12 15 18 9" />
-                        </svg>
+                      <div className="px-6 py-2 flex flex-row bg-blue-200 rounded-full">
+                        <div className="cursor-pointer flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-white transition duration-150 ease-in-out ">
+                          <i className="fas fa-bars text-gray-800"></i>
+                        </div>
+                        <div className="ml-2 text-gray-800">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="icon icon-tabler icon-tabler-chevron-down cursor-pointer"
+                            width={20}
+                            height={20}
+                            viewBox="0 0 24 24"
+                            strokeWidth="1.5"
+                            stroke="currentColor"
+                            fill="none"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path stroke="none" d="M0 0h24v24H0z" />
+                            <polyline points="6 9 12 15 18 9" />
+                          </svg>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div> */}
+                </div>
                 {/* End My profile */}
               </div>
               {/* End Navbar */}
