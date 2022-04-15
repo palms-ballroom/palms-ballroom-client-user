@@ -3,8 +3,8 @@ import React from "react";
 export default function HeadDetail() {
   return (
     <>
-      <div className="w-full items-center">
-        <h2 className="font-semibold lg:text-2xl text-3xl lg:leading-9 leading-7 tracking-wider text-gray-800 mb-5">
+      <div className="w-full items-center 2xl:mb-14">
+        <h2 className="font-semibold font-title lg:text-2xl text-3xl lg:leading-9 leading-7 tracking-wider text-gray-800 mb-5">
           Ballroom Hotel Ritz Carlton
         </h2>
         {/* Start Tag */}

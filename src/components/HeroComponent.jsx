@@ -7,18 +7,18 @@ export default function HeroComponent() {
         <img src="./assets/img/banner-2.png" />
         <div>
           <div className="flex flex-col items-end justify-end">
-            <p className="text-4xl 2xl:text-6xl tracking-wider text-slate-50 absolute flex justify-center items-center xl:top-[50%] xl:left-[46%] 2xl:top-[21%] 2xl:left-[46%] font-title">
-              <span className="text-4xl 2xl:text-[100px] tracking-widest text-slate-100 flex justify-center items-center xl:top-[50%] xl:left-[50%] 2xl:top-[21%] 2xl:left-[46%] font-title">
-                P
-              </span>
-              alms
+            <p
+              className="text-4xl 2xl:text-6xl tracking-wider text-slate-50 absolute flex justify-center
+             items-center xl:top-[50%] xl:left-[46%] 2xl:top-[47%] 2xl:left-[46%] font-title"
+            >
+              Palms
             </p>
-            <p className="text-4xl text-bold text-slate-100 absolute flex justify-center items-center xl:top-[50%] 2xl:top-[24%] xl:left-[35%] mt-14 font-title">
+            <p className="text-4xl text-bold text-slate-100 absolute flex justify-center items-center xl:top-[50%] 2xl:top-[47%] xl:left-[35%] 2xl:left-[39%] mt-14 font-title">
               Get ballroom in&ensp;
               <span className="text-slate-100">your</span>
               &ensp;palm!
             </p>
-            <div className="bg-[#e5f6f0] lg:top-1/2 xl:top-[43%] xl:left-[25%] 2xl:top-[22%] 2xl:left-[35%] mt-[170px] absolute rounded-full flex flex-row p-4 ">
+            <div className="bg-[#e5f6f0] lg:top-1/2 xl:top-[43%] xl:left-[25%] 2xl:top-[45%] 2xl:left-[33%] mt-[170px] absolute rounded-full flex flex-row p-4 ">
               <p className="ml-2 flex items-center">
                 <i className="fas fa-map-marker-alt text-slate-700"></i>
               </p>

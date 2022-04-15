@@ -14,7 +14,7 @@ const DetailPage = () => {
         <ImagesPreview></ImagesPreview>
 
         {/* <!-- Start Description --> */}
-        <div className="flex flex-row">
+        <div className="flex flex-row 2xl:mt-10">
           <div className="flex flex-col mt-7">
             <h1 className="font-sub_title text-xl tracking-wider">Details</h1>
             <div className="flex flex-row gap-4">
