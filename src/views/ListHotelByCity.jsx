@@ -3,7 +3,7 @@ import NavbarComponent from "../components/NavbarComponent";
 import FooterComponent from "../components/FooterComponent";
 import HotelCard from "../components/HotelCard";
 import { Outlet } from "react-router-dom";
-export default function ListHotel() {
+export default function ListHotelByCity() {
   return (
     <>
       <div className="flex flex-row justify-between h-200">
