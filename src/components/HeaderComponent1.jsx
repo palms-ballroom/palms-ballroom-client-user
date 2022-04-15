@@ -12,10 +12,7 @@ export default function HeaderComponent1() {
         {/* Code block starts */}
 
         {/* Start Web Responsive */}
-        <nav
-          className="bg-white shadow xl:block hidden"
-          // style={{ backgroundImage: "url('./assets/hero-banner.png')" }}
-        >
+        <nav className="bg-white shadow xl:block hidden">
           <div className="mx-auto container px-6 py-2 xl:py-0">
             <div className="flex items-center justify-between">
               {/* Start logo */}
@@ -169,40 +166,6 @@ export default function HeaderComponent1() {
 
         {/* Start Mobile responsive */}
         <nav>
-          <div className="py-4 px-6 w-full flex xl:hidden justify-between fixed top-0 z-40 bg-[url('https://img.freepik.com/free-vector/happy-tourists-choosing-hotel-booking-room-online-flat-illustration_74855-10811.jpg?t=st=1649761179~exp=1649761779~hmac=386a053b3f887fa1d8480fd277e92f5850985f60dcf44041144266f5301dab9f&w=996')] h-[250px] bg-no-repeat bg-center">
-            <div className="w-24">
-              <img src="./assets/logo-palm.png" className="w-14" />
-            </div>
-            <div className="flex">
-              <div
-                id="menu"
-                className="text-gray-800"
-                onClick={() => setShow(!show)}
-              >
-                {show ? (
-                  ""
-                ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="icon icon-tabler icon-tabler-menu-2"
-                    width={24}
-                    height={24}
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <line x1={4} y1={6} x2={20} y2={6} />
-                    <line x1={4} y1={12} x2={20} y2={12} />
-                    <line x1={4} y1={18} x2={20} y2={18} />
-                  </svg>
-                )}
-              </div>
-            </div>
-          </div>
           {/*Mobile responsive sidebar*/}
           <div
             className={

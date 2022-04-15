@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function HotelCard() {
   return (
     <>
-      <div className="mx-auto container py-8 px-4 overflow-auto h-[500px]">
+      <div className="mx-auto container py-8 px-4 overflow-auto xl:h-[500px] 2xl:h-[800px]">
         <div className="grid grid-cols-2 items-center lg:justify-between justify-center gap-10">
           {/* Card 1 */}
           <Link to="/detail">
