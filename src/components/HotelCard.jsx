@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function HotelCard({ballroom}) {
+export default function HotelCardAroundYou({ballroom}) {
   // console.log({ballroom});
 
   const priceBallroom = (price) => {

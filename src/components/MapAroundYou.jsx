@@ -1,7 +1,7 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
 
-export default function Map({ coordinates, setCoordinates, setBounds, ballroomsAround }) {
+export default function MapAroundYou({ coordinates, setCoordinates, setBounds, ballroomsAround }) {
   console.log({ ballroomsAround });
 
   const mapHandler = (e) => {
@@ -23,7 +23,6 @@ export default function Map({ coordinates, setCoordinates, setBounds, ballroomsA
         {ballroomsAround?.map((ballroom, index) => {
           return (
             <div
-              // className="absolute "
               key={index}
               lat={Number(ballroom.latitude)}
               lng={Number(ballroom.longitude)}

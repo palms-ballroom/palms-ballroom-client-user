@@ -4,7 +4,7 @@ import FooterComponent from "../components/FooterComponent";
 import HotelList from "../components/HotelList";
 import { Outlet } from "react-router-dom";
 import { getBallroomDataAround } from '../hooks/index'
-import Map from "../components/Map";
+import MapAroundYou from "../components/MapAroundYou";
 
 export default function ListHotelAroundYou() {
 
@@ -33,18 +33,17 @@ export default function ListHotelAroundYou() {
           <NavbarComponent></NavbarComponent>
           <div className="p-4">
             <HotelList
-            ballroomsAround={ballroomsAround}
+            ballrooms={ballroomsAround}
             ></HotelList>
           </div>
         </div>
-        <Map 
+        <MapAroundYou 
          coordinates={coordinates}
          setCoordinates={setCoordinates}
          setBounds={setBounds}
          ballroomsAround={ballroomsAround}
         >
-          {/* <h1 className="text-center text-2xl">Halo ini ntar tampilan maps</h1> */}
-        </Map>
+        </MapAroundYou>
       </div>
       <FooterComponent></FooterComponent>
       <Outlet></Outlet>
