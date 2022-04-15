@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function HotelCard({ballroom}) {
-  console.log({ballroom});
+  // console.log({ballroom});
 
   const priceBallroom = (price) => {
     if(!price) return 'Undisclosed'
@@ -27,7 +27,7 @@ export default function HotelCard({ballroom}) {
             />
             <div className="flex flex-row justify-between">
               <div className="bg-white py-1.5 px-6 rounded-md absolute top-[10px] left-2">
-                <p className="text-xs text-[#023d3a]">{ballroom.name}</p>
+                <p className="text-sm">{ballroom.name}</p>
               </div>
               <div className="absolute top-[10px] left-[200px] text-slate-100">
                 <i className="far fa-heart"></i>
@@ -36,10 +36,10 @@ export default function HotelCard({ballroom}) {
           </div>
           <div className="bg-white absolute top-[168px] left-[6px] px-7 rounded-md">
             <div className="p-2">
-             
-                <h2 className="text-[#023d3a] text-xs font-semibold">Address</h2>
-                <h3 className="text-[#023d3a] text-sm font-semibold">{priceBallroom(ballroom.price)}</h3>
-              
+              <div className="flex flex-row gap-4 items-center justify-between">
+                <h2 className="text-xs font-semibold">Address</h2>
+                <h3 className="text-sm font-semibold">{priceBallroom(ballroom.price)}</h3>
+              </div>
             </div>
           </div>
         </div>
