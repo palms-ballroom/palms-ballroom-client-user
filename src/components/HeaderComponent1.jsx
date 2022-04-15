@@ -47,13 +47,17 @@ export default function HeaderComponent1() {
                     </span>
                     Become a partner
                   </a>
-
-                  <a className="flex px-5 items-center py-6 text-sm leading-5 text-gray-800 hover:bg-opacity-100 focus:opacity-90 focus:outline-none transition duration-150 ease-in-out">
-                    <span className="mr-2">
-                      <i className="fas fa-file-invoice-dollar"></i>
+                  <Link to="/orderlist">
+                    <span
+                      an
+                      className="flex px-5 items-center py-6 text-sm leading-5 text-gray-800 hover:bg-opacity-100 focus:opacity-90 focus:outline-none transition duration-150 ease-in-out"
+                    >
+                      <span className="mr-2">
+                        <i className="fas fa-file-invoice-dollar"></i>
+                      </span>
+                      My booking
                     </span>
-                    My order
-                  </a>
+                  </Link>
                 </div>
                 {/* Start My profile */}
                 <div className="hidden xl:flex items-center">

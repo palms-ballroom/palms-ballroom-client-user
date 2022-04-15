@@ -6,6 +6,7 @@ import DetailPage from "./views/DetailPage";
 import View from "./components/View";
 import LoginPage from "./views/LoginPage";
 import RegisterPage from "./views/RegisterPage";
+import MyBookingPage from "./views/MyBookingPage.jsx";
 require("aframe");
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/3d" element={<View />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/orderlist" element={<MyBookingPage />} />
       </Routes>
     </>
   );
