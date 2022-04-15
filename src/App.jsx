@@ -4,6 +4,8 @@ import HomePage from "./views/HomePage";
 import ListHotel from "./views/ListHotel";
 import DetailPage from "./views/DetailPage";
 import View from "./components/View";
+import LoginPage from "./views/LoginPage";
+import RegisterPage from "./views/RegisterPage";
 require("aframe");
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <Route path="/hotels" element={<ListHotel />}></Route>
         <Route path="/detail" element={<DetailPage />} />
         <Route path="/3d" element={<View />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
       </Routes>
     </>
   );

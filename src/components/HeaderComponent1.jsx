@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-// import backGround from "./assets/hero-banner.png";
 import { Link } from "react-router-dom";
+// import backGround from "./assets/hero-banner.png"
 export default function HeaderComponent1() {
   const [show, setShow] = useState(null);
   const [profile, setProfile] = useState(false);
@@ -47,6 +47,13 @@ export default function HeaderComponent1() {
                     </span>
                     Become a partner
                   </a>
+
+                  <a className="flex px-5 items-center py-6 text-sm leading-5 text-gray-800 hover:bg-opacity-100 focus:opacity-90 focus:outline-none transition duration-150 ease-in-out">
+                    <span className="mr-2">
+                      <i className="fas fa-file-invoice-dollar"></i>
+                    </span>
+                    My order
+                  </a>
                 </div>
                 {/* Start My profile */}
                 <div className="hidden xl:flex items-center">
@@ -79,18 +86,22 @@ export default function HeaderComponent1() {
                               <span className="ml-2">My Profile</span>
                             </div>
                           </li>
-                          <li className="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
-                            <div className="flex items-center ml-1">
-                              <i className="far fa-registered"></i>
-                              <span className="ml-2">Register</span>
-                            </div>
-                          </li>
-                          <li className="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
-                            <div className="flex items-center ml-1">
-                              <i className="fas fa-sign-in-alt"></i>
-                              <span className="ml-2">Login</span>
-                            </div>
-                          </li>
+                          <Link to="/register">
+                            <li className="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
+                              <div className="flex items-center ml-1">
+                                <i className="far fa-registered"></i>
+                                <span className="ml-2">Register</span>
+                              </div>
+                            </li>
+                          </Link>
+                          <Link to="/login">
+                            <li className="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
+                              <div className="flex items-center ml-1">
+                                <i className="fas fa-sign-in-alt"></i>
+                                <span className="ml-2">Login</span>
+                              </div>
+                            </li>
+                          </Link>
                           <li className="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"

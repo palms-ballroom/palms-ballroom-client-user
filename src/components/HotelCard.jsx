@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 export default function HotelCard() {
   return (
     <>
-      <div className="mx-auto container py-8 px-4">
-        <div className="flex flex-wrap items-center lg:justify-between justify-center gap-10">
+      <div className="mx-auto container py-8 px-4 overflow-auto h-[500px]">
+        <div className="grid grid-cols-2 items-center lg:justify-between justify-center gap-10">
           {/* Card 1 */}
           <Link to="/detail">
             <div className="mx-2 w-52 lg:mb-0 mb-8 relative">
