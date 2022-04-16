@@ -11,12 +11,13 @@ export default function CityCard() {
         <div className="mx-auto container py-8 px-6">
           <div className="flex flex-wrap items-center lg:justify-evenly justify-center gap-12 ">
             {/* Card 1 */}
-            <Link to="/hotels">
+            <Link to="/hotels/Around">
               <div className="mx-3 w-72 lg:mb-0 mb-8 hover:cursor-pointer">
                 <div>
                   <img
                     src="https://media.istockphoto.com/photos/we-herd-you-were-looking-for-some-magnificent-cattle-picture-id1303666715?b=1&k=20&m=1303666715&s=170667a&w=0&h=mOQcfUp6wdVwwVtoigfMQZHLGv4RWUzm_5PKvZc58go="
                     className="w-full h-44 rounded-xl bg-cover shadow-lg hover:opacity-90"
+                    alt="Around"
                   />
                 </div>
                 <div className="p-2">
@@ -36,6 +37,7 @@ export default function CityCard() {
                   <img
                     src="https://images.unsplash.com/photo-1538582709238-0a503bd5ae04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
                     className="w-full h-44 rounded-xl bg-cover shadow-lg hover:opacity-90"
+                    alt="Jakarta"
                   />
                 </div>
                 <div className="p-2">
@@ -55,6 +57,7 @@ export default function CityCard() {
                   <img
                     src="https://media.istockphoto.com/photos/15th-july-martyrs-bridge-bosphorus-bridge-at-night-istanbul-turkey-picture-id821745776?k=20&m=821745776&s=612x612&w=0&h=eIjqRdMZe4sELm1A2ejC_WWV8BFsdRXkj34qbmAK1fc="
                     className="w-full h-44 rounded-xl bg-cover shadow-lg hover:opacity-90"
+                    alt="Palembang"
                   />
                 </div>
                 <div className="p-2">
@@ -74,6 +77,7 @@ export default function CityCard() {
                   <img
                     src="https://media.istockphoto.com/photos/sunrise-at-the-bromo-volcano-mountain-in-indonesia-picture-id474625072?k=20&m=474625072&s=612x612&w=0&h=2tO5Uc3OyNzhmz9BhDoQUhCrr-WVoLOVbxwsdndJBCQ="
                     className="w-full h-44 rounded-xl bg-cover shadow-lg hover:opacity-90"
+                    alt="Surabaya"
                   />
                 </div>
                 <div className="p-2">
@@ -93,6 +97,7 @@ export default function CityCard() {
                   <img
                     src="https://media.istockphoto.com/photos/vanadzor-cityarmenia-picture-id502576822?k=20&m=502576822&s=612x612&w=0&h=agfa5JNqMa1QzAbtc6JCgnsJei-CsXv9mAjnTxaAPCM="
                     className="w-full h-44 rounded-xl bg-cover shadow-lg hover:opacity-90"
+                    alt="Bandung"
                   />
                 </div>
                 <div className="p-2">
@@ -112,6 +117,7 @@ export default function CityCard() {
                   <img
                     src="https://media.istockphoto.com/photos/prambanan-temple-in-yogyakarta-picture-id1342846900?k=20&m=1342846900&s=612x612&w=0&h=8gJPdVr2GY1RKi6_rBY0AgAnQdLuCAWy39IybKxmocw="
                     className="w-full h-44 rounded-xl bg-cover shadow-lg hover:opacity-90"
+                    alt="Yogyakarta"
                   />
                 </div>
                 <div className="p-2">

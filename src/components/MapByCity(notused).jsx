@@ -11,6 +11,11 @@ export default function MapByCity({ coordinates,
     setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
   };
 
+
+  // const getLatLong = () => {
+
+  // }
+
   return (
     <div className="bg-[#023d3a] w-1/2 flex justify-center items-center xl:h-[620px] 2xl:h-[980px]">
       <GoogleMapReact

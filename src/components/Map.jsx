@@ -1,8 +1,8 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
 
-export default function MapAroundYou({ coordinates, setCoordinates, setBounds, ballroomsAround }) {
-  console.log({ ballroomsAround });
+export default function Map({ coordinates, setCoordinates, setBounds, ballrooms }) {
+  console.log({ ballrooms });
 
   const mapHandler = (e) => {
     setCoordinates({ lat: e.center.lat, lng: e.center.lng });
@@ -15,12 +15,11 @@ export default function MapAroundYou({ coordinates, setCoordinates, setBounds, b
         bootstrapURLKeys={{ key: "AIzaSyBqF-Y1hwU-rbdRJxChIsrzv7cm9TmmkRU" }}
         defaultCenter={coordinates}
         center={coordinates}
-        defaultZoom={14}
+        defaultZoom={12}
         margin={[50, 50, 50, 50]}
-        options={""}
         onChange={(e) => mapHandler(e)}
       >
-        {ballroomsAround?.map((ballroom, index) => {
+        {ballrooms?.map((ballroom, index) => {
           return (
             <div
               key={index}

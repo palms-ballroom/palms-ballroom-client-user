@@ -1,8 +1,7 @@
 import "./App.css";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import HomePage from "./views/HomePage";
-import ListHotelAroundYou from "./views/ListHotelAroundYou";
-import ListHotelByCity from "./views/ListHotelByCity";
+import ListHotel from "./views/ListHotel";
 import DetailPage from "./views/DetailPage";
 import LoginPage from "./views/LoginPage";
 import RegisterPage from "./views/RegisterPage";
@@ -13,8 +12,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/hotels" element={<ListHotelAroundYou />}></Route>
-        <Route path="/hotels/:city" element={<ListHotelByCity />}></Route>
+        <Route path="/hotels/:city" element={<ListHotel />}></Route>
         <Route path="/detail" element={<DetailPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
