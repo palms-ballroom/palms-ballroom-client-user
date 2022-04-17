@@ -1,5 +1,7 @@
 import React from "react";
 import HeaderComponent1 from "../components/HeaderComponent1";
+import {useMutation} from "@apollo/client"
+import {xenditPayment} from "../config/query"
 
 import * as faceapi from "@vladmandic/face-api";
 
@@ -7,6 +9,15 @@ const MyBookingPage = () => {
   const [modelsLoaded, setModelsLoaded] = React.useState(false);
   const [captureVideo, setCaptureVideo] = React.useState(false);
   const [labeledDescriptor, setLabeledDescriptor] = React.useState([]);
+  const [authStatus, setAuthStatus] = React.useState(false)
+
+  const  [ xenditPay, {error, loading, data}]= useMutation(xenditPayment)
+  const openNewTab = () => {
+    window.open(data.createInvoice.data.invoice_url)
+  }
+  if(data) {
+    openNewTab()
+  }
 
   const videoRef = React.useRef();
   const videoHeight = 480;
@@ -93,7 +104,7 @@ const MyBookingPage = () => {
         const results = resizedDetections.map((d) => {
           return faceMatcher.findBestMatch(d.descriptor);
         });
-        detectedUserName.push(results[0].label);
+        detectedUserName.push(results[0]?.label);
         // console.log("masuk");
         // const results = new faceapi.FaceMatcher(labeledDescriptor, 0.6).findBestMatch(detections[0].descriptor);
         // console.log("keluar");
@@ -111,20 +122,41 @@ const MyBookingPage = () => {
             );
         });
         console.log(detectedUserName);
-
-        // canvasRef && canvasRef.current && faceapi.draw.drawFaceExpressions(canvasRef.current, resizedDetections);
-
-        // canvasRef && canvasRef.current && faceapi.dram.draw
-        console.log(detections);
+      }
+      if(detectedUserName.includes('Wika Silo')) {
+        closeWebcam()
+        setAuthStatus(true)
       }
     }, 1000);
   };
 
   const closeWebcam = () => {
-    videoRef.current.pause();
-    videoRef.current.srcObject.getTracks()[0].stop();
+    videoRef.current?.pause();
+    videoRef.current?.srcObject.getTracks()[0].stop();
     setCaptureVideo(false);
   };
+
+  
+
+  const doXenditPayment = async () => {
+    try {
+      await xenditPay({
+        variables: {
+            customerId: 3,
+            accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJQcm9taXNlSEBnbWFpbC5jb20iLCJyb2xlIjoiQ3VzdG9tZXIiLCJpYXQiOjE2NTAwNDA3MzB9.XnFxiNsoFgQGj7y7KlgBO49o7SYShpWGiWvyZw8YjD0",
+            price: 500000   
+      }
+    })
+    } catch (error) {
+      console.log(error)
+    }  
+  }
+
+  const btnPay = () => {
+    if(authStatus) {
+      return <button style={{marginLeft: 10}} onClick={() => doXenditPayment() } >Pay with xendit</button>
+    }
+  }
 
   return (
     <>
@@ -166,6 +198,9 @@ const MyBookingPage = () => {
                     <p className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-gray-800">
                       $28.00
                     </p>
+                    {
+                      btnPay()
+                    }
                   </div>
                 </div>
               </div>
@@ -195,6 +230,9 @@ const MyBookingPage = () => {
                     <p className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-gray-800">
                       $28.00
                     </p>
+                    {
+                      btnPay()
+                    }
                   </div>
                 </div>
               </div>
@@ -265,7 +303,7 @@ const MyBookingPage = () => {
                           borderRadius: "10px",
                         }}
                       >
-                        Close Webcam
+                        Close
                       </button>
                     ) : (
                       <button
@@ -280,7 +318,7 @@ const MyBookingPage = () => {
                           borderRadius: "10px",
                         }}
                       >
-                        Open Webcam
+                         Face Scanning
                       </button>
                     )}
                   </div>
