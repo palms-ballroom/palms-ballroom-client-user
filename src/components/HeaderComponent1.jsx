@@ -8,11 +8,11 @@ export default function HeaderComponent1() {
   const [deliverables, setDeliverables] = useState(false);
   return (
     <>
-      <div className="bg-gray-200 h-full w-full static">
+      <div className="bg-gray-200 h-full w-full sticky top-0 z-50">
         {/* Code block starts */}
 
         {/* Start Web Responsive */}
-        <nav className="bg-white shadow xl:block hidden">
+        <nav className="bg-white shadow block">
           <div className="mx-auto container px-6 py-2 xl:py-0">
             <div className="flex items-center justify-between">
               {/* Start logo */}
@@ -31,7 +31,7 @@ export default function HeaderComponent1() {
 
               {/* Start Navbar */}
               <div className="flex">
-                <div className="hidden xl:flex">
+                <div className="flex">
                   <a className="flex px-5 items-center py-6 text-sm leading-5 text-gray-800 hover:bg-opacity-100 focus:opacity-90 focus:outline-none transition duration-150 ease-in-out">
                     <span className="mr-2">
                       <i className="fas fa-hotel"></i>
@@ -44,7 +44,7 @@ export default function HeaderComponent1() {
                     </span>
                     Become a partner
                   </a>
-                  <Link to="/orderlist">
+                  {/* <Link to="/orderlist">
                     <span
                       an
                       className="flex px-5 items-center py-6 text-sm leading-5 text-gray-800 hover:bg-opacity-100 focus:opacity-90 focus:outline-none transition duration-150 ease-in-out"
@@ -54,10 +54,10 @@ export default function HeaderComponent1() {
                       </span>
                       My booking
                     </span>
-                  </Link>
+                  </Link> */}
                 </div>
                 {/* Start My profile */}
-                <div className="hidden xl:flex items-center">
+                <div className="flex items-center">
                   <div className="relative md:mr-6 my-2"></div>
                   <div className="ml-6 relative">
                     <div
@@ -87,6 +87,14 @@ export default function HeaderComponent1() {
                               <span className="ml-2">My Profile</span>
                             </div>
                           </li>
+                          <Link to="/orderlist">
+                            <li className="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
+                              <div className="flex items-center ml-1">
+                                <i className="fas fa-file-invoice-dollar"></i>
+                                <span className="ml-2">My Booking</span>
+                              </div>
+                            </li>
+                          </Link>
                           <Link to="/register">
                             <li className="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
                               <div className="flex items-center ml-1">

@@ -5,20 +5,20 @@ export default function FooterComponent() {
       <div className="w-full border-gray-300 border-t lg:w-11/12 md:w-11/12 lg:mx-auto md:mx-auto">
         <div className="container mx-auto py-2">
           <div className="xl:flex lg:flex md:flex pt-2">
-            <div className="w-11/12 xl:w-3/6 lg:w-2/5 mx-auto lg:mx-0 xl:mx-0">
-              <div className="flex items-center mb-2 xl:mb-0 lg:mb-0">
+            <div className="w-full mx-auto lg:mx-0 xl:mx-0">
+              <div className="flex items-center sm:justify-center md:justify-center lg:justify-center xl:justify-start mb-2 xl:mb-0 lg:mb-0">
                 <img src="./assets/logo-palm.png" className="w-32" />
               </div>
             </div>
           </div>
-          <div className="xl:flex flex-wrap justify-between xl:mt-24 mt-16 pb-2 pl-3 sm:pl-0">
-            <div className="w-11/12 xl:w-2/6 mx-auto lg:mx-0 xl:mx-0 mb-6 xl:mb-0">
+          <div className="xl:flex xl:justify-between xl:mt-24 mt-16 pb-2">
+            <div className="w-full xl:w-2/6 flex sm:justify-center md:justify-center lg:justify-center xl:justify-start mx-auto lg:mx-0 xl:mx-0 mb-6 xl:mb-0">
               <p className="text-gray-900 text-base">
                 🌴 2022 Palms . All Rights Reserved
               </p>
             </div>
-            <div className="w-11/12 xl:w-2/6 mx-auto lg:mx-0 xl:mx-0 mb-6 lg:mb-0 xl:mb-0">
-              <ul className="xl:flex lg:flex md:flex sm:flex justify-between">
+            <div className="w-full mx-auto sm:px-28 lg:mx-0 xl:mx-0 mb-6 lg:mb-0 xl:mb-0">
+              <ul className="xl:flex lg:flex md:flex sm:flex sm:justify-between md:justify-between sm:px-0 md:px-11 lg:px-40 xl:px-0 ">
                 <li className="text-gray-800 hover:text-gray-900 text-base mb-4 sm:mb-0">
                   <a>Terms of service</a>
                 </li>
@@ -33,7 +33,7 @@ export default function FooterComponent() {
                 </li>
               </ul>
             </div>
-            <div className="w-11/12 xl:w-1/6 lg:w-1/6 sm:w-11/12 mx-auto lg:mx-0 xl:mx-0 mb-6 lg:mb-0 xl:mb-0 mt-8 lg:mt-8 xl:mt-0">
+            <div className="w-full xl:w-1/6 lg:w-full sm:w-full sm:flex sm:justify-center mx-auto lg:mx-0 xl:mx-0 mb-6 lg:mb-0 xl:mb-0 mt-8 lg:mt-8 xl:mt-0">
               <div className="flex justify-start sm:justify-start xl:justify-end space-x-6 pr-2 xl:pr-0 lg:pr-0 md:pr-0 sm:pr-0">
                 <div>
                   <a href="#">
