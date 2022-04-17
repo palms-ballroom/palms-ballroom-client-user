@@ -87,26 +87,20 @@ export default function CityCard() {
             </Link>
             {/* Card 1 Ends */}
             {/* Card 2 */}
-            <Link to="/hotels/Palembang" className="flex justify-center">
+            <Link to="/hotels/Bali" className="flex justify-center">
               <div className="mx-3 w-72 h-96 lg:mb-0 mb-8 hover:cursor-pointer flex flex-col rounded-3xl">
                 <div className="w-full h-[42.85%] bg-red-600 rounded-t-3xl">
                   <img
-                    src="https://media.istockphoto.com/photos/15th-july-martyrs-bridge-bosphorus-bridge-at-night-istanbul-turkey-picture-id821745776?k=20&m=821745776&s=612x612&w=0&h=eIjqRdMZe4sELm1A2ejC_WWV8BFsdRXkj34qbmAK1fc="
+                    src="https://media.timeout.com/images/105240189/image.jpg"
                     className="bg-cover rounded-t-3xl"
-                    alt="Palembang"
+                    alt="Bali"
                   />
                 </div>
                 <div className="w-full h-[42.85%] bg-slate-50 text-xs text-gray-500 flex justify-center items-center text-center px-2">
-                  Capital of Indonesia’s South Sumatra province, is a port city
-                  on the Musi River. The river, scene of a floating market, is
-                  lined with houses on stilts and spanned by the Ampera Bridge.
-                  At the bridge’s northern end stands the palatial Museum Sultan
-                  Mahmud Badaruddin II, exploring regional history. The
-                  archaeological site and sacred hill of Bukit Siguntang
-                  overlooks the city.
+                  Indonesian's westernmost of the Lesser Sunda Islands. Bali appeals through its sheer natural beauty of looming volcanoes and lush terraced rice fields that exude peace and serenity. Bali enchants with its dramatic dances and colorful ceremonies, its arts, and crafts, to its luxurious beach resorts and exciting nightlife. And everywhere, you will find intricately carved temples.
                 </div>
                 <div className="w-full h-[14.3%] bg-[#EE7197] rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
-                  PALEMBANG
+                  Bali
                 </div>
               </div>
               {/* <div className="mx-2 w-72 lg:mb-0 mb-8 hover:cursor-pointer">
