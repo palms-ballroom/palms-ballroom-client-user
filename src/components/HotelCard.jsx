@@ -17,7 +17,7 @@ export default function HotelCard({ ballroom }) {
 
   return (
     <>
-      <Link to="/detail">
+      <Link to={`/detail/${ballroom.location_id}`}>
         {/* <div className="mx-2 w-52 lg:mb-0 mb-8 relative">
           <div>
             <img

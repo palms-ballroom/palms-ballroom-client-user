@@ -21,8 +21,8 @@ export default function ListHotel() {
      })
     } else if (city === 'Jakarta') {
       setCoordinates({ lat: -6.208835455195333, lng: 106.84558354912964 })
-    } else if (city === 'Palembang') {
-      setCoordinates({ lat: -2.9760949006783224, lng: 104.7753048713629 })
+    } else if (city === 'Bali') {
+      setCoordinates({ lat: -8.670470825331023, lng: 115.21242641380833 })
     } else if (city === 'Surabaya') {
       setCoordinates({ lat: -7.257596307368415, lng: 112.75167834379174 })
     } else if (city === 'Bandung') {
@@ -30,6 +30,7 @@ export default function ListHotel() {
     } else if (city === 'Yogyakarta') {
       setCoordinates({ lat: -7.795489277618111, lng: 110.36906830754828 })
     } 
+    // -8.670485142108955, 115.21239896877901
     // Denpasar
     // -8.670470825331023, 115.21242641380833
   }, [city])
