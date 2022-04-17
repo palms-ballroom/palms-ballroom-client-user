@@ -2,153 +2,251 @@ import React, { useEffect, useState } from "react";
 import HeaderComponent1 from "../components/HeaderComponent1";
 import HeadDetail from "../components/HeadDetail";
 import ImagesPreview from "../components/ImagesPreview";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { getBallroomById } from "../hooks";
-const DetailPage = () => {
 
+import { FaMoneyBillWave } from "react-icons/fa";
+import { FaRegStar } from "react-icons/fa";
+import { FaStreetView } from "react-icons/fa";
+
+const DetailPage = () => {
   const { hotelApiId } = useParams();
   const [hotel, setHotel] = useState(null);
-  
 
   const formattedBallroomPrice = (price) => {
     if (!price) {
       return "Undisclosed";
     } else {
       const ballroomPrice = parseInt(price?.replace(/[^0-9]/g, "") * 100);
-      const formatted = `Rp. ${ballroomPrice.toLocaleString("id-ID", {
+      const formatted = `${ballroomPrice.toLocaleString("id-ID", {
         style: "currency",
         currency: "IDR",
         minimumFractionDigits: 0,
       })}`;
       return formatted;
     }
-  }
-
+  };
 
   useEffect(() => {
-    getBallroomById(hotelApiId)
-    .then((data) => {
+    getBallroomById(hotelApiId).then((data) => {
       console.log(data);
       setHotel(data);
-    })
-  }, [hotelApiId])
+    });
+  }, [hotelApiId]);
 
   const hotelName = (array) => {
     // console.log("array: ", array);
-    const x = array.filter(el => el.__typename === 'AppPresentation_PoiOverview')
+    const x = array.filter(
+      (el) => el.__typename === "AppPresentation_PoiOverview"
+    );
     // console.log("x: ", x);
-    const y = x[0].name 
+    const y = x[0].name;
     // console.log("y: ", y);
     // console.log(poiOverview);
-    return y
-  }
+    return y;
+  };
 
   const hotelRanking = (array) => {
     // console.log("array: ", array);
-    const x = array.filter(el => el.__typename === 'AppPresentation_PoiOverview')
+    const x = array.filter(
+      (el) => el.__typename === "AppPresentation_PoiOverview"
+    );
     // console.log("x: ", x);
-    const y = x[0].rankingDetails.string 
+    const y = x[0].rankingDetails.string;
     // console.log("y: ", y);
     // console.log(poiOverview);
-    return y
-  }
+    return y;
+  };
 
   const hotelAddress = (array) => {
     // hotel[0].sections[14].address.address
-    const x = array.filter(el => el.__typename === 'AppPresentation_PoiLocation')
-    const y = x[0].address.address 
+    const x = array.filter(
+      (el) => el.__typename === "AppPresentation_PoiLocation"
+    );
+    const y = x[0].address.address;
     // console.log(poiOverview);
-    return y
-  }
+    return y;
+  };
 
   const about = (array) => {
     // [10].about
     // AppPresentation_PoiAbout
     // console.log("array: ", array);
-    const x = array.filter(el => el.__typename === 'AppPresentation_PoiAbout')
+    const x = array.filter(
+      (el) => el.__typename === "AppPresentation_PoiAbout"
+    );
     // console.log("x: ", x);
-    const y = x[0].about 
+    const y = x[0].about;
     // console.log("y: ", y);
-    return y
-  }
+    return y;
+  };
 
   const descriptionTop = (array) => {
     // console.log("array: ", array);
-    const x = array.filter(el => el.__typename === 'AppPresentation_PoiHealthSafety')
+    const x = array.filter(
+      (el) => el.__typename === "AppPresentation_PoiHealthSafety"
+    );
     // console.log("x: ", x);
-    const y = x[0].subtitle.string 
+    const y = x[0].subtitle.string;
     // console.log("y: ", y);
-    return y
-  }
+    return y;
+  };
 
   const descriptionBtm = (array) => {
-    
     // console.log("array: ", array);
-    const x = array.filter(el => el.__typename === 'AppPresentation_PoiHealthSafety')
+    const x = array.filter(
+      (el) => el.__typename === "AppPresentation_PoiHealthSafety"
+    );
     // console.log("x: ", x);
-    const y = x[0].managementResponse
+    const y = x[0].managementResponse;
     // console.log("y: ", y);
-    return y
-  }
+    return y;
+  };
 
   return (
     hotel && (
-    <>
-      <HeaderComponent1></HeaderComponent1>
-      <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6">
-        {/* <!-- Start title & tag --> */}
-        <HeadDetail 
-        hotelName={hotelName(hotel[0].sections)}
-        hotelRanking={hotelRanking(hotel[0].sections)}
-        ></HeadDetail>
-
-        {/* <!-- Start Preview Images --> */}
-        <ImagesPreview hotelPhotos={hotel[0].sections[0].albumPhotos}></ImagesPreview>
-
-        {/* <!-- Start Description --> */}
-        <div className="flex flex-row 2xl:mt-10">
-          <div className="flex flex-col mt-7">
-            <h1 className="font-sub_title text-xl tracking-wider">Details</h1>
-            <div className="flex flex-row gap-4">
-              <div className="mt-5 bg-slate-100 py-6 w-24">
-                <p className="text-gray-800 text-xs text-center">Price: {formattedBallroomPrice(hotel[0].sections[4].primaryOfferV2?.displayPrice?.string)} </p>
-              </div>
-              <div className="mt-5 bg-slate-100 py-6 w-24">
-                <p className="text-gray-800 text-xs text-center">
-                  Address : {hotelAddress(hotel[0].sections)}
-                </p>
-              </div>
-              <div className="mt-5 bg-slate-100 py-6 w-24">
-                <p className="text-gray-800 text-xs text-center">Rating: {hotel[0].sections[2].rating} </p>
-              </div>
-            </div>
-            <div className="description mt-5 w-1/2">
-              <p className="text-gray-800 text-xs font-sub_title font-semibold tracking-widest">
-                About
-              </p>
-              <p className="text-gray-800 text-xs mt-3">
-                {about(hotel[0].sections)}
-              </p>
-            </div>
-            <div className="description mt-5 w-1/2">
-              <p className="text-gray-800 text-xs font-sub_title font-semibold tracking-widest">
-                {descriptionTop(hotel[0].sections)}
-              </p>
-              <p className="text-gray-800 text-xs mt-3">
-                {descriptionBtm(hotel[0].sections)}
-              </p>
-            </div>
+      <>
+        <HeaderComponent1></HeaderComponent1>
+        <div className="w-full flex flex-col py-16 px-56">
+          <div className="w-full h-[600px] pb-5">
+            <HeadDetail
+              hotelName={hotelName(hotel[0].sections)}
+              hotelRanking={hotelRanking(hotel[0].sections)}
+            ></HeadDetail>
+            <ImagesPreview
+              hotelPhotos={hotel[0].sections[0].albumPhotos}
+            ></ImagesPreview>
           </div>
-          <div className="flex justify-center items-center">
-            <div>
-              <button className="bg-slate-200 shadow-lg py-2 px-36">
-                View 3D Ballroom
-              </button>
+          <div className="w-full py-5 h-[600px]">
+            <div className="w-full h-full flex flex-row">
+              <div className="w-2/3 h-full">
+                <div className="w-full py-5 h-24 ">
+                  <div className="w-full h-full text-5xl">Details</div>
+                </div>
+                <div className="w-full py-5 h-44">
+                  <div className="flex flex-row justify-evenly h-full w-full">
+                    <div className="h-full w-44 flex flex-col border-2 border-black rounded-xl ">
+                      <div className="h-1/3 w-full">
+                        <FaMoneyBillWave className="h-full w-12 pl-5 pt-5" />
+                      </div>
+                      <div className="h-full w-full flex">
+                        <div className="pl-5 flex items-center">
+                          {formattedBallroomPrice(
+                            hotel[0].sections[4].primaryOfferV2?.displayPrice
+                              ?.string
+                          )}{" "}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="h-full w-44 flex flex-col border-2 border-black rounded-xl ">
+                      <div className="h-1/3 w-full">
+                        <FaStreetView className="h-full w-12 pl-5 pt-5" />
+                      </div>
+                      <div className="h-full w-full flex">
+                        <div className="px-5 flex items-center text-xs">
+                          {hotelAddress(hotel[0].sections)}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="h-full w-44 flex flex-col border-2 border-black rounded-xl ">
+                      <div className="h-1/3 w-full">
+                        <FaRegStar className="h-full w-12 pl-5 pt-5" />
+                      </div>
+                      <div className="h-full w-full flex">
+                        <div className="pl-5 flex items-center">
+                          {hotel[0].sections[2].rating}{" "}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="w-full pr-5">{about(hotel[0].sections)}</div>
+              </div>
+              <div className="w-1/3 h-full">
+                <div className="flex flex-col justify-center items-center">
+                  <Link to="/orderlist" className="py-5 w-full pl-2">
+                    <button className="bg-slate-200 shadow-lg py-2 w-full">
+                      Add To Cart
+                    </button>
+                  </Link>
+                  <div className="py-5 w-full pl-2">
+                    <button className="bg-slate-200 shadow-lg py-2 w-full">
+                      View 3D Ballroom
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </>)
+
+        {/* <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6">
+
+          <HeadDetail
+            hotelName={hotelName(hotel[0].sections)}
+            hotelRanking={hotelRanking(hotel[0].sections)}
+          ></HeadDetail>
+
+          <ImagesPreview
+            hotelPhotos={hotel[0].sections[0].albumPhotos}
+          ></ImagesPreview>
+
+          <div className="flex flex-row 2xl:mt-10">
+            <div className="flex flex-col mt-7">
+              <h1 className="font-sub_title text-xl tracking-wider">Details</h1>
+              <div className="flex flex-row gap-4">
+                <div className="mt-5 bg-slate-100 py-6 w-24">
+                  <p className="text-gray-800 text-xs text-center">
+                    Price:{" "}
+                    {formattedBallroomPrice(
+                      hotel[0].sections[4].primaryOfferV2?.displayPrice?.string
+                    )}{" "}
+                  </p>
+                </div>
+                <div className="mt-5 bg-slate-100 py-6 w-24">
+                  <p className="text-gray-800 text-xs text-center">
+                    Address : {hotelAddress(hotel[0].sections)}
+                  </p>
+                </div>
+                <div className="mt-5 bg-slate-100 py-6 w-24">
+                  <p className="text-gray-800 text-xs text-center">
+                    Rating: {hotel[0].sections[2].rating}{" "}
+                  </p>
+                </div>
+              </div>
+              <div className="description mt-5 w-1/2">
+                <p className="text-gray-800 text-xs font-sub_title font-semibold tracking-widest">
+                  About
+                </p>
+                <p className="text-gray-800 text-xs mt-3">
+                  {about(hotel[0].sections)}
+                </p>
+              </div>
+              <div className="description mt-5 w-1/2">
+                <p className="text-gray-800 text-xs font-sub_title font-semibold tracking-widest">
+                  {descriptionTop(hotel[0].sections)}
+                </p>
+                <p className="text-gray-800 text-xs mt-3">
+                  {descriptionBtm(hotel[0].sections)}
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col justify-center items-center">
+              <Link to="/orderlist" className="py-5">
+                <button className="bg-slate-200 shadow-lg py-2 px-36">
+                  Add To Cart
+                </button>
+              </Link>
+              <div className="py-5">
+                <button className="bg-slate-200 shadow-lg py-2 px-36">
+                  View 3D Ballroom
+                </button>
+              </div>
+            </div>
+          </div>
+        </div> */}
+      </>
+    )
   );
 };
 
