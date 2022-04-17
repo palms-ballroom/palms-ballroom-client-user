@@ -26,11 +26,14 @@ export default function NavbarComponent() {
         <nav className="flex justify-between items-center gap-3">
           <Link to="/">
             <div className="flex justify-center items-center">
-              <img src="./assets/logo-palm.png" className="2xl:w-28 xl:w-28" />
+              <img
+                src="../../public/assets/logo-palm.png"
+                className="2xl:w-28 xl:w-28"
+              />
             </div>
           </Link>
           {/* For medium and plus sized devices */}
-          <ul className="hidden md:flex 2xl:space-x-2 xl:space-x-1 h-8">
+          <ul className="hidden sm:hidden md:hidden lg:hidden xl:flex 2xl:flex 2xl:space-x-2 xl:space-x-1 h-8">
             <li
               onClick={() => selected(0)}
               className={`${
@@ -128,10 +131,10 @@ export default function NavbarComponent() {
           </div>
         </nav>
         {/* for smaller devcies */}
-        <div className="block md:hidden w-full mt-5 ">
+        <div className="sm:block md:block lg:block xl:hidden 2xl:hidden w-full mt-5 ">
           <div
             onClick={() => setDropDown(!dropDown)}
-            className="cursor-pointer px-4 py-3 text-white bg-[#023d3a] rounded flex justify-between items-center w-full"
+            className="cursor-pointer px-4 py-3 text-white bg-[#bb9e80] rounded flex justify-between items-center w-full"
           >
             <div className="flex space-x-2">
               <span
@@ -146,7 +149,7 @@ export default function NavbarComponent() {
                 id="textClicked"
                 className="font-normal text-sm leading-3 focus:outline-none hover:bg-gray-800 duration-100 cursor-pointer "
               >
-                {text ? text : "Collections"}
+                {text ? text : "LOCATION"}
               </p>
             </div>
             <svg
@@ -174,37 +177,37 @@ export default function NavbarComponent() {
               id="list"
               className={`${
                 dropDown ? "hidden" : "block"
-              } font-normal text-base leading-4 absolute top-2  w-full rounded shadow-md`}
+              } font-normal text-base leading-4 absolute top-2  w-full rounded shadow-md z-10`}
             >
               <li
                 onClick={() => setSelectedText("Arts")}
                 className="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xs leading-3 font-normal"
               >
-                Arts
+                Jakarta
               </li>
               <li
                 onClick={() => setSelectedText("Space")}
                 className="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xs leading-3 font-normal"
               >
-                Space
+                Bandung
               </li>
               <li
                 onClick={() => setSelectedText("Game")}
                 className="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xs leading-3 font-normal"
               >
-                Game
+                Palembang
               </li>
               <li
                 onClick={() => setSelectedText("Utility")}
                 className="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xs leading-3 font-normal"
               >
-                Utility
+                Yogyakarta
               </li>
               <li
                 onClick={() => setSelectedText("Cards")}
                 className="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xs leading-3 font-normal"
               >
-                Cards
+                Surabaya
               </li>
             </ul>
           </div>

@@ -5,7 +5,7 @@ export default function HotelList({ ballrooms }) {
   return (
     <>
       <div className="mx-auto container py-8 px-4 overflow-auto xl:h-[500px] 2xl:h-[800px]">
-        <div className="grid grid-cols-2 items-center lg:justify-between justify-center gap-10">
+        <div className="grid 2xl:grid-cols-2 xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 items-center lg:justify-between justify-center gap-10">
           {/* Card 1 */}
           {ballrooms?.map((ballroom, i) => {
             return <HotelCard ballroom={ballroom}></HotelCard>;
