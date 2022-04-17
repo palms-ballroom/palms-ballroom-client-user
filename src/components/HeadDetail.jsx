@@ -1,6 +1,8 @@
 import React from "react";
 
 export default function HeadDetail({hotelName, hotelRanking}) {
+  // console.log("hotelName: ", hotelName);
+  // console.log("hotelRanking: ", hotelRanking);
   return (
     <>
       <div className="w-full items-center 2xl:mb-14">

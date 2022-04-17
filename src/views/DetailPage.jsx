@@ -33,6 +33,63 @@ const DetailPage = () => {
     })
   }, [hotelApiId])
 
+  const hotelName = (array) => {
+    // console.log("array: ", array);
+    const x = array.filter(el => el.__typename === 'AppPresentation_PoiOverview')
+    // console.log("x: ", x);
+    const y = x[0].name 
+    // console.log("y: ", y);
+    // console.log(poiOverview);
+    return y
+  }
+
+  const hotelRanking = (array) => {
+    // console.log("array: ", array);
+    const x = array.filter(el => el.__typename === 'AppPresentation_PoiOverview')
+    // console.log("x: ", x);
+    const y = x[0].rankingDetails.string 
+    // console.log("y: ", y);
+    // console.log(poiOverview);
+    return y
+  }
+
+  const hotelAddress = (array) => {
+    // hotel[0].sections[14].address.address
+    const x = array.filter(el => el.__typename === 'AppPresentation_PoiLocation')
+    const y = x[0].address.address 
+    // console.log(poiOverview);
+    return y
+  }
+
+  const about = (array) => {
+    // [10].about
+    // AppPresentation_PoiAbout
+    // console.log("array: ", array);
+    const x = array.filter(el => el.__typename === 'AppPresentation_PoiAbout')
+    // console.log("x: ", x);
+    const y = x[0].about 
+    // console.log("y: ", y);
+    return y
+  }
+
+  const descriptionTop = (array) => {
+    // console.log("array: ", array);
+    const x = array.filter(el => el.__typename === 'AppPresentation_PoiHealthSafety')
+    // console.log("x: ", x);
+    const y = x[0].subtitle.string 
+    // console.log("y: ", y);
+    return y
+  }
+
+  const descriptionBtm = (array) => {
+    
+    // console.log("array: ", array);
+    const x = array.filter(el => el.__typename === 'AppPresentation_PoiHealthSafety')
+    // console.log("x: ", x);
+    const y = x[0].managementResponse
+    // console.log("y: ", y);
+    return y
+  }
 
   return (
     hotel && (
@@ -41,8 +98,8 @@ const DetailPage = () => {
       <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6">
         {/* <!-- Start title & tag --> */}
         <HeadDetail 
-        hotelName={hotel[0].sections[2].name}
-        hotelRanking={hotel[0].sections[2].rankingDetails.string}
+        hotelName={hotelName(hotel[0].sections)}
+        hotelRanking={hotelRanking(hotel[0].sections)}
         ></HeadDetail>
 
         {/* <!-- Start Preview Images --> */}
@@ -54,11 +111,11 @@ const DetailPage = () => {
             <h1 className="font-sub_title text-xl tracking-wider">Details</h1>
             <div className="flex flex-row gap-4">
               <div className="mt-5 bg-slate-100 py-6 w-24">
-                <p className="text-gray-800 text-xs text-center">Price: {formattedBallroomPrice(hotel[0].sections[4].primaryOfferV2.displayPrice.string)} </p>
+                <p className="text-gray-800 text-xs text-center">Price: {formattedBallroomPrice(hotel[0].sections[4].primaryOfferV2?.displayPrice?.string)} </p>
               </div>
               <div className="mt-5 bg-slate-100 py-6 w-24">
                 <p className="text-gray-800 text-xs text-center">
-                  Address : {hotel[0].sections[16].address.address}
+                  Address : {hotelAddress(hotel[0].sections)}
                 </p>
               </div>
               <div className="mt-5 bg-slate-100 py-6 w-24">
@@ -70,15 +127,15 @@ const DetailPage = () => {
                 About
               </p>
               <p className="text-gray-800 text-xs mt-3">
-                {hotel[0].sections[10].about}
+                {about(hotel[0].sections)}
               </p>
             </div>
             <div className="description mt-5 w-1/2">
               <p className="text-gray-800 text-xs font-sub_title font-semibold tracking-widest">
-                {hotel[0].sections[8].subtitle.string}
+                {descriptionTop(hotel[0].sections)}
               </p>
               <p className="text-gray-800 text-xs mt-3">
-                {hotel[0].sections[8].managementResponse}
+                {descriptionBtm(hotel[0].sections)}
               </p>
             </div>
           </div>
