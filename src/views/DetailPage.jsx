@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import HeaderComponent1 from "../components/HeaderComponent1";
 import HeadDetail from "../components/HeadDetail";
 import ImagesPreview from "../components/ImagesPreview";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link} from "react-router-dom";
 import { getBallroomById } from "../hooks";
 
 import { FaMoneyBillWave } from "react-icons/fa";
@@ -18,17 +18,19 @@ const DetailPage = () => {
 
   const [createBookingMutation, {error, loading, data}] = useMutation(createBooking)
 
-  if(data) {
-    console.log('masuk')
-    navigate("/orderlist/3") //nanti pakai localStorage
-  }
+  useEffect(() => {
+    if(data && !loading) {
+      console.log('masuk')
+      navigate("/orderlist/3") //nanti pakai localStorage
+    }
+  }, [data, loading])
 
   const doCreateBooking = () => {
     createBookingMutation({
       variables: {
         customerId: "3", //nanti pakai localStorage
         hotelApiId: hotelApiId,
-        bookingDate: "2022-05-22", //nanti pakai calendar
+        bookingDate: "2022-05-23", //nanti pakai calendar
         name: hotelName(hotel[0].sections), 
         accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJQcm9taXNlSEBnbWFpbC5jb20iLCJyb2xlIjoiQ3VzdG9tZXIiLCJpYXQiOjE2NTAwMTg4NjN9.IMurcmG_gW0cpQnI2fqnsoH_7Zn-oy6mQndxTFvOvuo", //nanti dari localStorage
         role: "Customer" //nanti dari localStorage atau mau di hardcode??
@@ -190,7 +192,7 @@ const DetailPage = () => {
                     <button onClick={() => doCreateBooking()} className="bg-slate-200 shadow-lg py-2 w-full">
                       Add To Cart
                     </button>
-                  </div>
+                  </div >
                   <div className="py-5 w-full pl-2">
                     <button className="bg-slate-200 shadow-lg py-2 w-full">
                       View 3D Ballroom

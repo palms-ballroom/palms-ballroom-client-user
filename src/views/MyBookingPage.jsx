@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HeaderComponent1 from "../components/HeaderComponent1";
 import {useMutation} from "@apollo/client"
 import {xenditPayment} from "../config/query"
@@ -15,9 +15,11 @@ const MyBookingPage = () => {
   const openNewTab = () => {
     window.open(data.createInvoice.data.invoice_url)
   }
-  if(data) {
-    openNewTab()
-  }
+  useEffect(() => {
+    if(data && !loading) {
+      openNewTab()
+    }
+  }, [data, loading])
 
   const videoRef = React.useRef();
   const videoHeight = 480;
@@ -147,6 +149,7 @@ const MyBookingPage = () => {
             price: 500000   
       }
     })
+
     } catch (error) {
       console.log(error)
     }  
