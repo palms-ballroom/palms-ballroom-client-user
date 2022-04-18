@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import HeaderComponent1 from "../components/HeaderComponent1";
 import HeadDetail from "../components/HeadDetail";
 import ImagesPreview from "../components/ImagesPreview";
+import FooterComponent from "../components/FooterComponent";
 // import Calendar from "../components/Calendar";
 import { useParams, Link } from "react-router-dom";
 import { getBallroomById } from "../hooks";
@@ -108,7 +109,7 @@ const DetailPage = () => {
     hotel && (
       <>
         <HeaderComponent1></HeaderComponent1>
-        <div className="w-full flex flex-col py-16 px-56">
+        <div className="w-full flex flex-col 2xl:py-16 2xl:p-52 xl:px-20 mb-28">
           <div className="w-full h-[600px] pb-5">
             <HeadDetail
               hotelName={hotelName(hotel[0].sections)}
@@ -161,7 +162,20 @@ const DetailPage = () => {
                     </div>
                   </div>
                 </div>
-                <div className="w-full pr-5">{about(hotel[0].sections)}</div>
+                <div className="description w-full pr-5">
+                  <p className="text-gray-800 text-xs font-sub_title font-semibold tracking-widest mb-2">
+                    About
+                  </p>
+                  <p>{about(hotel[0].sections)}</p>
+                </div>
+
+                {/* <div className="w-full pr-5">{about(hotel[0].sections)}</div> */}
+                <div className="description mt-5 w-full pr-5">
+                  <p className="text-gray-800 text-xs font-sub_title font-semibold tracking-widest mb-3">
+                    {descriptionTop(hotel[0].sections)}
+                  </p>
+                  <p>{descriptionBtm(hotel[0].sections)}</p>
+                </div>
               </div>
 
               <div className="w-1/3 h-full">
@@ -182,6 +196,7 @@ const DetailPage = () => {
             </div>
           </div>
         </div>
+        <FooterComponent></FooterComponent>
         {/* <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6">
 
           <HeadDetail

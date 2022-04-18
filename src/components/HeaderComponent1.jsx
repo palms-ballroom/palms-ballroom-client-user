@@ -20,7 +20,7 @@ export default function HeaderComponent1() {
                 <div className="flex w-full sm:w-auto items-center sm:items-stretch justify-end sm:justify-start">
                   <div className="flex items-center">
                     <img
-                      src="assets/logo-palm.png"
+                      src="/assets/logo-palm.png"
                       alt="Palm"
                       className="w-28"
                     />
@@ -32,15 +32,15 @@ export default function HeaderComponent1() {
               {/* Start Navbar */}
               <div className="flex">
                 <div className="flex">
-                  <div className="flex px-5 items-center py-6 text-sm leading-5 text-gray-800 hover:bg-opacity-100 focus:opacity-90 focus:outline-none transition duration-150 ease-in-out">
+                  <div className="flex px-5 items-center py-6 text-sm leading-5 text-[#0d423f] hover:bg-opacity-100 focus:opacity-90 focus:outline-none transition duration-150 ease-in-out">
                     <span className="mr-2">
-                      <i className="fas fa-hotel"></i>
+                      <i className="fas fa-hotel text-[#0d423f]"></i>
                     </span>
                     Ballroom
                   </div>
-                  <div className="flex px-5 items-center py-6 text-sm leading-5 text-gray-800 hover:bg-opacity-100 focus:opacity-90 focus:outline-none transition duration-150 ease-in-out">
+                  <div className="flex px-5 items-center py-6 text-sm leading-5 text-[#0d423f] hover:bg-opacity-100 focus:opacity-90 focus:outline-none transition duration-150 ease-in-out">
                     <span className="mr-2">
-                      <i className="far fa-handshake"></i>
+                      <i className="far fa-handshake text-[#0d423f]"></i>
                     </span>
                     Become a partner
                   </div>
@@ -66,7 +66,7 @@ export default function HeaderComponent1() {
                     >
                       {profile && (
                         <ul className="p-2 w-40 border-r bg-white absolute rounded right-0 shadow top-0 mt-16 ">
-                          <li className="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                          <li className="cursor-pointer text-[#0d423f] text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
                             <div className="flex items-center">
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -84,34 +84,42 @@ export default function HeaderComponent1() {
                                 <circle cx={12} cy={7} r={4} />
                                 <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
                               </svg>
-                              <span className="ml-2">My Profile</span>
+                              <span className="ml-2 text-[#0d423f]">
+                                My Profile
+                              </span>
                             </div>
                           </li>
                           <Link to="/orderlist">
-                            <li className="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
+                            <li className="cursor-pointer text-[#0d423f] text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
                               <div className="flex items-center ml-1">
-                                <i className="fas fa-file-invoice-dollar"></i>
-                                <span className="ml-2">My Booking</span>
+                                <i className="fas fa-file-invoice-dollar text-[#0d423f]"></i>
+                                <span className="ml-2 text-[#0d423f]">
+                                  My Booking
+                                </span>
                               </div>
                             </li>
                           </Link>
                           <Link to="/register">
-                            <li className="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
+                            <li className="cursor-pointer text-[#0d423f] text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
                               <div className="flex items-center ml-1">
                                 <i className="far fa-registered"></i>
-                                <span className="ml-2">Register</span>
+                                <span className="ml-2 text-[#0d423f]">
+                                  Register
+                                </span>
                               </div>
                             </li>
                           </Link>
                           <Link to="/login">
-                            <li className="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
+                            <li className="cursor-pointer text-[#0d423f] text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
                               <div className="flex items-center ml-1">
-                                <i className="fas fa-sign-in-alt"></i>
-                                <span className="ml-2">Login</span>
+                                <i className="fas fa-sign-in-alt text-[#0d423f]"></i>
+                                <span className="ml-2 text-[#0d423f]">
+                                  Login
+                                </span>
                               </div>
                             </li>
                           </Link>
-                          <li className="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none">
+                          <li className="cursor-pointer text-[#0d423f] text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               className="icon icon-tabler icon-tabler-settings"
@@ -128,22 +136,26 @@ export default function HeaderComponent1() {
                               <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                               <circle cx={12} cy={12} r={3} />
                             </svg>
-                            <span className="ml-2">Account Settings</span>
+                            <span className="ml-2 text-[#0d423f]">
+                              Account Settings
+                            </span>
                           </li>
-                          <li className="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
+                          <li className="cursor-pointer text-[#0d423f] text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
                             <div className="flex items-center ml-1">
                               <i className="fas fa-sign-in-alt"></i>
-                              <span className="ml-2">Logout</span>
+                              <span className="ml-2 text-[#0d423f]">
+                                Logout
+                              </span>
                             </div>
                           </li>
                         </ul>
                       )}
-                      <div className="bg-[#e5f6f0] p-3 flex flex-row rounded-full">
+                      <div className="bg-[#cfd9df] p-3 flex flex-row rounded-full">
                         <div className="cursor-pointer flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-white transition duration-150 ease-in-out">
                           <i className="fas fa-bars text-slate-30"></i>
                         </div>
 
-                        <div className="ml-2 text-gray-600">
+                        <div className="ml-2 text-[#0d423f]">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="icon icon-tabler icon-tabler-chevron-down cursor-pointer"

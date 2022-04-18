@@ -15,12 +15,12 @@ export default function Map({
   };
 
   return (
-    <div className="w-1/2 flex justify-center items-center xl:h-[620px] 2xl:h-[980px]">
+    <div className="w-1/2 flex justify-center items-center xl:h-[720px] 2xl:h-[980px]">
       <GoogleMapReact
         bootstrapURLKeys={{ key: "AIzaSyBqF-Y1hwU-rbdRJxChIsrzv7cm9TmmkRU" }}
         defaultCenter={coordinates}
         center={coordinates}
-        defaultZoom={12}
+        defaultZoom={15}
         margin={[50, 50, 50, 50]}
         onChange={(e) => mapHandler(e)}
       >

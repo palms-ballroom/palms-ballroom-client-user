@@ -39,7 +39,7 @@ export default function NavbarComponent() {
               onClick={() => selected(0)}
               className={`${
                 style[0]
-                  ? "text-white bg-[#023d3a]"
+                  ? "text-white bg-[#0d423f]"
                   : "text-gray-600 border border-white bg-gray-50"
               }  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800  cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}
             >

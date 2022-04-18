@@ -23,7 +23,7 @@ export default function CityCard() {
                 <div className="w-full h-[42.85%] bg-slate-50 text-xs text-gray-500 flex justify-center items-center text-center px-2">
                   Is the closest location to where you are&ensp;✈
                 </div>
-                <div className="w-full h-[14.3%] bg-[#F1EC14] rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
+                <div className="w-full h-[14.3%] bg-[#e19465] rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
                   AROUND YOU
                 </div>
               </div>
@@ -48,7 +48,7 @@ export default function CityCard() {
                   and the old port of Sunda Kelapa, where traditional wooden
                   schooners dock.
                 </div>
-                <div className="w-full h-[14.3%] bg-[#259AE9] rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
+                <div className="w-full h-[14.3%] bg-[#266c6b] rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
                   JAKARTA
                 </div>
               </div>
@@ -73,7 +73,7 @@ export default function CityCard() {
                   resorts and exciting nightlife. And everywhere, you will find
                   intricately carved temples.
                 </div>
-                <div className="w-full h-[14.3%] bg-[#EE7197] rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
+                <div className="w-full h-[14.3%] bg-[#c4744a] rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
                   Bali
                 </div>
               </div>
@@ -97,7 +97,7 @@ export default function CityCard() {
                   15th century. The Tugu Pahlawan (Heroes Monument) honors the
                   independence battles waged in Surabaya’s streets in 1945
                 </div>
-                <div className="w-full h-[14.3%] bg-[#668DA4] rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
+                <div className="w-full h-[14.3%] bg-[#23676d] rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
                   SURABAYA
                 </div>
               </div>
@@ -122,7 +122,7 @@ export default function CityCard() {
                   outlets clustered along Jalan Setiabudi and Jalan Riau in the
                   Dago district.
                 </div>
-                <div className="w-full h-[14.3%] bg-[#8EDD61] rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
+                <div className="w-full h-[14.3%] bg-[#f3986a] rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
                   BANDUNG
                 </div>
               </div>
@@ -147,7 +147,7 @@ export default function CityCard() {
                   shows and concerts of gamelan music, characterized by gongs,
                   chimes and plucked string instruments.
                 </div>
-                <div className="w-full h-[14.3%] bg-[#5AE6D0] rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
+                <div className="w-full h-[14.3%] bg-[#0d423f] rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
                   YOGYAKARTA
                 </div>
               </div>
