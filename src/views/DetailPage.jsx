@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import HeaderComponent1 from "../components/HeaderComponent1";
 import HeadDetail from "../components/HeadDetail";
 import ImagesPreview from "../components/ImagesPreview";
+// import Calendar from "../components/Calendar";
 import { useParams, Link } from "react-router-dom";
 import { getBallroomById } from "../hooks";
 
@@ -162,8 +163,10 @@ const DetailPage = () => {
                 </div>
                 <div className="w-full pr-5">{about(hotel[0].sections)}</div>
               </div>
+
               <div className="w-1/3 h-full">
                 <div className="flex flex-col justify-center items-center">
+                  {/* <Calendar></Calendar> */}
                   <Link to="/orderlist" className="py-5 w-full pl-2">
                     <button className="bg-slate-200 shadow-lg py-2 w-full">
                       Add To Cart
@@ -179,7 +182,6 @@ const DetailPage = () => {
             </div>
           </div>
         </div>
-
         {/* <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6">
 
           <HeadDetail

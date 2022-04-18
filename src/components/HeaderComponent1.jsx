@@ -32,18 +32,18 @@ export default function HeaderComponent1() {
               {/* Start Navbar */}
               <div className="flex">
                 <div className="flex">
-                  <a className="flex px-5 items-center py-6 text-sm leading-5 text-gray-800 hover:bg-opacity-100 focus:opacity-90 focus:outline-none transition duration-150 ease-in-out">
+                  <div className="flex px-5 items-center py-6 text-sm leading-5 text-gray-800 hover:bg-opacity-100 focus:opacity-90 focus:outline-none transition duration-150 ease-in-out">
                     <span className="mr-2">
                       <i className="fas fa-hotel"></i>
                     </span>
                     Ballroom
-                  </a>
-                  <a className="flex px-5 items-center py-6 text-sm leading-5 text-gray-800 hover:bg-opacity-100 focus:opacity-90 focus:outline-none transition duration-150 ease-in-out">
+                  </div>
+                  <div className="flex px-5 items-center py-6 text-sm leading-5 text-gray-800 hover:bg-opacity-100 focus:opacity-90 focus:outline-none transition duration-150 ease-in-out">
                     <span className="mr-2">
                       <i className="far fa-handshake"></i>
                     </span>
                     Become a partner
-                  </a>
+                  </div>
                   {/* <Link to="/orderlist">
                     <span
                       an
@@ -193,7 +193,11 @@ export default function HeaderComponent1() {
                     <div className="mt-6 flex w-full items-center justify-between">
                       <div className="flex items-center justify-between w-full">
                         <div className="flex items-center">
-                          <img src="./assets/logo-palm.png" className="w-20" />
+                          <img
+                            src="/assets/logo-palm.png"
+                            className="w-20"
+                            alt="Logo"
+                          />
                         </div>
                         <div
                           id="cross"
@@ -220,7 +224,7 @@ export default function HeaderComponent1() {
                       </div>
                     </div>
                     <ul className="f-m-m">
-                      <a className="cursor-pointer">
+                      <div className="cursor-pointer">
                         <li className="text-gray-800 pt-10">
                           <div className="flex items-center">
                             <div className="w-6 h-6 md:w-8 md:h-8 text-indigo-700">
@@ -231,8 +235,8 @@ export default function HeaderComponent1() {
                             </p>
                           </div>
                         </li>
-                      </a>
-                      <a className="cursor-pointer">
+                      </div>
+                      <div className="cursor-pointer">
                         <li className="text-gray-800 pt-8">
                           <div className="flex items-center justify-between">
                             <div className="flex items-center">
@@ -245,8 +249,8 @@ export default function HeaderComponent1() {
                             </div>
                           </div>
                         </li>
-                      </a>
-                      <a className="cursor-pointer">
+                      </div>
+                      <div className="cursor-pointer">
                         <li className="text-gray-800 pt-8">
                           <div className="flex items-center">
                             <div className="w-6 h-6 md:w-8 md:h-8 text-gray-800">
@@ -257,7 +261,7 @@ export default function HeaderComponent1() {
                             </p>
                           </div>
                         </li>
-                      </a>
+                      </div>
                     </ul>
                   </div>
                   {/* Start Bottom Navbar */}

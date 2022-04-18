@@ -27,8 +27,9 @@ export default function NavbarComponent() {
           <Link to="/">
             <div className="flex justify-center items-center">
               <img
-                src="../../public/assets/logo-palm.png"
+                src="/assets/logo-palm.png"
                 className="2xl:w-28 xl:w-28"
+                alt="logo"
               />
             </div>
           </Link>
