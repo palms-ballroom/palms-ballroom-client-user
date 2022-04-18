@@ -20,25 +20,30 @@ const DetailPage = () => {
   const [date, setDate] = React.useState(new Date());
   const [createBookingMutation, { error, loading, data }] =
     useMutation(createBooking);
-  console.log(
-    new Date(date).getFullYear() +
+
+  useEffect(() => {
+    if (data && !loading) {
+      console.log(data);
+      navigate("/orderlist/3"); //nanti pakai localStorage
+      console.log("masuk use");
+    }
+  }, [data, loading, navigate]);
+  const formattingDate = () => {
+    const dateBooking =
+      new Date(date).getFullYear() +
       "-" +
       new Date(date).getMonth() +
       "-" +
-      new Date(date).getDate()
-  );
-  useEffect(() => {
-    if (data && !loading) {
-      navigate("/orderlist/3"); //nanti pakai localStorage
-    }
-  }, [data, loading]);
-
+      new Date(date).getDate();
+    console.log(typeof dateBooking);
+    return dateBooking;
+  };
   const doCreateBooking = () => {
     createBookingMutation({
       variables: {
         customerId: "3", //nanti pakai localStorage
         hotelApiId: hotelApiId,
-        bookingDate: "2022-05-23", //nanti pakai calendar
+        bookingDate: formattingDate(), //nanti pakai calendar
         name: hotelName(hotel[0].sections),
         accessToken:
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJQcm9taXNlSEBnbWFpbC5jb20iLCJyb2xlIjoiQ3VzdG9tZXIiLCJpYXQiOjE2NTAwMTg4NjN9.IMurcmG_gW0cpQnI2fqnsoH_7Zn-oy6mQndxTFvOvuo", //nanti dari localStorage
@@ -80,59 +85,42 @@ const DetailPage = () => {
   };
 
   const hotelRanking = (array) => {
-    // console.log("array: ", array);
     const x = array.filter(
       (el) => el.__typename === "AppPresentation_PoiOverview"
     );
-    // console.log("x: ", x);
     const y = x[0].rankingDetails.string;
-    // console.log("y: ", y);
-    // console.log(poiOverview);
     return y;
   };
 
   const hotelAddress = (array) => {
-    // hotel[0].sections[14].address.address
     const x = array.filter(
       (el) => el.__typename === "AppPresentation_PoiLocation"
     );
     const y = x[0].address.address;
-    // console.log(poiOverview);
     return y;
   };
 
   const about = (array) => {
-    // [10].about
-    // AppPresentation_PoiAbout
-    // console.log("array: ", array);
     const x = array.filter(
       (el) => el.__typename === "AppPresentation_PoiAbout"
     );
-    // console.log("x: ", x);
     const y = x[0].about;
-    // console.log("y: ", y);
     return y;
   };
 
   const descriptionTop = (array) => {
-    // console.log("array: ", array);
     const x = array.filter(
       (el) => el.__typename === "AppPresentation_PoiHealthSafety"
     );
-    // console.log("x: ", x);
     const y = x[0].subtitle.string;
-    // console.log("y: ", y);
     return y;
   };
 
   const descriptionBtm = (array) => {
-    // console.log("array: ", array);
     const x = array.filter(
       (el) => el.__typename === "AppPresentation_PoiHealthSafety"
     );
-    // console.log("x: ", x);
     const y = x[0].managementResponse;
-    // console.log("y: ", y);
     return y;
   };
 

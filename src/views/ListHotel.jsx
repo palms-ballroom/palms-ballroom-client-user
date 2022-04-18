@@ -38,9 +38,9 @@ export default function ListHotel() {
   }, [city]);
 
   useEffect(() => {
-    // getBallroomData(bounds.sw, bounds.ne).then((data) => {
-    //   setBallrooms(data);
-    // });
+    getBallroomData(bounds.sw, bounds.ne).then((data) => {
+      setBallrooms(data);
+    });
   }, [coordinates, bounds]);
 
   return (
