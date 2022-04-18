@@ -35,7 +35,7 @@ export default function ImagesPreview({ hotelPhotos }) {
               className="w-full h-full object-cover rounded-2xl pl-2 pb-2"
             />
           </div>
-          <div className="w-full h-48">
+          <div className="w-full h-full">
             <img
               src={
                 hotelPhotos[2].data.sizes[hotelPhotos[2].data.sizes.length - 1]
@@ -52,7 +52,7 @@ export default function ImagesPreview({ hotelPhotos }) {
                   .url
               }
               alt="Image3"
-              className="w-full h-48 object-cover rounded-2xl pl-2 pt-2"
+              className="w-full h-full object-cover rounded-2xl pl-2 pt-2"
             />
           </div>
         </div>

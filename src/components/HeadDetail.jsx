@@ -33,7 +33,7 @@ export default function HeadDetail({ hotelName, hotelRanking }) {
           </div>
         </div>
       </div> */}
-      <div className="w-full h-[12.5%] font-bold text-6xl">{hotelName}</div>
+      <div className="w-full h-[12.5%] font-bold text-4xl">{hotelName}</div>
       <div className="w-full h-[12.5%] xl:mb-5">
         <p className="text-gray-800 text-sm pt-1 pb-2">{hotelRanking}</p>
         <div className="flex flex-row gap-2 xl:mt-2">
