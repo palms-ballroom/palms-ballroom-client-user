@@ -7,7 +7,7 @@ export default function FooterComponent() {
           <div className="xl:flex lg:flex md:flex pt-2">
             <div className="w-full mx-auto lg:mx-0 xl:mx-0">
               <div className="flex items-center sm:justify-center md:justify-center lg:justify-center xl:justify-start mb-2 xl:mb-0 lg:mb-0">
-                <img src="./assets/logo-palm.png" className="w-32" />
+                <img src="/assets/logo-palm.png" className="w-32" alt="Logo" />
               </div>
             </div>
           </div>

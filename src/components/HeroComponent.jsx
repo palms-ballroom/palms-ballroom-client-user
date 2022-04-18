@@ -4,8 +4,8 @@ export default function HeroComponent() {
   return (
     <>
       <div className="flex flex-col relative">
-        <img src="./assets/img/banner-2.png" />
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <img src="./assets/img/banner-2.png" alt="Logo" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <p className="xl:text-5xl lg:text-4xl md:text-3xl sm:text-2xl text-slate-50 font-title flex justify-center">
             Palms
           </p>

@@ -18,50 +18,36 @@ export default function HotelCard({ ballroom }) {
   return (
     <>
       <Link to={`/detail/${ballroom.location_id}`}>
-        {/* <div className="mx-2 w-52 lg:mb-0 mb-8 relative">
-          <div>
+        <div className="flex flex-col justify-center items-center max-w-sm mx-auto my-8 relative">
+          {ballroom.photo?.images.large.url ? (
             <img
               src={ballroom.photo?.images.large.url}
-              className="w-[250px] h-[230px] bg-cover bg-no-repeat rounded-xl shadow-lg"
+              className="bg-gray-300 h-64 w-full rounded-lg shadow-md bg-cover bg-center"
               alt={ballroom.name}
             />
-            <div className="flex flex-row justify-between">
-              <div className="bg-white py-1.5 px-6 rounded-md absolute top-[10px] left-2">
-                <p className="text-sm">{ballroom.name}</p>
-              </div>
-              <div className="absolute top-[10px] left-[200px] text-slate-100">
-                <i className="far fa-heart"></i>
-              </div>
-            </div>
-          </div>
-          <div className="bg-white absolute top-[168px] left-[6px] px-7 rounded-md">
-            <div className="p-2">
-              <div className="flex flex-row gap-4 items-center justify-between">
-                <h2 className="text-xs font-semibold">Address</h2>
-                <h3 className="text-sm font-semibold">{priceBallroom(ballroom.price)}</h3>
-              </div>
-            </div>
-          </div>
-        </div> */}
-
-        <div className="flex flex-col justify-center items-center max-w-sm mx-auto my-8 relative">
-          <img
-            src={ballroom.photo?.images.large.url}
-            className="bg-gray-300 h-64 w-full rounded-lg shadow-md bg-cover bg-center"
-            alt={ballroom.name}
-          />
+          ) : (
+            <img
+              src={
+                "https://media.istockphoto.com/photos/empty-convention-hall-center-with-stagethe-backdrop-for-exhibition-picture-id1344729946?b=1&k=20&m=1344729946&s=170667a&w=0&h=H7xH37FvoGCjT8BOpI-CuZMavR64AyQlyEWkToN08_U="
+              }
+              className="bg-gray-300 h-64 xl:w-52 w-full rounded-lg shadow-md bg-cover bg-center"
+              alt={ballroom.name}
+            />
+          )}
           <div className="w-56 md:w-64 bg-white -mt-10 shadow-lg rounded-lg overflow-hidden absolute -bottom-10">
-            <div className="py-2 text-center font-bold uppercase tracking-wide text-[#bb9e80]">
+            <div className="py-2 text-center font-bold uppercase tracking-wide text-[#0d423f]">
               {ballroom.name}
             </div>
-            <div className="flex items-center justify-center py-2 px-3 bg-[#bb9e80]">
+            <div
+              className="flex items-center justify-center py-2 px-3
+             bg-[#0d423f]
+             "
+            >
               <h1 className="text-white font-bold">
                 {priceBallroom(ballroom.price)}
               </h1>
             </div>
           </div>
-          {/* <div className="absolute">{ballroom.name}</div>
-          <div>{priceBallroom(ballroom.price)}</div> */}
         </div>
       </Link>
     </>

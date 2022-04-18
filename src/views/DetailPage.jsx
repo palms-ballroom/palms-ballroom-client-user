@@ -2,28 +2,31 @@ import React, { useEffect, useState } from "react";
 import HeaderComponent1 from "../components/HeaderComponent1";
 import HeadDetail from "../components/HeadDetail";
 import ImagesPreview from "../components/ImagesPreview";
-import { useParams, useNavigate, Link} from "react-router-dom";
+import FooterComponent from "../components/FooterComponent";
+// import Calendar from "../components/Calendar";
+import { useParams, useNavigate } from "react-router-dom";
 import { getBallroomById } from "../hooks";
 
 import { FaMoneyBillWave } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
 import { FaStreetView } from "react-icons/fa";
-import {useMutation} from '@apollo/client'
-import { createBooking } from '../config/query'
+import { useMutation } from "@apollo/client";
+import { createBooking } from "../config/query";
 
 const DetailPage = () => {
   const { hotelApiId } = useParams();
   const [hotel, setHotel] = useState(null);
   const navigate = useNavigate();
 
-  const [createBookingMutation, {error, loading, data}] = useMutation(createBooking)
+  const [createBookingMutation, { error, loading, data }] =
+    useMutation(createBooking);
 
   useEffect(() => {
-    if(data && !loading) {
-      console.log('masuk')
-      navigate("/orderlist/3") //nanti pakai localStorage
+    if (data && !loading) {
+      console.log("masuk");
+      navigate("/orderlist/3"); //nanti pakai localStorage
     }
-  }, [data, loading])
+  }, [data, loading]);
 
   const doCreateBooking = () => {
     createBookingMutation({
@@ -31,12 +34,13 @@ const DetailPage = () => {
         customerId: "3", //nanti pakai localStorage
         hotelApiId: hotelApiId,
         bookingDate: "2022-05-23", //nanti pakai calendar
-        name: hotelName(hotel[0].sections), 
-        accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJQcm9taXNlSEBnbWFpbC5jb20iLCJyb2xlIjoiQ3VzdG9tZXIiLCJpYXQiOjE2NTAwMTg4NjN9.IMurcmG_gW0cpQnI2fqnsoH_7Zn-oy6mQndxTFvOvuo", //nanti dari localStorage
-        role: "Customer" //nanti dari localStorage atau mau di hardcode??
-      }
-    })
-  }
+        name: hotelName(hotel[0].sections),
+        accessToken:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJQcm9taXNlSEBnbWFpbC5jb20iLCJyb2xlIjoiQ3VzdG9tZXIiLCJpYXQiOjE2NTAwMTg4NjN9.IMurcmG_gW0cpQnI2fqnsoH_7Zn-oy6mQndxTFvOvuo", //nanti dari localStorage
+        role: "Customer", //nanti dari localStorage atau mau di hardcode??
+      },
+    });
+  };
 
   const formattedBallroomPrice = (price) => {
     if (!price) {
@@ -131,7 +135,7 @@ const DetailPage = () => {
     hotel && (
       <>
         <HeaderComponent1></HeaderComponent1>
-        <div className="w-full flex flex-col py-16 px-56">
+        <div className="w-full flex flex-col 2xl:py-16 2xl:p-52 xl:px-20 mb-28">
           <div className="w-full h-[600px] pb-5">
             <HeadDetail
               hotelName={hotelName(hotel[0].sections)}
@@ -184,15 +188,32 @@ const DetailPage = () => {
                     </div>
                   </div>
                 </div>
-                <div className="w-full pr-5">{about(hotel[0].sections)}</div>
+                <div className="description w-full pr-5">
+                  <p className="text-gray-800 text-xs font-sub_title font-semibold tracking-widest mb-2">
+                    About
+                  </p>
+                  <p>{about(hotel[0].sections)}</p>
+                </div>
+
+                {/* <div className="w-full pr-5">{about(hotel[0].sections)}</div> */}
+                <div className="description mt-5 w-full pr-5">
+                  <p className="text-gray-800 text-xs font-sub_title font-semibold tracking-widest mb-3">
+                    {descriptionTop(hotel[0].sections)}
+                  </p>
+                  <p>{descriptionBtm(hotel[0].sections)}</p>
+                </div>
               </div>
+
               <div className="w-1/3 h-full">
                 <div className="flex flex-col justify-center items-center">
                   <div className="py-5 w-full pl-2">
-                    <button onClick={() => doCreateBooking()} className="bg-slate-200 shadow-lg py-2 w-full">
+                    <button
+                      onClick={() => doCreateBooking()}
+                      className="bg-slate-200 shadow-lg py-2 w-full"
+                    >
                       Add To Cart
                     </button>
-                  </div >
+                  </div>
                   <div className="py-5 w-full pl-2">
                     <button className="bg-slate-200 shadow-lg py-2 w-full">
                       View 3D Ballroom
@@ -203,7 +224,7 @@ const DetailPage = () => {
             </div>
           </div>
         </div>
-
+        <FooterComponent></FooterComponent>
         {/* <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6">
 
           <HeadDetail

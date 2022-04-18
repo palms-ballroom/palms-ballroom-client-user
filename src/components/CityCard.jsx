@@ -12,34 +12,18 @@ export default function CityCard() {
           <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
             {/* Card 1 */}
             <Link to="/hotels/Around" className="flex justify-center">
-              {/* <div className="mx-3 w-72 lg:mb-0 mb-8 hover:cursor-pointer">
-                <div>
-                  <img
-                    src="https://media.istockphoto.com/photos/we-herd-you-were-looking-for-some-magnificent-cattle-picture-id1303666715?b=1&k=20&m=1303666715&s=170667a&w=0&h=mOQcfUp6wdVwwVtoigfMQZHLGv4RWUzm_5PKvZc58go="
-                    className="w-full h-44 rounded-xl bg-cover shadow-lg hover:opacity-90"
-                    alt="Around"
-                  />
-                </div>
-                <div className="p-2">
-                  <div className="flex items-center mt-5">
-                    <h2 className="xl:text-xl 2xl:text-3xl font-semibold">
-                      Around You
-                    </h2>
-                  </div>
-                </div>
-              </div> */}
               <div className="mx-3 w-72 h-96 mb-10 hover:cursor-pointer flex flex-col rounded-3xl">
-                <div className="w-full h-[42.85%] bg-red-600 rounded-t-3xl">
+                <div className="w-full h-[42.85%] bg-slate-100 rounded-t-3xl">
                   <img
-                    src="https://media.istockphoto.com/photos/we-herd-you-were-looking-for-some-magnificent-cattle-picture-id1303666715?b=1&k=20&m=1303666715&s=170667a&w=0&h=mOQcfUp6wdVwwVtoigfMQZHLGv4RWUzm_5PKvZc58go="
+                    src="https://images.unsplash.com/photo-1594302954323-7846bf62b5a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2FwaXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60"
                     className="bg-cover rounded-t-3xl"
                     alt="Around"
                   />
                 </div>
                 <div className="w-full h-[42.85%] bg-slate-50 text-xs text-gray-500 flex justify-center items-center text-center px-2">
-                  Is the closest location to where you are
+                  Is the closest location to where you are&ensp;✈
                 </div>
-                <div className="w-full h-[14.3%] bg-[#668DA4] rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
+                <div className="w-full h-[14.3%] bg-[#e19465] rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
                   AROUND YOU
                 </div>
               </div>
@@ -48,7 +32,7 @@ export default function CityCard() {
             {/* Card 1 */}
             <Link to="/hotels/Jakarta" className="flex justify-center">
               <div className="mx-3 w-72 h-96 lg:mb-0 mb-8 hover:cursor-pointer flex flex-col rounded-3xl">
-                <div className="w-full h-[42.85%] bg-red-600 rounded-t-3xl">
+                <div className="w-full h-[42.85%] bg-slate-100 rounded-t-3xl">
                   <img
                     src="https://images.unsplash.com/photo-1538582709238-0a503bd5ae04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
                     className="bg-cover rounded-t-3xl"
@@ -64,32 +48,16 @@ export default function CityCard() {
                   and the old port of Sunda Kelapa, where traditional wooden
                   schooners dock.
                 </div>
-                <div className="w-full h-[14.3%] bg-[#259AE9] rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
+                <div className="w-full h-[14.3%] bg-[#266c6b] rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
                   JAKARTA
                 </div>
               </div>
-              {/* <div className="mx-3 w-72 lg:mb-0 mb-8 hover:cursor-pointer">
-                <div>
-                  <img
-                    src="https://images.unsplash.com/photo-1538582709238-0a503bd5ae04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                    className="w-full h-44 rounded-xl bg-cover shadow-lg hover:opacity-90"
-                    alt="Jakarta"
-                  />
-                </div>
-                <div className="p-2">
-                  <div className="flex items-center mt-5">
-                    <h2 className="xl:text-xl 2xl:text-3xl font-semibold">
-                      Jakarta
-                    </h2>
-                  </div>
-                </div>
-              </div> */}
             </Link>
             {/* Card 1 Ends */}
             {/* Card 2 */}
             <Link to="/hotels/Bali" className="flex justify-center">
               <div className="mx-3 w-72 h-96 lg:mb-0 mb-8 hover:cursor-pointer flex flex-col rounded-3xl">
-                <div className="w-full h-[42.85%] bg-red-600 rounded-t-3xl">
+                <div className="w-full h-[42.85%] bg-slate-100 rounded-t-3xl">
                   <img
                     src="https://media.timeout.com/images/105240189/image.jpg"
                     className="bg-cover rounded-t-3xl"
@@ -97,50 +65,24 @@ export default function CityCard() {
                   />
                 </div>
                 <div className="w-full h-[42.85%] bg-slate-50 text-xs text-gray-500 flex justify-center items-center text-center px-2">
-                  Indonesian's westernmost of the Lesser Sunda Islands. Bali appeals through its sheer natural beauty of looming volcanoes and lush terraced rice fields that exude peace and serenity. Bali enchants with its dramatic dances and colorful ceremonies, its arts, and crafts, to its luxurious beach resorts and exciting nightlife. And everywhere, you will find intricately carved temples.
+                  Indonesian's westernmost of the Lesser Sunda Islands. Bali
+                  appeals through its sheer natural beauty of looming volcanoes
+                  and lush terraced rice fields that exude peace and serenity.
+                  Bali enchants with its dramatic dances and colorful
+                  ceremonies, its arts, and crafts, to its luxurious beach
+                  resorts and exciting nightlife. And everywhere, you will find
+                  intricately carved temples.
                 </div>
-                <div className="w-full h-[14.3%] bg-[#EE7197] rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
+                <div className="w-full h-[14.3%] bg-[#c4744a] rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
                   Bali
                 </div>
               </div>
-              {/* <div className="mx-2 w-72 lg:mb-0 mb-8 hover:cursor-pointer">
-                <div>
-                  <img
-                    src="https://media.istockphoto.com/photos/15th-july-martyrs-bridge-bosphorus-bridge-at-night-istanbul-turkey-picture-id821745776?k=20&m=821745776&s=612x612&w=0&h=eIjqRdMZe4sELm1A2ejC_WWV8BFsdRXkj34qbmAK1fc="
-                    className="w-full h-44 rounded-xl bg-cover shadow-lg hover:opacity-90"
-                    alt="Palembang"
-                  />
-                </div>
-                <div className="p-2">
-                  <div className="flex items-center mt-5">
-                    <h2 className="xl:text-xl 2xl:text-3xl font-semibold">
-                      Palembang
-                    </h2>
-                  </div>
-                </div>
-              </div> */}
             </Link>
             {/* Card 2 Ends */}
             {/* Card 3  */}
             <Link to="/hotels/Surabaya" className="flex justify-center">
-              {/* <div className="mx-2 w-72 lg:mb-0 mb-8 hover:cursor-pointer">
-                <div>
-                  <img
-                    src="https://media.istockphoto.com/photos/sunrise-at-the-bromo-volcano-mountain-in-indonesia-picture-id474625072?k=20&m=474625072&s=612x612&w=0&h=2tO5Uc3OyNzhmz9BhDoQUhCrr-WVoLOVbxwsdndJBCQ="
-                    className="w-full h-44 rounded-xl bg-cover shadow-lg hover:opacity-90"
-                    alt="Surabaya"
-                  />
-                </div>
-                <div className="p-2">
-                  <div className="flex items-center">
-                    <h2 className="xl:text-xl 2xl:text-3xl font-semibold mt-5">
-                      Surabaya
-                    </h2>
-                  </div>
-                </div>
-              </div> */}
               <div className="mx-3 w-72 h-96 lg:mb-0 mb-8 hover:cursor-pointer flex flex-col rounded-3xl">
-                <div className="w-full h-[42.85%] bg-red-600 rounded-t-3xl">
+                <div className="w-full h-[42.85%] bg-slate-100 rounded-t-3xl">
                   <img
                     src="https://media.istockphoto.com/photos/sunrise-at-the-bromo-volcano-mountain-in-indonesia-picture-id474625072?k=20&m=474625072&s=612x612&w=0&h=2tO5Uc3OyNzhmz9BhDoQUhCrr-WVoLOVbxwsdndJBCQ="
                     className="bg-cover rounded-t-3xl"
@@ -155,7 +97,7 @@ export default function CityCard() {
                   15th century. The Tugu Pahlawan (Heroes Monument) honors the
                   independence battles waged in Surabaya’s streets in 1945
                 </div>
-                <div className="w-full h-[14.3%] bg-[#8EDD61] rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
+                <div className="w-full h-[14.3%] bg-[#23676d] rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
                   SURABAYA
                 </div>
               </div>
@@ -163,24 +105,8 @@ export default function CityCard() {
             {/* Card 3 Ends */}
             {/* Card 4  */}
             <Link to="/hotels/Bandung" className="flex justify-center">
-              {/* <div className="mx-2 w-72 lg:mb-0 mb-8 hover:cursor-pointer">
-                <div>
-                  <img
-                    src="https://media.istockphoto.com/photos/vanadzor-cityarmenia-picture-id502576822?k=20&m=502576822&s=612x612&w=0&h=agfa5JNqMa1QzAbtc6JCgnsJei-CsXv9mAjnTxaAPCM="
-                    className="w-full h-44 rounded-xl bg-cover shadow-lg hover:opacity-90"
-                    alt="Bandung"
-                  />
-                </div>
-                <div className="p-2">
-                  <div className="flex items-center">
-                    <h2 className="xl:text-xl 2xl:text-3xl font-semibold mt-5">
-                      Bandung
-                    </h2>
-                  </div>
-                </div>
-              </div> */}
               <div className="mx-3 w-72 h-96 lg:mb-0 mb-8 hover:cursor-pointer flex flex-col rounded-3xl">
-                <div className="w-full h-[42.85%] bg-red-600 rounded-t-3xl">
+                <div className="w-full h-[42.85%] bg-slate-100 rounded-t-3xl">
                   <img
                     src="https://media.istockphoto.com/photos/vanadzor-cityarmenia-picture-id502576822?k=20&m=502576822&s=612x612&w=0&h=agfa5JNqMa1QzAbtc6JCgnsJei-CsXv9mAjnTxaAPCM="
                     className="bg-cover rounded-t-3xl"
@@ -196,7 +122,7 @@ export default function CityCard() {
                   outlets clustered along Jalan Setiabudi and Jalan Riau in the
                   Dago district.
                 </div>
-                <div className="w-full h-[14.3%] bg-[#5AE6D0] rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
+                <div className="w-full h-[14.3%] bg-[#f3986a] rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
                   BANDUNG
                 </div>
               </div>
@@ -204,24 +130,8 @@ export default function CityCard() {
             {/* Card 4 Ends */}
             {/* Card 5  */}
             <Link to="/hotels/Yogyakarta" className="flex justify-center">
-              {/* <div className="mx-2 w-72 lg:mb-0 mb-8 hover:cursor-pointer">
-                <div>
-                  <img
-                    src="https://media.istockphoto.com/photos/prambanan-temple-in-yogyakarta-picture-id1342846900?k=20&m=1342846900&s=612x612&w=0&h=8gJPdVr2GY1RKi6_rBY0AgAnQdLuCAWy39IybKxmocw="
-                    className="w-full h-44 rounded-xl bg-cover shadow-lg hover:opacity-90"
-                    alt="Yogyakarta"
-                  />
-                </div>
-                <div className="p-2">
-                  <div className="flex items-center">
-                    <h2 className="xl:text-xl 2xl:text-3xl font-semibold mt-5">
-                      Yogyakarta
-                    </h2>
-                  </div>
-                </div>
-              </div> */}
               <div className="mx-3 w-72 h-96 lg:mb-0 mb-8 hover:cursor-pointer flex flex-col rounded-3xl">
-                <div className="w-full h-[42.85%] bg-red-600 rounded-t-3xl">
+                <div className="w-full h-[42.85%] bg-slate-100 rounded-t-3xl">
                   <img
                     src="https://media.istockphoto.com/photos/prambanan-temple-in-yogyakarta-picture-id1342846900?k=20&m=1342846900&s=612x612&w=0&h=8gJPdVr2GY1RKi6_rBY0AgAnQdLuCAWy39IybKxmocw="
                     className="bg-cover rounded-t-3xl"
@@ -237,7 +147,7 @@ export default function CityCard() {
                   shows and concerts of gamelan music, characterized by gongs,
                   chimes and plucked string instruments.
                 </div>
-                <div className="w-full h-[14.3%] bg-[#F1EC14] rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
+                <div className="w-full h-[14.3%] bg-[#0d423f] rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
                   YOGYAKARTA
                 </div>
               </div>
