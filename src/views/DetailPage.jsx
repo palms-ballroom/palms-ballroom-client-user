@@ -21,7 +21,6 @@ const DetailPage = () => {
   const [createBookingMutation, { error, loading, data }] =
     useMutation(createBooking);
   console.log(
-    { date },
     new Date(date).getFullYear() +
       "-" +
       new Date(date).getMonth() +
@@ -30,7 +29,6 @@ const DetailPage = () => {
   );
   useEffect(() => {
     if (data && !loading) {
-      console.log("masuk");
       navigate("/orderlist/3"); //nanti pakai localStorage
     }
   }, [data, loading]);
