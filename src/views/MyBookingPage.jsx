@@ -13,10 +13,11 @@ const MyBookingPage = () => {
 
   const [xenditPay, { error, loading, data }] = useMutation(xenditPayment);
   const openNewTab = () => {
-    window.open(data.createInvoice.data.invoice_url);
+    window.open(data && data?.createInvoice.data?.invoice_url);
   };
   useEffect(() => {
     if (data && !loading) {
+      console.log(data, "dataaa")
       openNewTab();
     }
   }, [data, loading]);
@@ -144,7 +145,7 @@ const MyBookingPage = () => {
         variables: {
           customerId: 3,
           accessToken:
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJQcm9taXNlSEBnbWFpbC5jb20iLCJyb2xlIjoiQ3VzdG9tZXIiLCJpYXQiOjE2NTAwNDA3MzB9.XnFxiNsoFgQGj7y7KlgBO49o7SYShpWGiWvyZw8YjD0",
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJXaWthU0BnbWFpbC5jb20iLCJyb2xlIjoiQ3VzdG9tZXIiLCJpYXQiOjE2NTAzMTA1MTB9.FWwB84CW17Uiq-girsHU-QQ94Vw9h_DT_JJKGtu29U4",
           price: 500000,
         },
       });
