@@ -2,16 +2,39 @@ import React, { useEffect, useState } from "react";
 import HeaderComponent1 from "../components/HeaderComponent1";
 import HeadDetail from "../components/HeadDetail";
 import ImagesPreview from "../components/ImagesPreview";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { getBallroomById } from "../hooks";
 
 import { FaMoneyBillWave } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
 import { FaStreetView } from "react-icons/fa";
+import {useMutation} from '@apollo/client'
+import { createBooking } from '../config/query'
 
 const DetailPage = () => {
   const { hotelApiId } = useParams();
   const [hotel, setHotel] = useState(null);
+  const navigate = useNavigate();
+
+  const [createBookingMutation, {error, loading, data}] = useMutation(createBooking)
+
+  if(data) {
+    console.log('masuk')
+    navigate("/orderlist/3") //nanti pakai localStorage
+  }
+
+  const doCreateBooking = () => {
+    createBookingMutation({
+      variables: {
+        customerId: "3", //nanti pakai localStorage
+        hotelApiId: hotelApiId,
+        bookingDate: "2022-05-22", //nanti pakai calendar
+        name: hotelName(hotel[0].sections), 
+        accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJQcm9taXNlSEBnbWFpbC5jb20iLCJyb2xlIjoiQ3VzdG9tZXIiLCJpYXQiOjE2NTAwMTg4NjN9.IMurcmG_gW0cpQnI2fqnsoH_7Zn-oy6mQndxTFvOvuo", //nanti dari localStorage
+        role: "Customer" //nanti dari localStorage atau mau di hardcode??
+      }
+    })
+  }
 
   const formattedBallroomPrice = (price) => {
     if (!price) {
@@ -29,7 +52,6 @@ const DetailPage = () => {
 
   useEffect(() => {
     getBallroomById(hotelApiId).then((data) => {
-      console.log(data);
       setHotel(data);
     });
   }, [hotelApiId]);
@@ -164,11 +186,11 @@ const DetailPage = () => {
               </div>
               <div className="w-1/3 h-full">
                 <div className="flex flex-col justify-center items-center">
-                  <Link to="/orderlist" className="py-5 w-full pl-2">
-                    <button className="bg-slate-200 shadow-lg py-2 w-full">
+                  <div className="py-5 w-full pl-2">
+                    <button onClick={() => doCreateBooking()} className="bg-slate-200 shadow-lg py-2 w-full">
                       Add To Cart
                     </button>
-                  </Link>
+                  </div>
                   <div className="py-5 w-full pl-2">
                     <button className="bg-slate-200 shadow-lg py-2 w-full">
                       View 3D Ballroom
