@@ -135,7 +135,7 @@ const DetailPage = () => {
     hotel && (
       <>
         <HeaderComponent1></HeaderComponent1>
-        <div className="w-full flex flex-col 2xl:py-16 2xl:p-52 xl:px-20 mb-28">
+        <div className=" w-full flex flex-col 2xl:py-16 2xl:p-52 xl:px-20">
           <div className="w-full h-[600px] pb-5">
             <HeadDetail
               hotelName={hotelName(hotel[0].sections)}
@@ -145,7 +145,7 @@ const DetailPage = () => {
               hotelPhotos={hotel[0].sections[0].albumPhotos}
             ></ImagesPreview>
           </div>
-          <div className="w-full py-5 h-[600px]">
+          <div className="w-full py-5">
             <div className="w-full h-full flex flex-row">
               <div className="w-2/3 h-full">
                 <div className="w-full py-5 h-24 ">
