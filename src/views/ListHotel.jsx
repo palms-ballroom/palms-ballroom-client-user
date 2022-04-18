@@ -12,7 +12,6 @@ export default function ListHotel() {
   const [coordinates, setCoordinates] = useState();
   const [bounds, setBounds] = useState({});
 
-  console.log("coordinates: ", coordinates);
   useEffect(() => {
     if (city === "Around") {
       navigator.geolocation.getCurrentPosition(
@@ -21,7 +20,7 @@ export default function ListHotel() {
         }
       );
     } else if (city === "Jakarta") {
-      setCoordinates({ lat: -6.208835455195333, lng: 106.84558354912964 });
+      setCoordinates({ lat: -6.1803278913190445, lng: 106.82813851892055 });
     } else if (city === "Bali") {
       setCoordinates({ lat: -8.670470825331023, lng: 115.21242641380833 });
     } else if (city === "Surabaya") {
@@ -31,6 +30,8 @@ export default function ListHotel() {
     } else if (city === "Yogyakarta") {
       setCoordinates({ lat: -7.795489277618111, lng: 110.36906830754828 });
     }
+    // Jakarta Baru
+    // -6.1803278913190445, 106.82813851892055
     // -8.670485142108955, 115.21239896877901
     // Denpasar
     // -8.670470825331023, 115.21242641380833
