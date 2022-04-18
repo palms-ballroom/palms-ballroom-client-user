@@ -7,7 +7,6 @@ export default function Map({
   setBounds,
   ballrooms,
 }) {
-  console.log({ ballrooms });
 
   const mapHandler = (e) => {
     setCoordinates({ lat: e.center.lat, lng: e.center.lng });
@@ -20,7 +19,7 @@ export default function Map({
         bootstrapURLKeys={{ key: "AIzaSyBqF-Y1hwU-rbdRJxChIsrzv7cm9TmmkRU" }}
         defaultCenter={coordinates}
         center={coordinates}
-        defaultZoom={15}
+        defaultZoom={14}
         margin={[50, 50, 50, 50]}
         onChange={(e) => mapHandler(e)}
       >
