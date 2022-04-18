@@ -3,7 +3,7 @@ import HeaderComponent1 from "../components/HeaderComponent1";
 import HeadDetail from "../components/HeadDetail";
 import ImagesPreview from "../components/ImagesPreview";
 import FooterComponent from "../components/FooterComponent";
-// import Calendar from "../components/Calendar";
+import Calendar from "../components/Calendar";
 import { useParams, useNavigate } from "react-router-dom";
 import { getBallroomById } from "../hooks";
 
@@ -17,13 +17,18 @@ const DetailPage = () => {
   const { hotelApiId } = useParams();
   const [hotel, setHotel] = useState(null);
   const navigate = useNavigate();
-
+  const [date, setDate] = React.useState(new Date());
   const [createBookingMutation, { error, loading, data }] =
     useMutation(createBooking);
-
+  console.log(
+    new Date(date).getFullYear() +
+      "-" +
+      new Date(date).getMonth() +
+      "-" +
+      new Date(date).getDate()
+  );
   useEffect(() => {
     if (data && !loading) {
-      console.log("masuk");
       navigate("/orderlist/3"); //nanti pakai localStorage
     }
   }, [data, loading]);
@@ -206,6 +211,9 @@ const DetailPage = () => {
 
               <div className="w-1/3 h-full">
                 <div className="flex flex-col justify-center items-center">
+                  <div className="w-full flex items-center justify-center mt-auto shadow-lg">
+                    <Calendar date={date} setDate={setDate}></Calendar>
+                  </div>
                   <div className="py-5 w-full pl-2">
                     <button
                       onClick={() => doCreateBooking()}
