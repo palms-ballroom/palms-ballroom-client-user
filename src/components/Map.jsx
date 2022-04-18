@@ -7,7 +7,6 @@ export default function Map({
   setBounds,
   ballrooms,
 }) {
-
   const mapHandler = (e) => {
     setCoordinates({ lat: e.center.lat, lng: e.center.lng });
     setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
@@ -36,7 +35,23 @@ export default function Map({
                 "&:hover": { zIndex: 2 },
               }}
             >
-              <div className="w-[170px] h-[200px] rounded-lg shadow-2xl bg-white text-center flex flex-col">
+              <div class="relative max-w-sm min-w-[300px] bg-white shadow-md rounded-2xl pb-2 mx-1 my-3 cursor-pointer">
+                <div class="overflow-x-hidden rounded-t-2xl relative">
+                  <img
+                    class="h-40 rounded-t-2xl w-full object-cover"
+                    src={ballroom.photo && ballroom.photo.images.large.url}
+                    alt={ballroom.name}
+                  />
+                </div>
+                <div class="mt-4 pl-2 mb-2">
+                  <div>
+                    <p class="text-lg font-semibold text-gray-900 mb-0">
+                      {ballroom.name}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              {/* <div className="w-[170px] h-[200px] rounded-lg shadow-2xl bg-white text-center flex flex-col">
                 <h1 className="text-sm p-2 flex-1">{ballroom.name}</h1>
                 {ballroom.photo?.images.large.url ? (
                   <img
@@ -51,13 +66,13 @@ export default function Map({
                     className="w-[150px] h-[130px] bg-cover rounded-md shadow-lg mx-auto mb-3"
                     alt={ballroom.name}
                   />
-                )}
-                {/* <img
+                )} */}
+              {/* <img
                   className="w-[150px] h-[130px] bg-cover rounded-md shadow-lg mx-auto mb-3"
                   src={ballroom.photo && ballroom.photo.images.large.url}
                   alt={ballroom.name}
                 ></img> */}
-              </div>
+              {/* </div> */}
             </div>
           );
         })}
