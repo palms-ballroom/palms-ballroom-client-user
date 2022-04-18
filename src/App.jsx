@@ -6,8 +6,8 @@ import DetailPage from "./views/DetailPage";
 import LoginPage from "./views/LoginPage";
 import RegisterPage from "./views/RegisterPage";
 import MyBookingPage from "./views/MyBookingPage.jsx";
-
-function App() {
+// import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+function App({ children }) {
   return (
     <>
       <Routes>
