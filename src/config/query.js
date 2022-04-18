@@ -14,3 +14,9 @@ export const xenditPayment = gql`
     }
   }
 `;
+
+export const createBooking = gql`
+  mutation BookingBallroom($customerId: ID!, $hotelApiId: ID!, $bookingDate: String!, $name: String, $accessToken: String, $role: String) {
+    bookingBallroom(customerId: $customerId, hotelApiId: $hotelApiId, bookingDate: $bookingDate, name: $name, access_token: $accessToken, role: $role)
+  }
+`;

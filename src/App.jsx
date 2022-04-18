@@ -16,7 +16,7 @@ function App() {
         <Route path="/detail/:hotelApiId" element={<DetailPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/orderlist" element={<MyBookingPage />} />
+        <Route path="/orderlist/:userId" element={<MyBookingPage />} />
       </Routes>
     </>
   );
