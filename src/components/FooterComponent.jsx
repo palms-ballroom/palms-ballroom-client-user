@@ -7,15 +7,13 @@ export default function FooterComponent() {
           <div className="xl:flex lg:flex md:flex pt-2">
             <div className="w-full mx-auto lg:mx-0 xl:mx-0">
               <div className="flex items-center sm:justify-center md:justify-center lg:justify-center xl:justify-start mb-2 xl:mb-0 lg:mb-0">
-                <img src="/assets/logo-palm.png" className="w-32" alt="Logo" />
+                <img src="/assets/img/Logo-Palms.jpg" className="w-32" alt="Logo" />
               </div>
             </div>
           </div>
           <div className="xl:flex xl:justify-between xl:mt-24 mt-16 pb-2">
             <div className="w-full xl:w-2/6 flex sm:justify-center md:justify-center lg:justify-center xl:justify-start mx-auto lg:mx-0 xl:mx-0 mb-6 xl:mb-0">
-              <p className="text-gray-900 text-base">
-                🌴 2022 Palms . All Rights Reserved
-              </p>
+              <p className="text-gray-900 text-base">🌴 2022 Palms . All Rights Reserved</p>
             </div>
             <div className="w-full mx-auto sm:px-28 lg:mx-0 xl:mx-0 mb-6 lg:mb-0 xl:mb-0">
               <ul className="xl:flex lg:flex md:flex sm:flex sm:justify-between md:justify-between sm:px-0 md:px-11 lg:px-40 xl:px-0 ">
