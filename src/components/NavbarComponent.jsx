@@ -26,11 +26,7 @@ export default function NavbarComponent() {
         <nav className="flex justify-between items-center gap-3">
           <Link to="/">
             <div className="flex justify-center items-center">
-              <img
-                src="/assets/logo-palm.png"
-                className="2xl:w-28 xl:w-28"
-                alt="logo"
-              />
+              <img src="/assets/img/Logo-Palms.jpg" className="2xl:w-36 xl:w-36" alt="logo" />
             </div>
           </Link>
           {/* For medium and plus sized devices */}
@@ -113,8 +109,8 @@ export default function NavbarComponent() {
                   strokeLinejoin="round"
                 />
               </svg>
-              <div className="animate-ping w-1.5 h-1.5 bg-indigo-700 rounded-full absolute -top-1 -right-1 m-auto duration-200" />
-              <div className=" w-1.5 h-1.5 bg-indigo-700 rounded-full absolute -top-1 -right-1 m-auto shadow-lg" />
+              <div className="animate-ping w-1.5 h-1.5 bg-[#0d423f] rounded-full absolute -top-1 -right-1 m-auto duration-200" />
+              <div className=" w-1.5 h-1.5 bg-[#0d423f] rounded-full absolute -top-1 -right-1 m-auto shadow-lg" />
             </div>
             <svg
               className="cursor-pointer  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 "
@@ -150,9 +146,7 @@ export default function NavbarComponent() {
             <div className="flex space-x-2">
               <span
                 id="s1"
-                className={`${
-                  text.length != 0 ? "" : "hidden"
-                } font-semibold text-sm leading-3`}
+                className={`${text.length != 0 ? "" : "hidden"} font-semibold text-sm leading-3`}
               >
                 Selected:{" "}
               </span>
@@ -165,9 +159,7 @@ export default function NavbarComponent() {
             </div>
             <svg
               id="ArrowSVG"
-              className={`${
-                dropDown ? "" : "rotate-180"
-              } transform duration-100`}
+              className={`${dropDown ? "" : "rotate-180"} transform duration-100`}
               width={24}
               height={24}
               viewBox="0 0 24 24"

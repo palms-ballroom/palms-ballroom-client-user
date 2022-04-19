@@ -6,7 +6,7 @@ import DetailPage from "./views/DetailPage";
 import LoginPage from "./views/LoginPage";
 import RegisterPage from "./views/RegisterPage";
 import MyBookingPage from "./views/MyBookingPage.jsx";
-// import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import ThankPage from "./views/ThankPage";
 function App({ children }) {
   return (
     <>
@@ -17,6 +17,7 @@ function App({ children }) {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/orderlist/:userId" element={<MyBookingPage />} />
+        <Route path="/thankPage" element={<ThankPage />} />
       </Routes>
     </>
   );
