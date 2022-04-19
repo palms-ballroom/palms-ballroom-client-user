@@ -35,16 +35,16 @@ const MyBookingPage = () => {
         faceapi.nets.ssdMobilenetv1.loadFromUri(MODEL_URL),
       ]).then(async (_) => {
         setModelsLoaded(true);
-        const img = await faceapi.fetchImage(
-          "https://media-exp1.licdn.com/dms/image/C5603AQFMv0hTGP91Lg/profile-displayphoto-shrink_800_800/0/1527214801932?e=1655337600&v=beta&t=LdbbUlh7fplHWgbspNThceu5G2CtXruabtTLt3n__Zk"
-        );
+        // pake localstorage image url
+        const img = await faceapi.fetchImage(localStorage.getItem("imageUrl"));
         const detections = await faceapi
           .detectSingleFace(img)
           .withFaceLandmarks()
           .withFaceDescriptor();
-        const newLabeledDescriptor = new faceapi.LabeledFaceDescriptors("Wika Silo", [
-          detections.descriptor,
-        ]);
+        const newLabeledDescriptor = new faceapi.LabeledFaceDescriptors(
+          localStorage.getItem("username"),
+          [detections.descriptor]
+        );
         setLabeledDescriptor([...labeledDescriptor, newLabeledDescriptor]);
       });
     };
@@ -112,7 +112,8 @@ const MyBookingPage = () => {
         });
         console.log(detectedUserName);
       }
-      if (detectedUserName.includes("Wika Silo")) {
+      // nanti pake localstorage username
+      if (detectedUserName.includes(localStorage.getItem("username"))) {
         closeWebcam();
         setAuthStatus(true);
       }
@@ -124,15 +125,20 @@ const MyBookingPage = () => {
     videoRef.current?.srcObject.getTracks()[0].stop();
     setCaptureVideo(false);
   };
-
+  // {
+  //   "transactionId": null,
+  //   "hotelApiId": null,
+  //   "accessToken": null,
+  //   "price": null
+  // }
   const doXenditPayment = async () => {
     try {
       await xenditPay({
         variables: {
-          customerId: 3,
-          accessToken:
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJXaWthU0BnbWFpbC5jb20iLCJyb2xlIjoiQ3VzdG9tZXIiLCJpYXQiOjE2NTAzMTA1MTB9.FWwB84CW17Uiq-girsHU-QQ94Vw9h_DT_JJKGtu29U4",
-          price: 500000,
+          hotelApiId: 10391433, // Nanti pake hasil fetch .price NANTI APUS KALO UDAH ADA THANKYOU NEXT
+          transactionId: 8, // dari fetch .transactionId
+          accessToken: localStorage.getItem("token"),
+          price: 320000000, // Nanti pake hasil fetch .price
         },
       });
     } catch (error) {
