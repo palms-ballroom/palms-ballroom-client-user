@@ -22,7 +22,7 @@ const DetailPage = () => {
   const [createBookingMutation, { data, error, loading }] = useMutation(createBooking);
 
   useEffect(() => {
-    if (data && !loading && data.bookingBallroom !== "This date is already booked") {
+    if (data && !loading && data.bookingBallroom === "create transaction complete") {
       navigate(`/orderlist/${localStorage.getItem("userId")}`);
       Swal.fire({
         icon: "success",
@@ -31,6 +31,12 @@ const DetailPage = () => {
         timer: 1500,
       });
       localStorage.removeItem("price");
+    } else if (data && !loading && data.bookingBallroom === "Hotel not registered yet") {
+      Swal.fire({
+        icon: "error",
+        title: "Sorry",
+        text: "We're sorry, but this hotel is not yet a partner with us.",
+      });
     } else if (data && !loading && data.bookingBallroom === "This date is already booked") {
       Swal.fire({
         icon: "error",
