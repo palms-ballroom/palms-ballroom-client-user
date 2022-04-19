@@ -20,8 +20,7 @@ const DetailPage = () => {
   const [hotel, setHotel] = useState(null);
   const navigate = useNavigate();
   const [date, setDate] = React.useState(new Date());
-  const [createBookingMutation, { data, error, loading }] =
-    useMutation(createBooking);
+  const [createBookingMutation, { data, error, loading }] = useMutation(createBooking); 
 
   useEffect(() => {
     if (data && !loading) {
@@ -53,24 +52,16 @@ const DetailPage = () => {
     });
   };
 
-  const formattedBallroomPrice = (price) => {
-    if (!price) {
-      return "Undisclosed";
-    } else {
-      const ballroomPrice = parseInt(price?.replace(/[^0-9]/g, "") * 100);
-      const formatted = `${ballroomPrice.toLocaleString("id-ID", {
-        style: "currency",
-        currency: "IDR",
-        minimumFractionDigits: 0,
-      })}`;
-      return formatted;
-    }
+  const ballroomPrice = () => {
+      const price = localStorage.getItem("price");
+      return price;
   };
 
   useEffect(() => {
     getBallroomById(hotelApiId).then((data) => {
       setHotel(data);
     });
+    
   }, [hotelApiId]);
 
   const hotelName = (array) => {
@@ -168,10 +159,7 @@ const DetailPage = () => {
                           </div>
                           <div className="h-full w-full flex">
                             <div className="pl-5 flex items-center">
-                              {formattedBallroomPrice(
-                                hotel[0].sections[4].primaryOfferV2
-                                  ?.displayPrice?.string
-                              )}{" "}
+                              {ballroomPrice()}{" "}
                             </div>
                           </div>
                         </div>
