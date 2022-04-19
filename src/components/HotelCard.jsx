@@ -1,8 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function HotelCard({ ballroom }) {
-  // console.log({ballroom});
+  const navigate = useNavigate()
+
+  const moveToDetail = () => {
+    const price = priceBallroom(ballroom.price)
+    localStorage.setItem("price", price);
+    navigate(`/detail/${ballroom.location_id}`)
+  }
+  
 
   const priceBallroom = (price) => {
     if (!price) return "Undisclosed";
@@ -17,7 +24,7 @@ export default function HotelCard({ ballroom }) {
 
   return (
     <>
-      <Link to={`/detail/${ballroom.location_id}`}>
+      <button onClick={() => moveToDetail()}>
         <div className="flex flex-col justify-center items-center max-w-sm mx-auto my-8 relative">
           {ballroom.photo?.images.large.url ? (
             <img
@@ -49,7 +56,7 @@ export default function HotelCard({ ballroom }) {
             </div>
           </div>
         </div>
-      </Link>
+      </button>
     </>
   );
 }

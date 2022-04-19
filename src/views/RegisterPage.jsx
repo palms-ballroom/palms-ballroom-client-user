@@ -50,7 +50,7 @@ export default function LoginPage() {
     body.append("image", form.imageFile);
     const response = await axios({
       method: "post",
-      url: "https://api.imgbb.com/1/upload?key=d7f8ef6e35c6735dc7698da9e9d1192b&name=test",
+      url: `https://api.imgbb.com/1/upload?key=d7f8ef6e35c6735dc7698da9e9d1192b&name=${form.username}`,
       headers: {
         "Content-Type": "multipart/form-data",
       },
