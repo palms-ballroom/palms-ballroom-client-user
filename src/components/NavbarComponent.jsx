@@ -109,8 +109,8 @@ export default function NavbarComponent() {
                   strokeLinejoin="round"
                 />
               </svg>
-              <div className="animate-ping w-1.5 h-1.5 bg-indigo-700 rounded-full absolute -top-1 -right-1 m-auto duration-200" />
-              <div className=" w-1.5 h-1.5 bg-indigo-700 rounded-full absolute -top-1 -right-1 m-auto shadow-lg" />
+              <div className="animate-ping w-1.5 h-1.5 bg-[#0d423f] rounded-full absolute -top-1 -right-1 m-auto duration-200" />
+              <div className=" w-1.5 h-1.5 bg-[#0d423f] rounded-full absolute -top-1 -right-1 m-auto shadow-lg" />
             </div>
             <svg
               className="cursor-pointer  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 "
