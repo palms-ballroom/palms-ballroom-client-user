@@ -19,11 +19,7 @@ export default function HeaderComponent1() {
               <Link to="/">
                 <div className="flex w-full sm:w-auto items-center sm:items-stretch justify-end sm:justify-start">
                   <div className="flex items-center">
-                    <img
-                      src="/assets/logo-palm.png"
-                      alt="Palm"
-                      className="w-28"
-                    />
+                    <img src="/assets/img/Logo-Palms.jpg" alt="Palm" className="w-36 bg-cover" />
                   </div>
                 </div>
               </Link>
@@ -84,18 +80,14 @@ export default function HeaderComponent1() {
                                 <circle cx={12} cy={7} r={4} />
                                 <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
                               </svg>
-                              <span className="ml-2 text-[#0d423f]">
-                                My Profile
-                              </span>
+                              <span className="ml-2 text-[#0d423f]">My Profile</span>
                             </div>
                           </li>
                           <Link to="/orderlist">
                             <li className="cursor-pointer text-[#0d423f] text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
                               <div className="flex items-center ml-1">
                                 <i className="fas fa-file-invoice-dollar text-[#0d423f]"></i>
-                                <span className="ml-2 text-[#0d423f]">
-                                  My Booking
-                                </span>
+                                <span className="ml-2 text-[#0d423f]">My Booking</span>
                               </div>
                             </li>
                           </Link>
@@ -103,9 +95,7 @@ export default function HeaderComponent1() {
                             <li className="cursor-pointer text-[#0d423f] text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
                               <div className="flex items-center ml-1">
                                 <i className="far fa-registered"></i>
-                                <span className="ml-2 text-[#0d423f]">
-                                  Register
-                                </span>
+                                <span className="ml-2 text-[#0d423f]">Register</span>
                               </div>
                             </li>
                           </Link>
@@ -113,9 +103,7 @@ export default function HeaderComponent1() {
                             <li className="cursor-pointer text-[#0d423f] text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
                               <div className="flex items-center ml-1">
                                 <i className="fas fa-sign-in-alt text-[#0d423f]"></i>
-                                <span className="ml-2 text-[#0d423f]">
-                                  Login
-                                </span>
+                                <span className="ml-2 text-[#0d423f]">Login</span>
                               </div>
                             </li>
                           </Link>
@@ -136,16 +124,12 @@ export default function HeaderComponent1() {
                               <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                               <circle cx={12} cy={12} r={3} />
                             </svg>
-                            <span className="ml-2 text-[#0d423f]">
-                              Account Settings
-                            </span>
+                            <span className="ml-2 text-[#0d423f]">Account Settings</span>
                           </li>
                           <li className="cursor-pointer text-[#0d423f] text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
                             <div className="flex items-center ml-1">
                               <i className="fas fa-sign-in-alt"></i>
-                              <span className="ml-2 text-[#0d423f]">
-                                Logout
-                              </span>
+                              <span className="ml-2 text-[#0d423f]">Logout</span>
                             </div>
                           </li>
                         </ul>
@@ -194,10 +178,7 @@ export default function HeaderComponent1() {
                 : "   w-full xl:hidden h-full absolute z-40  transform -translate-x-full"
             }
           >
-            <div
-              className="bg-gray-800 opacity-50 w-full h-full"
-              onClick={() => setShow(!show)}
-            />
+            <div className="bg-gray-800 opacity-50 w-full h-full" onClick={() => setShow(!show)} />
             <div className="w-64 z-40 fixed overflow-y-auto top-0 bg-white shadow h-full flex-col justify-between xl:hidden pb-4 transition duration-150 ease-in-out">
               <div className="px-6 h-full">
                 <div className="flex flex-col justify-between h-full w-full">
@@ -205,17 +186,9 @@ export default function HeaderComponent1() {
                     <div className="mt-6 flex w-full items-center justify-between">
                       <div className="flex items-center justify-between w-full">
                         <div className="flex items-center">
-                          <img
-                            src="/assets/logo-palm.png"
-                            className="w-20"
-                            alt="Logo"
-                          />
+                          <img src="/assets/logo-palm.png" className="w-20" alt="Logo" />
                         </div>
-                        <div
-                          id="cross"
-                          className="text-gray-800"
-                          onClick={() => setShow(!show)}
-                        >
+                        <div id="cross" className="text-gray-800" onClick={() => setShow(!show)}>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="icon icon-tabler icon-tabler-x"
@@ -242,9 +215,7 @@ export default function HeaderComponent1() {
                             <div className="w-6 h-6 md:w-8 md:h-8 text-indigo-700">
                               <i className="far fa-registered"></i>
                             </div>
-                            <p className="text-indigo-700 xl:text-base text-base ml-3">
-                              Register
-                            </p>
+                            <p className="text-indigo-700 xl:text-base text-base ml-3">Register</p>
                           </div>
                         </li>
                       </div>
@@ -313,9 +284,7 @@ export default function HeaderComponent1() {
                             src="https://th.bing.com/th/id/OIP.HAlzz7_SUXjXKwsKkyBmJQHaHa?pid=ImgDet&rs=1"
                             className="w-6 h-6 rounded-md"
                           />
-                          <p className=" text-gray-800 text-sm leading-4 ml-2">
-                            Username
-                          </p>
+                          <p className=" text-gray-800 text-sm leading-4 ml-2">Username</p>
                         </div>
                         <ul className="flex">
                           <li className="cursor-pointer text-gray-800 pt-5 pb-3">
