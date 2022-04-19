@@ -6,14 +6,13 @@ import FooterComponent from "../components/FooterComponent";
 import Calendar from "../components/Calendar";
 import { useParams, useNavigate } from "react-router-dom";
 import { getBallroomById } from "../hooks";
-
 import { FaMoneyBillWave } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
 import { FaStreetView } from "react-icons/fa";
 import { useMutation } from "@apollo/client";
 import { createBooking } from "../config/query";
-
 import HashLoader from "react-spinners/HashLoader";
+import Swal from "sweetalert2";
 
 const DetailPage = () => {
   const { hotelApiId } = useParams();
@@ -23,10 +22,24 @@ const DetailPage = () => {
   const [createBookingMutation, { data, error, loading }] = useMutation(createBooking); 
 
   useEffect(() => {
-    if (data && !loading) {
-      navigate("/orderlist/3"); //nanti pakai localStorage
+    if (data && !loading && data.bookingBallroom !== "This date is already booked") {
+      navigate(`/orderlist/${localStorage.getItem("userId")}`); 
+      Swal.fire({
+        icon: 'success',
+        title: data.bookingBallroom,
+        showConfirmButton: false,
+        timer: 1500
+      })
+      localStorage.removeItem("price");
+    } else if (data && !loading && data.bookingBallroom === "This date is already booked") {
+      Swal.fire({
+        icon: 'error',
+        title: 'Sorry',
+        text: data.bookingBallroom,
+      })
     }
   }, [data, loading, navigate]);
+
   const formattingDate = () => {
     const dateBooking =
       new Date(date).getFullYear() +
@@ -41,13 +54,12 @@ const DetailPage = () => {
   const doCreateBooking = () => {
     createBookingMutation({
       variables: {
-        customerId: "3", //nanti pakai localStorage
+        customerId: localStorage.getItem("userId"), 
         hotelApiId: hotelApiId,
-        bookingDate: formattingDate(), //nanti pakai calendar
+        bookingDate: formattingDate(), 
         name: hotelName(hotel[0].sections),
-        accessToken:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJXaWthU0BnbWFpbC5jb20iLCJyb2xlIjoiQ3VzdG9tZXIiLCJpYXQiOjE2NTAzMTA1MTB9.FWwB84CW17Uiq-girsHU-QQ94Vw9h_DT_JJKGtu29U4", //nanti dari localStorage
-        role: "Customer", //nanti dari localStorage atau mau di hardcode??
+        accessToken: localStorage.getItem("token"),
+        role: localStorage.getItem("role"), 
       },
     });
   };
@@ -65,14 +77,10 @@ const DetailPage = () => {
   }, [hotelApiId]);
 
   const hotelName = (array) => {
-    // console.log("array: ", array);
     const x = array.filter(
       (el) => el.__typename === "AppPresentation_PoiOverview"
     );
-    // console.log("x: ", x);
     const y = x[0].name;
-    // console.log("y: ", y);
-    // console.log(poiOverview);
     return y;
   };
 

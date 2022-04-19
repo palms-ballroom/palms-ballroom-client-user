@@ -11,7 +11,7 @@ export default function StaticDatePickerLandscape({ date, setDate }) {
         orientation="landscape"
         openTo="day"
         value={date}
-        // shouldDisableDate={isWeekend}
+        disablePast={true}
         onChange={(newDate) => {
           setDate(newDate);
         }}

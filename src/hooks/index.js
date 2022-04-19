@@ -46,22 +46,3 @@ export const getBallroomById = async (hotelApiId) => {
     console.log(error);
   }
 };
-
-export const getBallroomByIdFromServer = async (hotelApiId) => {
-  try {
-    const response = await axios({
-      method: 'POST',
-      url: 'https://travel-advisor.p.rapidapi.com/hotels/v2/get-details',
-      params: {currency: 'IDR', units: 'km', lang: 'en_US'},
-      headers: {
-        'content-type': 'application/json',
-        'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com',
-        'X-RapidAPI-Key': 'cea445aa20msh49cfcff77a74b62p179ac1jsn5528ae435605'
-      },
-      data: `{"contentId":"${hotelApiId}","checkIn":"2022-04-10","checkOut":"2022-04-10","rooms":[{"adults":2,"childrenAges":[2]},{"adults":2,"childrenAges":[3]}]}`
-    });
-    return response.data.data.AppPresentation_queryAppDetailV2;
-  } catch (error) {
-    console.log(error);
-  }
-};
