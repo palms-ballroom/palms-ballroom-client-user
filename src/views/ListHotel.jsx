@@ -6,6 +6,8 @@ import { Outlet, useParams } from "react-router-dom";
 import { getBallroomData } from "../hooks/index";
 import Map from "../components/Map";
 
+import HashLoader from "react-spinners/HashLoader";
+
 export default function ListHotel() {
   const { city } = useParams();
   const [ballrooms, setBallrooms] = useState([]);
@@ -43,13 +45,31 @@ export default function ListHotel() {
     });
   }, [coordinates, bounds]);
 
+  const [loading, setLoading] = React.useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
   return (
     <>
       <div className="flex flex-row justify-between h-200">
         <div className="w-1/2">
           <NavbarComponent></NavbarComponent>
           <div className="p-4">
-            <HotelList ballrooms={ballrooms}></HotelList>
+            {loading ? (
+              <div className="flex justify-center items-center h-screen">
+                <HashLoader size={150} color={"#023d3a"} loading={loading} />
+              </div>
+            ) : (
+              <>
+                <HotelList ballrooms={ballrooms}></HotelList>
+              </>
+            )}
+            {/* <HotelList ballrooms={ballrooms}></HotelList> */}
           </div>
         </div>
         <Map
