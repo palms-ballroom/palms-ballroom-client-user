@@ -3,7 +3,7 @@ import React from "react";
 export default function ThankPage() {
   return (
     <>
-      <div className="w-full p-2 h-screen flex flex-col justify-center items-center place-content-center">
+      <div className="w-full h-screen flex flex-col justify-center items-center">
         <div className="flex flex-col">
           <img src="./assets/icon/sammy-done.png" alt="done" className="w-55 h-72" />
         </div>
