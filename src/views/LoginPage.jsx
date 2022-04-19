@@ -17,6 +17,8 @@ export default function LoginPage() {
       localStorage.setItem("token", data.loginUser.token);
       localStorage.setItem("userId", data.loginUser.id);
       localStorage.setItem("role", data.loginUser.role);
+      localStorage.setItem("username", data.loginUser.username);
+      localStorage.setItem("imageUrl", data.loginUser.imageUrl);
       navigate("/");
     }
   }, [data, loading]);

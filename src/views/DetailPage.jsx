@@ -19,24 +19,24 @@ const DetailPage = () => {
   const [hotel, setHotel] = useState(null);
   const navigate = useNavigate();
   const [date, setDate] = React.useState(new Date());
-  const [createBookingMutation, { data, error, loading }] = useMutation(createBooking); 
+  const [createBookingMutation, { data, error, loading }] = useMutation(createBooking);
 
   useEffect(() => {
     if (data && !loading && data.bookingBallroom !== "This date is already booked") {
-      navigate(`/orderlist/${localStorage.getItem("userId")}`); 
+      navigate(`/orderlist/${localStorage.getItem("userId")}`);
       Swal.fire({
-        icon: 'success',
+        icon: "success",
         title: data.bookingBallroom,
         showConfirmButton: false,
-        timer: 1500
-      })
+        timer: 1500,
+      });
       localStorage.removeItem("price");
     } else if (data && !loading && data.bookingBallroom === "This date is already booked") {
       Swal.fire({
-        icon: 'error',
-        title: 'Sorry',
+        icon: "error",
+        title: "Sorry",
         text: data.bookingBallroom,
-      })
+      });
     }
   }, [data, loading, navigate]);
 
@@ -54,72 +54,59 @@ const DetailPage = () => {
   const doCreateBooking = () => {
     createBookingMutation({
       variables: {
-        customerId: localStorage.getItem("userId"), 
+        customerId: localStorage.getItem("userId"),
         hotelApiId: hotelApiId,
-        bookingDate: formattingDate(), 
+        bookingDate: formattingDate(),
         name: hotelName(hotel[0].sections),
         accessToken: localStorage.getItem("token"),
-        role: localStorage.getItem("role"), 
+        role: localStorage.getItem("role"),
       },
     });
   };
 
   const ballroomPrice = () => {
-      const price = localStorage.getItem("price");
-      return price;
+    const price = localStorage.getItem("price");
+    return price;
   };
 
   useEffect(() => {
     getBallroomById(hotelApiId).then((data) => {
       setHotel(data);
     });
-    
   }, [hotelApiId]);
 
   const hotelName = (array) => {
-    const x = array.filter(
-      (el) => el.__typename === "AppPresentation_PoiOverview"
-    );
+    const x = array.filter((el) => el.__typename === "AppPresentation_PoiOverview");
     const y = x[0].name;
     return y;
   };
 
   const hotelRanking = (array) => {
-    const x = array.filter(
-      (el) => el.__typename === "AppPresentation_PoiOverview"
-    );
+    const x = array.filter((el) => el.__typename === "AppPresentation_PoiOverview");
     const y = x[0].rankingDetails.string;
     return y;
   };
 
   const hotelAddress = (array) => {
-    const x = array.filter(
-      (el) => el.__typename === "AppPresentation_PoiLocation"
-    );
+    const x = array.filter((el) => el.__typename === "AppPresentation_PoiLocation");
     const y = x[0].address.address;
     return y;
   };
 
   const about = (array) => {
-    const x = array.filter(
-      (el) => el.__typename === "AppPresentation_PoiAbout"
-    );
+    const x = array.filter((el) => el.__typename === "AppPresentation_PoiAbout");
     const y = x[0].about;
     return y;
   };
 
   const descriptionTop = (array) => {
-    const x = array.filter(
-      (el) => el.__typename === "AppPresentation_PoiHealthSafety"
-    );
+    const x = array.filter((el) => el.__typename === "AppPresentation_PoiHealthSafety");
     const y = x[0].subtitle.string;
     return y;
   };
 
   const descriptionBtm = (array) => {
-    const x = array.filter(
-      (el) => el.__typename === "AppPresentation_PoiHealthSafety"
-    );
+    const x = array.filter((el) => el.__typename === "AppPresentation_PoiHealthSafety");
     const y = x[0].managementResponse;
     return y;
   };
@@ -149,9 +136,7 @@ const DetailPage = () => {
                   hotelName={hotelName(hotel[0].sections)}
                   hotelRanking={hotelRanking(hotel[0].sections)}
                 ></HeadDetail>
-                <ImagesPreview
-                  hotelPhotos={hotel[0].sections[0].albumPhotos}
-                ></ImagesPreview>
+                <ImagesPreview hotelPhotos={hotel[0].sections[0].albumPhotos}></ImagesPreview>
               </div>
               <div className="w-full py-5">
                 <div className="w-full h-full flex flex-row">
@@ -166,9 +151,7 @@ const DetailPage = () => {
                             <FaMoneyBillWave className="h-full w-12 pl-5 pt-5" />
                           </div>
                           <div className="h-full w-full flex">
-                            <div className="pl-5 flex items-center">
-                              {ballroomPrice()}{" "}
-                            </div>
+                            <div className="pl-5 flex items-center">{ballroomPrice()} </div>
                           </div>
                         </div>
                         <div className="h-full w-44 flex flex-col border-2 border-black rounded-xl ">

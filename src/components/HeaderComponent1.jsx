@@ -1,11 +1,17 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import backGround from "./assets/hero-banner.png"
 export default function HeaderComponent1() {
   const [show, setShow] = useState(null);
   const [profile, setProfile] = useState(false);
   const [product, setProduct] = useState(false);
   const [deliverables, setDeliverables] = useState(false);
+  const navigate = useNavigate();
+  const doLogout = () => {
+    localStorage.clear();
+    navigate("/login");
+  };
+
   return (
     <>
       <div className="bg-gray-200 h-full w-full sticky top-0 z-50">
@@ -129,7 +135,9 @@ export default function HeaderComponent1() {
                           <li className="cursor-pointer text-[#0d423f] text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
                             <div className="flex items-center ml-1">
                               <i className="fas fa-sign-in-alt"></i>
-                              <span className="ml-2 text-[#0d423f]">Logout</span>
+                              <button onClick={doLogout} className="ml-2 text-[#0d423f]">
+                                Logout
+                              </button>
                             </div>
                           </li>
                         </ul>
