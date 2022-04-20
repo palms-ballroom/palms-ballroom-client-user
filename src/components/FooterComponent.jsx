@@ -13,30 +13,28 @@ export default function FooterComponent() {
           </div>
           <div className="xl:flex xl:justify-between xl:mt-24 mt-16 pb-2">
             <div className="w-full xl:w-2/6 flex sm:justify-center md:justify-center lg:justify-center xl:justify-start mx-auto lg:mx-0 xl:mx-0 mb-6 xl:mb-0">
-              <p className="text-gray-900 text-base">
-                🌴 2022 Palms . All Rights Reserved
-              </p>
+              <p className="text-gray-900 text-base">🌴 2022 Palms . All Rights Reserved</p>
             </div>
             <div className="w-full mx-auto sm:px-28 lg:mx-0 xl:mx-0 mb-6 lg:mb-0 xl:mb-0">
               <ul className="xl:flex lg:flex md:flex sm:flex sm:justify-between md:justify-between sm:px-0 md:px-11 lg:px-40 xl:px-0 ">
                 <li className="text-gray-800 hover:text-gray-900 text-base mb-4 sm:mb-0">
-                  <a>Terms of service</a>
+                  <span>Terms of service</span>
                 </li>
                 <li className="text-gray-800 hover:text-gray-900 text-base mb-4 sm:mb-0">
-                  <a>Privacy Policy</a>
+                  <span>Privacy Policy</span>
                 </li>
                 <li className="text-gray-800 hover:text-gray-900 text-base mb-4 sm:mb-0">
-                  <a>Security</a>
+                  <span>Security</span>
                 </li>
                 <li className="text-gray-800 hover:text-gray-900 text-base mb-4 sm:mb-0">
-                  <a>Sitemap</a>
+                  <span>Sitemap</span>
                 </li>
               </ul>
             </div>
             <div className="w-full xl:w-1/6 lg:w-full sm:w-full sm:flex sm:justify-center mx-auto lg:mx-0 xl:mx-0 mb-6 lg:mb-0 xl:mb-0 mt-8 lg:mt-8 xl:mt-0">
               <div className="flex justify-start sm:justify-start xl:justify-end space-x-6 pr-2 xl:pr-0 lg:pr-0 md:pr-0 sm:pr-0">
                 <div>
-                  <a href="#">
+                  <span href="#">
                     <svg
                       aria-label="Twitter"
                       xmlns="http://www.w3.org/2000/svg"
@@ -52,10 +50,10 @@ export default function FooterComponent() {
                     >
                       <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
                     </svg>
-                  </a>
+                  </span>
                 </div>
                 <div>
-                  <a href="#">
+                  <span>
                     <svg
                       aria-label="Instagram"
                       xmlns="http://www.w3.org/2000/svg"
@@ -73,10 +71,10 @@ export default function FooterComponent() {
                       <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                       <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                     </svg>
-                  </a>
+                  </span>
                 </div>
                 <div>
-                  <a href="#">
+                  <span>
                     <svg
                       aria-label="Dribble"
                       xmlns="http://www.w3.org/2000/svg"
@@ -96,10 +94,10 @@ export default function FooterComponent() {
                       <path d="M6.4 19c3.5-3.5 6-6.5 14.5-6.4" />
                       <path d="M3.1 10.75c5 0 9.814-.38 15.314-5" />
                     </svg>
-                  </a>
+                  </span>
                 </div>
                 <div>
-                  <a href="#">
+                  <span>
                     <svg
                       aria-label="Github"
                       xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +113,7 @@ export default function FooterComponent() {
                     >
                       <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
                     </svg>
-                  </a>
+                  </span>
                 </div>
               </div>
             </div>

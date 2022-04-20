@@ -148,21 +148,27 @@ const DetailPage = () => {
                 <div className="w-full h-full flex flex-row">
                   <div className="w-2/3 h-full">
                     <div className="w-full py-5 h-24 ">
-                      <div className="w-full h-full text-5xl">Details</div>
+                      <div className="w-full h-full text-5xl font-title">Details</div>
                     </div>
                     <div className="w-full py-5 h-44">
                       <div className="flex flex-row justify-evenly h-full w-full">
-                        <div className="h-full w-44 flex flex-col border-2 border-black rounded-xl ">
+                        <div className="h-full w-44 flex flex-col border-2 border-[#023d3a] rounded-xl ">
                           <div className="h-1/3 w-full">
-                            <FaMoneyBillWave className="h-full w-12 pl-5 pt-5" />
+                            <FaMoneyBillWave
+                              className="h-full w-12 pl-5 pt-5"
+                              style={{ color: "#023d3a" }}
+                            />
                           </div>
                           <div className="h-full w-full flex">
                             <div className="pl-5 flex items-center">{ballroomPrice()} </div>
                           </div>
                         </div>
-                        <div className="h-full w-44 flex flex-col border-2 border-black rounded-xl ">
+                        <div className="h-full w-44 flex flex-col border-2 border-[#023d3a] rounded-xl ">
                           <div className="h-1/3 w-full">
-                            <FaStreetView className="h-full w-12 pl-5 pt-5" />
+                            <FaStreetView
+                              className="h-full w-12 pl-5 pt-5"
+                              style={{ color: "#023d3a" }}
+                            />
                           </div>
                           <div className="h-full w-full flex">
                             <div className="px-5 flex items-center text-xs">
@@ -170,9 +176,12 @@ const DetailPage = () => {
                             </div>
                           </div>
                         </div>
-                        <div className="h-full w-44 flex flex-col border-2 border-black rounded-xl ">
+                        <div className="h-full w-44 flex flex-col border-2 border-[#023d3a] rounded-xl ">
                           <div className="h-1/3 w-full">
-                            <FaRegStar className="h-full w-12 pl-5 pt-5" />
+                            <FaRegStar
+                              className="h-full w-12 pl-5 pt-5"
+                              style={{ color: "#023d3a" }}
+                            />
                           </div>
                           <div className="h-full w-full flex">
                             <div className="pl-5 flex items-center">
@@ -183,7 +192,7 @@ const DetailPage = () => {
                       </div>
                     </div>
                     <div className="description w-full pr-5">
-                      <p className="text-gray-800 text-xs font-sub_title font-semibold tracking-widest mb-2">
+                      <p className="text-gray-800 text-md font-sub_title font-semibold tracking-widest mb-2">
                         About
                       </p>
                       <p>{about(hotel[0].sections)}</p>
@@ -191,7 +200,7 @@ const DetailPage = () => {
 
                     {/* <div className="w-full pr-5">{about(hotel[0].sections)}</div> */}
                     <div className="description mt-5 w-full pr-5">
-                      <p className="text-gray-800 text-xs font-sub_title font-semibold tracking-widest mb-3">
+                      <p className="text-gray-800 text-md font-sub_title font-semibold tracking-widest mb-3">
                         {descriptionTop(hotel[0].sections)}
                       </p>
                       <p>{descriptionBtm(hotel[0].sections)}</p>
