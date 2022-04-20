@@ -1,4 +1,5 @@
 import React from "react";
+
 export default function FooterComponent() {
   return (
     <div className="pt-2">
@@ -6,7 +7,7 @@ export default function FooterComponent() {
         <div className="container mx-auto py-2">
           <div className="xl:flex lg:flex md:flex pt-2">
             <div className="w-full mx-auto lg:mx-0 xl:mx-0">
-              <div className="flex items-center sm:justify-center md:justify-center lg:justify-center xl:justify-end mb-2 xl:mb-0 lg:mb-0">
+              <div className="flex items-center sm:justify-center md:justify-center lg:justify-center xl:justify-start mb-2 xl:mb-0 lg:mb-0">
                 <img src="/assets/img/Logo-Palms.jpg" className="w-44" alt="Logo" />
               </div>
             </div>

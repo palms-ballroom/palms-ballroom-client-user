@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import HeaderComponent1 from "../components/HeaderComponent1";
+import HeaderComponent from "../components/HeaderComponent";
 import { Link, useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { createCustomer } from "../config/query";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export default function LoginPage() {
   const [showpass, setShowPass] = useState(false);
@@ -15,14 +16,12 @@ export default function LoginPage() {
     imageFile: "",
     address: "",
   });
-
   const navigate = useNavigate();
-
-  const [createCustomerMutation, { error, loading, data }] = useMutation(createCustomer);
+  const [createCustomerMutation, { loading, data }] = useMutation(createCustomer);
 
   useEffect(() => {
     if (data && !loading) {
-      console.log(data);
+      Swal.fire("Register Success!", "Please do Login!", "success");
       navigate("/login");
     }
   }, [data, loading, navigate]);
@@ -32,7 +31,6 @@ export default function LoginPage() {
       ...form,
       [e.target.name]: e.target.value,
     });
-    console.log(form);
   };
 
   const handleFile = (e) => {
@@ -40,14 +38,14 @@ export default function LoginPage() {
       ...form,
       imageFile: e.target.files[0],
     });
-    console.log(form);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(form);
+
     let body = new FormData();
     body.append("image", form.imageFile);
+
     const response = await axios({
       method: "post",
       url: `https://api.imgbb.com/1/upload?key=d7f8ef6e35c6735dc7698da9e9d1192b&name=${form.username}`,
@@ -56,7 +54,7 @@ export default function LoginPage() {
       },
       data: body,
     });
-    console.log(response.data.data);
+
     createCustomerMutation({
       variables: {
         email: form.email,
@@ -71,7 +69,7 @@ export default function LoginPage() {
 
   return (
     <>
-      <HeaderComponent1></HeaderComponent1>
+      <HeaderComponent></HeaderComponent>
       <div className="h-screen w-full bg-black relative">
         <img src="./assets/img/LoginBackground.png" className="w-full h-full bg-auto" alt="logo" />
         <div className="absolute top-[40%] transform translate-x-1/4 -translate-y-1/2 w-1/4">

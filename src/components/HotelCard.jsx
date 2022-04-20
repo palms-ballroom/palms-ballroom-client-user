@@ -2,14 +2,13 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function HotelCard({ ballroom }) {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const moveToDetail = () => {
-    const price = priceBallroom(ballroom.price)
+    const price = priceBallroom(ballroom.price);
     localStorage.setItem("price", price);
-    navigate(`/detail/${ballroom.location_id}`)
-  }
-  
+    navigate(`/detail/${ballroom.location_id}`);
+  };
 
   const priceBallroom = (price) => {
     if (!price) return "Undisclosed";
@@ -50,9 +49,7 @@ export default function HotelCard({ ballroom }) {
              bg-[#0d423f]
              "
             >
-              <h1 className="text-white font-bold">
-                {priceBallroom(ballroom.price)}
-              </h1>
+              <h1 className="text-white font-bold">{priceBallroom(ballroom.price)}</h1>
             </div>
           </div>
         </div>
