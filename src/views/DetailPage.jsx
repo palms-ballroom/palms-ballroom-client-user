@@ -198,26 +198,26 @@ const DetailPage = () => {
                     </div>
                   </div>
 
-                  <div className="w-1/3 h-full">
-                    <div className="flex flex-col justify-center items-center">
-                      <div className="w-full flex items-center justify-center mt-auto shadow-lg">
-                        <Calendar date={date} setDate={setDate}></Calendar>
-                      </div>
-                      <div className="py-5 w-full pl-2">
-                        <button
-                          onClick={() => doCreateBooking()}
-                          className="bg-slate-200 shadow-lg py-2 w-full"
-                        >
-                          Add To Cart
-                        </button>
-                      </div>
-                      <div className="py-5 w-full pl-2">
-                        <button className="bg-slate-200 shadow-lg py-2 w-full">
-                          View 3D Ballroom
-                        </button>
-                      </div>
+                  {/* <div className="w-1/3 h-full flex items-center"> */}
+                  <div className="flex flex-col justify-center items-center">
+                    <div className="w-full flex items-center justify-center mt-auto shadow-lg">
+                      <Calendar date={date} setDate={setDate}></Calendar>
+                    </div>
+                    <div className="py-5 w-full pl-2 mt-4">
+                      <button className="bg-[#e29566] shadow-lg py-2 w-full text-white font-semibold">
+                        View 3D Ballroom
+                      </button>
+                    </div>
+                    <div className="py-5 w-full pl-2">
+                      <button
+                        onClick={() => doCreateBooking()}
+                        className="bg-[#266c6b] shadow-lg py-2 w-full text-white font-semibold"
+                      >
+                        Book Now!
+                      </button>
                     </div>
                   </div>
+                  {/* </div> */}
                 </div>
               </div>
             </div>

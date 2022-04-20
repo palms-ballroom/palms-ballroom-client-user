@@ -199,7 +199,7 @@ const MyBookingPage = () => {
         <div className="flex flex-col xl:flex-row justify-center items-center space-y-10 xl:space-y-0 xl:space-x-8">
           <div className="flex justify-center flex-col items-start w-full lg:w-9/12 xl:w-full ">
             <h3 className="text-3xl xl:text-4xl font-semibold leading-7 xl:leading-9 w-full  md:text-left text-gray-800">
-              My booking page
+              My Booking Page
             </h3>
             <p className="text-base leading-none mt-4 text-gray-800">
               Paid using credit or debit card using <span className="font-semibold">Xendit</span>

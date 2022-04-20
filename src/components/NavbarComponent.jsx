@@ -146,7 +146,7 @@ export default function NavbarComponent() {
             <div className="flex space-x-2">
               <span
                 id="s1"
-                className={`${text.length != 0 ? "" : "hidden"} font-semibold text-sm leading-3`}
+                className={`${text.length !== 0 ? "" : "hidden"} font-semibold text-sm leading-3`}
               >
                 Selected:{" "}
               </span>
