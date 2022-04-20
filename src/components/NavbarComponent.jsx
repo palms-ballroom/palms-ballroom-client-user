@@ -34,8 +34,8 @@ export default function NavbarComponent() {
             <NavLink
               className={({ isActive }) => {
                 return isActive
-                  ? "text-white bg-[#0d423f] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800  cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded"
-                  : "text-gray-600 border border-white bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800  cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded";
+                  ? "text-white bg-[#0d423f] cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded"
+                  : "text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded";
               }}
               to="/hotels/Jakarta"
             >
@@ -45,8 +45,8 @@ export default function NavbarComponent() {
               to="/hotels/Bandung"
               className={({ isActive }) => {
                 return isActive
-                  ? "text-white bg-[#0d423f] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800  cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded"
-                  : "text-gray-600 border border-white bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800  cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded";
+                  ? "text-white bg-[#0d423f] cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded"
+                  : "text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded";
               }}
             >
               <li>Bandung</li>
@@ -54,8 +54,8 @@ export default function NavbarComponent() {
             <NavLink
               className={({ isActive }) => {
                 return isActive
-                  ? "text-white bg-[#0d423f] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800  cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded"
-                  : "text-gray-600 border border-white bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800  cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded";
+                  ? "text-white bg-[#0d423f] cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded"
+                  : "text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded";
               }}
               to="/hotels/Bali"
             >
@@ -64,8 +64,8 @@ export default function NavbarComponent() {
             <NavLink
               className={({ isActive }) => {
                 return isActive
-                  ? "text-white bg-[#0d423f] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800  cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded"
-                  : "text-gray-600 border border-white bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800  cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded";
+                  ? "text-white bg-[#0d423f] cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded"
+                  : "text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded";
               }}
               to="/hotels/Yogyakarta"
             >
@@ -74,8 +74,8 @@ export default function NavbarComponent() {
             <NavLink
               className={({ isActive }) => {
                 return isActive
-                  ? "text-white bg-[#0d423f] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800  cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded"
-                  : "text-gray-600 border border-white bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800  cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded";
+                  ? "text-white bg-[#0d423f] cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded"
+                  : "text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded";
               }}
               to="/hotels/Surabaya"
             >
@@ -83,7 +83,7 @@ export default function NavbarComponent() {
             </NavLink>
           </ul>
           <div className="flex space-x-5 justify-center items-center pl-2">
-            <div className="relative cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 ">
+            <div className="relative cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2">
               <svg
                 width={24}
                 height={24}
@@ -103,7 +103,7 @@ export default function NavbarComponent() {
               <div className=" w-1.5 h-1.5 bg-[#0d423f] rounded-full absolute -top-1 -right-1 m-auto shadow-lg" />
             </div>
             <svg
-              className="cursor-pointer  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 "
+              className="cursor-pointer  focus:outline-none focus:ring-2 focus:ring-offset-2"
               width={24}
               height={24}
               viewBox="0 0 24 24"
@@ -131,7 +131,7 @@ export default function NavbarComponent() {
         <div className="sm:block md:block lg:block xl:hidden 2xl:hidden w-full mt-5 ">
           <div
             onClick={() => setDropDown(!dropDown)}
-            className="cursor-pointer px-4 py-3 text-white bg-[#bb9e80] rounded flex justify-between items-center w-full"
+            className="cursor-pointer px-4 py-3 text-white bg-[#0d423f] rounded flex justify-between items-center w-full"
           >
             <div className="flex space-x-2">
               <span
