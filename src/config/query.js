@@ -1,13 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const xenditPayment = gql`
-  mutation CreateInvoice($transactionId: ID!, $hotelApiId: Int, $accessToken: String, $price: Int) {
-    createInvoice(
-      transactionId: $transactionId
-      hotelApiId: $hotelApiId
-      access_token: $accessToken
-      price: $price
-    ) {
+  mutation CreateInvoice($transactionId: ID!, $accessToken: String, $price: Int) {
+    createInvoice(transactionId: $transactionId, access_token: $accessToken, price: $price) {
       message
       data {
         external_id

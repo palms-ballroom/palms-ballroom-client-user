@@ -33,11 +33,11 @@ const MyBookingPage = () => {
     });
   };
 
-  // useEffect(() => {
-  //   if (data && !loading) {
-  //     openNewTab();
-  //   }
-  // }, [data, loading]);
+  useEffect(() => {
+    if (data && !loading) {
+      localStorage.setItem("transactionId", data.latestUserTransactions.id);
+    }
+  }, [data, loading]);
 
   // const videoRef = React.useRef();
   // const videoHeight = 480;
@@ -209,19 +209,22 @@ const MyBookingPage = () => {
                 <div className="w-40 md:w-32">
                   <img
                     className=""
-                    src={data.latestUserTransactions.mainImg}
-                    alt="girl-in-red-dress"
+                    src={data?.latestUserTransactions.mainImg}
+                    alt="hotel-ballroom"
                   />
                 </div>
                 <div className="flex justify-start md:justify-between items-start md:items-center  flex-col md:flex-row w-full p-4 md:px-8">
                   <div className="flex flex-col md:flex-shrink-0  justify-start items-start">
                     <h3 className="text-lg md:text-xl  w-full font-semibold leading-6 md:leading-5  text-gray-800">
-                      {data.latestUserTransactions.hotelName}
+                      {data?.latestUserTransactions.hotelName}
                     </h3>
                     <div className="flex flex-row justify-start  space-x-4 md:space-x-6 items-start mt-4 ">
                       <p className="text-sm leading-none text-gray-600">
                         Status:{" "}
-                        <span className="text-gray-800"> {data.latestUserTransactions.status}</span>
+                        <span className="text-gray-800">
+                          {" "}
+                          {data?.latestUserTransactions.status}
+                        </span>
                       </p>
                       <p className="text-sm leading-none text-gray-600">
                         Days: <span className="text-gray-800"> 1 full day</span>
@@ -240,9 +243,7 @@ const MyBookingPage = () => {
             <div className="flex flex-col justify-start items-start mt-8 xl:mt-10 space-y-10 w-full">
               <div className="flex justify-start items-start flex-col md:flex-row  w-full md:w-auto space-y-8 md:space-y-0 md:space-x-14 xl:space-x-8  lg:w-full">
                 <div className="flex jusitfy-start items-start flex-col space-y-2">
-                  <p className="text-base font-semibold leading-4  text-gray-800">
-                    Shipping Method
-                  </p>
+                  <p className="text-base font-semibold leading-4  text-gray-800">Payment Method</p>
                   <p className="text-sm leading-5 text-gray-600">Payment with xendit</p>
                 </div>
               </div>
@@ -269,12 +270,14 @@ const MyBookingPage = () => {
                 </div>
                 <div>
                   <button
-                    className="py-5 focus:outline-none  focus:ring-offset-2  w-full text-base font-medium leading-4 bg-[#266c6b] hover:bg-[#0d423f] focus:ring-4 focus:ring-[#266c6b] text-white rounded-md"
+                    className="mt-7 py-5 focus:outline-none  focus:ring-offset-2  w-full text-base font-medium leading-4 bg-[#266c6b] hover:bg-[#0d423f] focus:ring-4 focus:ring-[#266c6b] text-white rounded-sm"
                     onClick={() => setModalOn(true)}
                   >
                     Verification
                   </button>
-                  {modalOn && <Modal setModalOn={setModalOn} />}
+                  {modalOn && (
+                    <Modal bookingData={data?.latestUserTransactions} setModalOn={setModalOn} />
+                  )}
 
                   {/* <div style={{ textAlign: "center", padding: "10px" }}>
                     {captureVideo && modelsLoaded ? (
