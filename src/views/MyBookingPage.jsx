@@ -243,7 +243,7 @@ const MyBookingPage = () => {
             <div className="flex flex-col justify-start items-start mt-8 xl:mt-10 space-y-10 w-full">
               <div className="flex justify-start items-start flex-col md:flex-row  w-full md:w-auto space-y-8 md:space-y-0 md:space-x-14 xl:space-x-8  lg:w-full">
                 <div className="flex jusitfy-start items-start flex-col space-y-2">
-                  <p className="text-base font-semibold leading-4  text-gray-800">Payment Method</p>
+                  <p className="text-base font-semibold leading-4 text-gray-800">Payment Method</p>
                   <p className="text-sm leading-5 text-gray-600">Payment with xendit</p>
                 </div>
               </div>
@@ -257,14 +257,10 @@ const MyBookingPage = () => {
                     <p className="text-base leading-4 text-gray-800">Discount </p>
                     <p className="text-base leading-4 text-gray-600">-</p>
                   </div>
-                  <div className="flex justify-between  w-full">
-                    <p className="text-base leading-4 text-gray-800">Shipping</p>
-                    <p className="text-base leading-4 text-gray-600">-</p>
-                  </div>
                 </div>
                 <div className="flex justify-between items-center w-full">
-                  <p className="text-base font-semibold leading-4 text-gray-800">Total</p>
-                  <p className="text-base font-semibold leading-4 text-gray-600">
+                  <p className="text-xl font-semibold leading-4 text-gray-800">Total</p>
+                  <p className="text-xl font-semibold leading-4 text-gray-600">
                     {formattedPrice()}
                   </p>
                 </div>
