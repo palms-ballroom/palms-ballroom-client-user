@@ -25,7 +25,7 @@ export default function LoginPage() {
       console.log(data);
       navigate("/login");
     }
-  }, [data, loading]);
+  }, [data, loading, navigate]);
 
   const handleChange = (e) => {
     setForm({

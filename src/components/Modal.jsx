@@ -14,13 +14,10 @@ export default function Modal({ setModalOn, bookingData }) {
   const [authStatus, setAuthStatus] = React.useState(false);
 
   const [xenditPay, { error, loading, data }] = useMutation(xenditPayment);
-  const openNewTab = () => {
-    window.open(data && data?.createInvoice.data?.invoice_url);
-  };
 
   useEffect(() => {
     if (data && !loading) {
-      openNewTab();
+      window.open(data && data?.createInvoice.data?.invoice_url);
     }
   }, [data, loading]);
 
@@ -54,7 +51,7 @@ export default function Modal({ setModalOn, bookingData }) {
       });
     };
     loadModels();
-  }, []);
+  }, [labeledDescriptor]);
 
   const startVideo = () => {
     setCaptureVideo(true);

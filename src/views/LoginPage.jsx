@@ -21,7 +21,7 @@ export default function LoginPage() {
       localStorage.setItem("imageUrl", data.loginUser.imageUrl);
       navigate("/");
     }
-  }, [data, loading]);
+  }, [data, loading, navigate]);
   const handleChange = (e) => {
     setForm({
       ...form,
@@ -43,7 +43,7 @@ export default function LoginPage() {
     <>
       <HeaderComponent1></HeaderComponent1>
       <div className="h-screen w-full bg-black relative">
-        <img src="./assets/img/LoginBackground.png" className="w-full h-full" />
+        <img src="./assets/img/LoginBackground.png" className="w-full h-full" alt="Logo" />
         <div className="absolute top-[40%] transform translate-x-1/4 -translate-y-1/2 w-1/4">
           <p
             tabIndex={0}
