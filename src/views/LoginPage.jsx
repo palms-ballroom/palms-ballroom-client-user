@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
-import HeaderComponent1 from "../components/HeaderComponent1";
+import HeaderComponent from "../components/HeaderComponent";
 import { Link, useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { loginCustomer } from "../config/query";
+
 export default function LoginPage() {
   const [showpass, setShowPass] = useState(false);
   const [form, setForm] = useState({
     email: "",
     password: "",
   });
-  const [loginCustomerMutation, { data, loading, error }] = useMutation(loginCustomer);
+  const [loginCustomerMutation, { data, loading }] = useMutation(loginCustomer);
   const navigate = useNavigate();
+
   useEffect(() => {
     if (data && !loading) {
-      console.log(data);
       localStorage.setItem("token", data.loginUser.token);
       localStorage.setItem("userId", data.loginUser.id);
       localStorage.setItem("role", data.loginUser.role);
@@ -22,16 +23,16 @@ export default function LoginPage() {
       navigate("/");
     }
   }, [data, loading, navigate]);
+
   const handleChange = (e) => {
     setForm({
       ...form,
       [e.target.name]: e.target.value,
     });
-    console.log(form);
   };
+
   const doLogin = (e) => {
     e.preventDefault();
-    console.log(form);
     loginCustomerMutation({
       variables: {
         email: form.email,
@@ -39,9 +40,10 @@ export default function LoginPage() {
       },
     });
   };
+
   return (
     <>
-      <HeaderComponent1></HeaderComponent1>
+      <HeaderComponent></HeaderComponent>
       <div className="h-screen w-full bg-black relative">
         <img src="./assets/img/LoginBackground.png" className="w-full h-full" alt="Logo" />
         <div className="absolute top-[40%] transform translate-x-1/4 -translate-y-1/2 w-1/4">

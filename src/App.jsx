@@ -1,4 +1,3 @@
-import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./views/HomePage";
 import ListHotel from "./views/ListHotel";
@@ -7,7 +6,7 @@ import LoginPage from "./views/LoginPage";
 import RegisterPage from "./views/RegisterPage";
 import MyBookingPage from "./views/MyBookingPage.jsx";
 import ThankPage from "./views/ThankPage";
-function App({ children }) {
+function App() {
   return (
     <>
       <Routes>

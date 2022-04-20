@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import * as faceapi from "@vladmandic/face-api";
 import { useMutation } from "@apollo/client";
 import { xenditPayment } from "../config/query";
@@ -7,13 +7,11 @@ export default function Modal({ setModalOn, bookingData }) {
   const handleOKClick = () => {
     setModalOn(false);
   };
-
   const [modelsLoaded, setModelsLoaded] = React.useState(false);
   const [captureVideo, setCaptureVideo] = React.useState(false);
   const [labeledDescriptor, setLabeledDescriptor] = React.useState([]);
   const [authStatus, setAuthStatus] = React.useState(false);
-
-  const [xenditPay, { error, loading, data }] = useMutation(xenditPayment);
+  const [xenditPay, { loading, data }] = useMutation(xenditPayment);
 
   useEffect(() => {
     if (data && !loading) {
@@ -37,7 +35,6 @@ export default function Modal({ setModalOn, bookingData }) {
         faceapi.nets.ssdMobilenetv1.loadFromUri(MODEL_URL),
       ]).then(async (_) => {
         setModelsLoaded(true);
-        // pake localstorage image url
         const img = await faceapi.fetchImage(localStorage.getItem("imageUrl"));
         const detections = await faceapi
           .detectSingleFace(img)
@@ -80,41 +77,38 @@ export default function Modal({ setModalOn, bookingData }) {
 
         const faceMatcher = new faceapi.FaceMatcher(labeledDescriptor, 0.5);
 
-        //.findBestMatch(detections[0].descriptor)
-
         const detections = await faceapi
           .detectAllFaces(videoRef.current)
           .withFaceLandmarks()
           .withFaceDescriptors()
           .withFaceExpressions();
-        //new faceapi.TinyFaceDetectorOptions())
-        // console.log(detections);
+
         const resizedDetections = faceapi.resizeResults(detections, displaySize);
+
         canvasRef &&
           canvasRef.current &&
           canvasRef.current.getContext("2d").clearRect(0, 0, videoWidth, videoHeight);
-        // console.log(resizedDetections);
-        // console.log(resizedDetections);
+
         const results = resizedDetections.map((d) => {
           return faceMatcher.findBestMatch(d.descriptor);
         });
+
         detectedUserName.push(results[0]?.label);
-        // console.log("masuk");
-        // const results = new faceapi.FaceMatcher(labeledDescriptor, 0.6).findBestMatch(detections[0].descriptor);
-        // console.log("keluar");
+
         results.forEach((result, i) => {
           const box = resizedDetections[i].detection.box;
           const drawBox = new faceapi.draw.DrawBox(box, {
             label: result.toString(),
           });
+
           drawBox.draw(canvasRef.current);
+
           canvasRef &&
             canvasRef.current &&
             faceapi.draw.drawFaceExpressions(canvasRef.current, resizedDetections);
         });
-        console.log(detectedUserName);
       }
-      // nanti pake localstorage username
+
       if (detectedUserName.includes(localStorage.getItem("username"))) {
         closeWebcam();
         setAuthStatus(true);
@@ -132,9 +126,9 @@ export default function Modal({ setModalOn, bookingData }) {
     try {
       await xenditPay({
         variables: {
-          transactionId: bookingData.id, // dari fetch .transactionId
+          transactionId: bookingData.id,
           accessToken: localStorage.getItem("token"),
-          price: bookingData.price, // Nanti pake hasil fetch .price
+          price: bookingData.price,
         },
       });
     } catch (error) {
@@ -147,7 +141,6 @@ export default function Modal({ setModalOn, bookingData }) {
       return (
         <button
           className="bg-[#266c6b] hover:bg-[#0d423f] focus:ring-4 focus:ring-blue-300 text-white px-6 py-2 shadow-md rounded-md"
-          // style={{ marginLeft: 10 }}
           onClick={() => doXenditPayment()}
         >
           Pay with xendit
@@ -220,61 +213,6 @@ export default function Modal({ setModalOn, bookingData }) {
               </button>
             </div>
           </div>
-          {/* <div style={{ textAlign: "center", padding: "10px" }}>
-            {captureVideo && modelsLoaded ? (
-              <div className="flex w-full justify-center items-center pt-1 md:pt-4  xl:pt-8 space-y-6 md:space-y-8 flex-col">
-                <button
-                  onClick={closeWebcam}
-                  className="py-5 focus:outline-none  focus:ring-offset-2  w-full text-base font-medium leading-4 bg-[#266c6b] hover:bg-[#0d423f] focus:ring-4 focus:ring-[#266c6b] text-white rounded-md"
-                >
-                  Close Face Scanning
-                </button>
-              </div>
-            ) : (
-              <div className="flex w-full justify-center items-center pt-1 md:pt-4  xl:pt-8 space-y-6 md:space-y-8 flex-col">
-                <button
-                  onClick={startVideo}
-                  className="py-5 focus:outline-none  focus:ring-offset-2  w-full text-base font-medium leading-4 bg-[#266c6b] hover:bg-[#0d423f] focus:ring-4 focus:ring-[#266c6b] text-white rounded-md"
-                >
-                  Face Scanning
-                </button>
-              </div>
-            )}
-          </div>
-          {captureVideo ? (
-            modelsLoaded ? (
-              <div>
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    padding: "10px",
-                  }}
-                >
-                  <video
-                    ref={videoRef}
-                    height={videoHeight}
-                    width={videoWidth}
-                    onPlay={handleVideoOnPlay}
-                    style={{ borderRadius: "10px" }}
-                  />
-                  <canvas ref={canvasRef} style={{ position: "absolute" }} />
-                </div>
-              </div>
-            ) : (
-              <div>loading...</div>
-            )
-          ) : (
-            <></>
-          )}
-          <div className="flex justify-center mt-10">
-            <button
-              onClick={handleOKClick}
-              className="rounded px-4 py-2 text-white bg-green-400"
-            >
-              Back
-            </button>
-          </div> */}
         </div>
       </div>
     </div>

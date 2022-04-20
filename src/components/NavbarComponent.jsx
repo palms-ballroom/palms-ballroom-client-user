@@ -1,20 +1,9 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+
 export default function NavbarComponent() {
-  let arr = [true, false, false, false, false, false];
-  const [style, setStyle] = useState(arr);
   const [dropDown, setDropDown] = useState(true);
   const [text, setText] = useState("");
-
-  const selected = (props) => {
-    let newArr = [...arr];
-    for (let i = 0; i < newArr.length; i++) {
-      newArr[i] = false;
-    }
-    newArr[props] = true;
-    setStyle(newArr);
-  };
-
   const setSelectedText = (txt) => {
     setText(txt);
     setDropDown(true);

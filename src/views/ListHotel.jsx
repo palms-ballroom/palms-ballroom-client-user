@@ -5,7 +5,6 @@ import HotelList from "../components/HotelList";
 import { Outlet, useParams } from "react-router-dom";
 import { getBallroomData } from "../hooks/index";
 import Map from "../components/Map";
-
 import HashLoader from "react-spinners/HashLoader";
 
 export default function ListHotel() {
@@ -30,11 +29,6 @@ export default function ListHotel() {
     } else if (city === "Yogyakarta") {
       setCoordinates({ lat: -7.795489277618111, lng: 110.36906830754828 });
     }
-    // Jakarta Baru
-    // -6.1803278913190445, 106.82813851892055
-    // -8.670485142108955, 115.21239896877901
-    // Denpasar
-    // -8.670470825331023, 115.21242641380833
   }, [city]);
 
   useEffect(() => {
@@ -67,7 +61,6 @@ export default function ListHotel() {
                 <HotelList ballrooms={ballrooms}></HotelList>
               </>
             )}
-            {/* <HotelList ballrooms={ballrooms}></HotelList> */}
           </div>
         </div>
         <Map

@@ -46,15 +46,3 @@ export const getBallroomById = async (hotelApiId) => {
     console.log(error);
   }
 };
-
-export const getBallroomByIdFromServer = async (hotelApiId) => {
-  try {
-    const { data } = await axios({
-      method: "GET",
-      url: "http://localhost:4001/ballroom/" + hotelApiId,
-    });
-    return data;
-  } catch (error) {
-    console.log(error);
-  }
-};

@@ -7,7 +7,6 @@ export default function CityCard() {
         <p className="text-3xl flex items-center xl:justify-start lg:justify-start sm:justify-center md:justify-center font-sub_title pt-10 ml-2 pb-5 px-6">
           Inspirasi untuk acara anda berikutnya
         </p>
-        {/* Remove py-8 */}
         <div className="mx-auto container py-8 px-6">
           <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
             {/* Card 1 */}
@@ -40,10 +39,9 @@ export default function CityCard() {
                   />
                 </div>
                 <div className="w-full h-[30%] bg-slate-50 text-xs text-gray-500 flex justify-center items-center text-center px-2">
-                  Indonesia's massive capital, sits on the northwest coast of
-                  the island of Java. A historic mix of cultures – Javanese,
-                  Malay, Chinese, Arab, Indian and European – has influenced its
-                  architecture, language and cuisine.
+                  Indonesia's massive capital, sits on the northwest coast of the island of Java. A
+                  historic mix of cultures – Javanese, Malay, Chinese, Arab, Indian and European –
+                  has influenced its architecture, language and cuisine.
                 </div>
                 <div className="w-full h-[10%] bg-[#266c6b] py-7 rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
                   JAKARTA
@@ -62,9 +60,9 @@ export default function CityCard() {
                   />
                 </div>
                 <div className="w-full h-[30%] bg-slate-50 text-xs text-gray-500 flex justify-center items-center text-center px-2">
-                  Indonesian's westernmost of the Lesser Sunda Islands. Bali
-                  appeals through its sheer natural beauty of looming volcanoes
-                  and lush terraced rice fields that exude peace and serenity.
+                  Indonesian's westernmost of the Lesser Sunda Islands. Bali appeals through its
+                  sheer natural beauty of looming volcanoes and lush terraced rice fields that exude
+                  peace and serenity.
                 </div>
                 <div className="w-full h-[10%] bg-[#c4744a] py-7 rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
                   BALI
@@ -83,10 +81,9 @@ export default function CityCard() {
                   />
                 </div>
                 <div className="w-full h-[30%] bg-slate-50 text-xs text-gray-500 flex justify-center items-center text-center px-2">
-                  A port city on the Indonesian island of Java. A vibrant,
-                  sprawling metropolis, it mixes modern skyscrapers with canals
-                  and buildings from its Dutch colonial past. It has a thriving
-                  Chinatown and an Arab Quarter whose Ampel Mosque dates to the
+                  A port city on the Indonesian island of Java. A vibrant, sprawling metropolis, it
+                  mixes modern skyscrapers with canals and buildings from its Dutch colonial past.
+                  It has a thriving Chinatown and an Arab Quarter whose Ampel Mosque dates to the
                   15th century.
                 </div>
                 <div className="w-full h-[10%] bg-[#23676d] py-7 rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
@@ -106,10 +103,9 @@ export default function CityCard() {
                   />
                 </div>
                 <div className="w-full h-[30%] bg-slate-50 text-xs text-gray-500 flex justify-center items-center text-center px-2">
-                  Capital of Indonesia’s West Java province, is a large city set
-                  amid volcanoes & tea plantations. It's known for colonial &
-                  art deco architecture, a lively, university-town feel &
-                  –thanks to its 768m elevation–relatively cool tropical
+                  Capital of Indonesia’s West Java province, is a large city set amid volcanoes &
+                  tea plantations. It's known for colonial & art deco architecture, a lively,
+                  university-town feel & –thanks to its 768m elevation–relatively cool tropical
                   weather.
                 </div>
                 <div className="w-full h-[10%] bg-[#f3986a] py-7 rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
@@ -129,10 +125,9 @@ export default function CityCard() {
                   />
                 </div>
                 <div className="w-full h-[30%] bg-slate-50 text-xs text-gray-500 flex justify-center items-center text-center px-2">
-                  A city on the Indonesian island of Java known for its
-                  traditional arts and cultural heritage. Its ornate
-                  18th-century royal complex, or kraton, encompasses the
-                  still-inhabited Sultan’s Palace.
+                  A city on the Indonesian island of Java known for its traditional arts and
+                  cultural heritage. Its ornate 18th-century royal complex, or kraton, encompasses
+                  the still-inhabited Sultan’s Palace.
                 </div>
                 <div className="w-full h-[10%] bg-[#0d423f] py-7 rounded-b-3xl flex justify-center items-center text-white text-2xl font-bold">
                   YOGYAKARTA
