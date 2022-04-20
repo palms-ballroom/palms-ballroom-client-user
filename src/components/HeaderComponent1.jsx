@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import backGround from "./assets/hero-banner.png"
 export default function HeaderComponent1() {
   const [show, setShow] = useState(null);
   const [profile, setProfile] = useState(false);
-  const [product, setProduct] = useState(false);
-  const [deliverables, setDeliverables] = useState(false);
   const navigate = useNavigate();
   const doLogout = () => {
     localStorage.clear();
@@ -46,17 +43,6 @@ export default function HeaderComponent1() {
                     </span>
                     Become a partner
                   </div>
-                  {/* <Link to="/orderlist">
-                    <span
-                      an
-                      className="flex px-5 items-center py-6 text-sm leading-5 text-gray-800 hover:bg-opacity-100 focus:opacity-90 focus:outline-none transition duration-150 ease-in-out"
-                    >
-                      <span className="mr-2">
-                        <i className="fas fa-file-invoice-dollar"></i>
-                      </span>
-                      My booking
-                    </span>
-                  </Link> */}
                 </div>
                 {/* Start My profile */}
                 <div className="flex items-center">
