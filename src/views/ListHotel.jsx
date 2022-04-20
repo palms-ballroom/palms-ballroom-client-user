@@ -16,11 +16,9 @@ export default function ListHotel() {
 
   useEffect(() => {
     if (city === "Around") {
-      navigator.geolocation.getCurrentPosition(
-        ({ coords: { latitude, longitude } }) => {
-          setCoordinates({ lat: latitude, lng: longitude });
-        }
-      );
+      navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
+        setCoordinates({ lat: latitude, lng: longitude });
+      });
     } else if (city === "Jakarta") {
       setCoordinates({ lat: -6.1803278913190445, lng: 106.82813851892055 });
     } else if (city === "Bali") {
@@ -43,7 +41,7 @@ export default function ListHotel() {
     getBallroomData(bounds.sw, bounds.ne).then((data) => {
       setBallrooms(data);
     });
-  }, [coordinates, bounds]);
+  }, [bounds]);
 
   const [loading, setLoading] = React.useState(true);
 

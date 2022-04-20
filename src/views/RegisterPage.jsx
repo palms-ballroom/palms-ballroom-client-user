@@ -214,7 +214,7 @@ export default function LoginPage() {
             </div>
             <div className="mt-6">
               <label
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                 for="user_avatar"
               >
                 Upload your best photo!
@@ -222,12 +222,12 @@ export default function LoginPage() {
               <input
                 name="imageFile"
                 onChange={handleFile}
-                class="block w-full text-sm text-gray-900 bg-[#e5f6f0] rounded border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 px-8 py-2"
+                className="block w-full text-sm text-gray-900 bg-[#e5f6f0] rounded border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 px-8 py-2"
                 aria-describedby="user_avatar_help"
                 id="user_avatar"
                 type="file"
               />
-              <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="user_avatar_help">
+              <div className="mt-1 text-sm text-gray-500 dark:text-gray-300" id="user_avatar_help">
                 A profile picture is useful to confirm your payment
               </div>
             </div>

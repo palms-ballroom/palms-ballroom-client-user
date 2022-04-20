@@ -1,12 +1,7 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
 
-export default function Map({
-  coordinates,
-  setCoordinates,
-  setBounds,
-  ballrooms,
-}) {
+export default function Map({ coordinates, setCoordinates, setBounds, ballrooms }) {
   const mapHandler = (e) => {
     setCoordinates({ lat: e.center.lat, lng: e.center.lng });
     setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
@@ -35,19 +30,17 @@ export default function Map({
                 "&:hover": { zIndex: 2 },
               }}
             >
-              <div class="relative max-w-sm min-w-[300px] bg-white shadow-md rounded-2xl pb-2 mx-1 my-3 cursor-pointer">
-                <div class="overflow-x-hidden rounded-t-2xl relative">
+              <div className="relative max-w-sm min-w-[300px] bg-white shadow-md rounded-2xl pb-2 mx-1 my-3 cursor-pointer">
+                <div className="overflow-x-hidden rounded-t-2xl relative">
                   <img
-                    class="h-40 rounded-t-2xl w-full object-cover"
+                    className="h-40 rounded-t-2xl w-full object-cover"
                     src={ballroom.photo && ballroom.photo.images.large.url}
                     alt={ballroom.name}
                   />
                 </div>
-                <div class="mt-4 pl-2 mb-2">
+                <div className="mt-4 pl-2 mb-2">
                   <div>
-                    <p class="text-lg font-semibold text-gray-900 mb-0">
-                      {ballroom.name}
-                    </p>
+                    <p className="text-lg font-semibold text-gray-900 mb-0">{ballroom.name}</p>
                   </div>
                 </div>
               </div>
