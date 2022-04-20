@@ -21,8 +21,8 @@ export const getBallroomData = async (sw, ne) => {
         "X-RapidAPI-Key": "cea445aa20msh49cfcff77a74b62p179ac1jsn5528ae435605",
       },
     });
-
-    return response.data.data;
+    const result = response.data.data.filter((el) => el.name);
+    return result;
   } catch (error) {
     console.log(error);
   }
