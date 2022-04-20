@@ -107,13 +107,13 @@ const DetailPage = () => {
 
   const descriptionTop = (array) => {
     const x = array.filter((el) => el.__typename === "AppPresentation_PoiHealthSafety");
-    const y = x[0].subtitle.string;
+    const y = x[0]?.subtitle?.string;
     return y;
   };
 
   const descriptionBtm = (array) => {
     const x = array.filter((el) => el.__typename === "AppPresentation_PoiHealthSafety");
-    const y = x[0].managementResponse;
+    const y = x[0]?.managementResponse;
     return y;
   };
 

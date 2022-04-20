@@ -3,7 +3,7 @@ import * as faceapi from "@vladmandic/face-api";
 import { useMutation } from "@apollo/client";
 import { xenditPayment } from "../config/query";
 
-export default function Modal({ setModalOn }) {
+export default function Modal({ setModalOn, bookingData }) {
   const handleOKClick = () => {
     setModalOn(false);
   };
@@ -74,9 +74,7 @@ export default function Modal({ setModalOn }) {
     let detectedUserName = [];
     setInterval(async () => {
       if (canvasRef && canvasRef.current) {
-        canvasRef.current.innerHTML = faceapi.createCanvasFromMedia(
-          videoRef.current
-        );
+        canvasRef.current.innerHTML = faceapi.createCanvasFromMedia(videoRef.current);
         const displaySize = {
           width: videoWidth,
           height: videoHeight,
@@ -94,15 +92,10 @@ export default function Modal({ setModalOn }) {
           .withFaceExpressions();
         //new faceapi.TinyFaceDetectorOptions())
         // console.log(detections);
-        const resizedDetections = faceapi.resizeResults(
-          detections,
-          displaySize
-        );
+        const resizedDetections = faceapi.resizeResults(detections, displaySize);
         canvasRef &&
           canvasRef.current &&
-          canvasRef.current
-            .getContext("2d")
-            .clearRect(0, 0, videoWidth, videoHeight);
+          canvasRef.current.getContext("2d").clearRect(0, 0, videoWidth, videoHeight);
         // console.log(resizedDetections);
         // console.log(resizedDetections);
         const results = resizedDetections.map((d) => {
@@ -120,10 +113,7 @@ export default function Modal({ setModalOn }) {
           drawBox.draw(canvasRef.current);
           canvasRef &&
             canvasRef.current &&
-            faceapi.draw.drawFaceExpressions(
-              canvasRef.current,
-              resizedDetections
-            );
+            faceapi.draw.drawFaceExpressions(canvasRef.current, resizedDetections);
         });
         console.log(detectedUserName);
       }
@@ -145,10 +135,9 @@ export default function Modal({ setModalOn }) {
     try {
       await xenditPay({
         variables: {
-          hotelApiId: 10391433, // Nanti pake hasil fetch .price NANTI APUS KALO UDAH ADA THANKYOU NEXT
-          transactionId: 8, // dari fetch .transactionId
+          transactionId: bookingData.id, // dari fetch .transactionId
           accessToken: localStorage.getItem("token"),
-          price: 320000000, // Nanti pake hasil fetch .price
+          price: bookingData.price, // Nanti pake hasil fetch .price
         },
       });
     } catch (error) {
@@ -161,7 +150,7 @@ export default function Modal({ setModalOn }) {
       return (
         <button
           className="bg-[#266c6b] hover:bg-[#0d423f] focus:ring-4 focus:ring-blue-300 text-white px-6 py-2 shadow-md rounded-md"
-          style={{ marginLeft: 10 }}
+          // style={{ marginLeft: 10 }}
           onClick={() => doXenditPayment()}
         >
           Pay with xendit
@@ -173,11 +162,11 @@ export default function Modal({ setModalOn }) {
   return (
     <div className="bg-zinc-200 opacity-95 fixed inset-0 z-50">
       <div className="flex h-screen justify-center items-center">
-        <div className="flex-col justify-center h-[750px] w-[750px] bg-white py-5 px-5 border-4 border-sky-500 rounded-xl">
+        <div className="flex-col justify-center h-[750px] w-[750px] bg-white py-5 px-5 border-4 border-[#266c6b] rounded-sm">
           <div className="h-5/6 w-full">
             <div style={{ textAlign: "center", padding: "10px" }}>
               {captureVideo && modelsLoaded ? (
-                <div className="flex w-full justify-center items-center pt-1 md:pt-4  xl:pt-8 space-y-6 md:space-y-8 flex-col">
+                <div className="flex w-full justify-center mb-2 items-center pt-1 md:pt-4  xl:pt-2 space-y-6 md:space-y-8 flex-col">
                   <button
                     onClick={closeWebcam}
                     className="py-5 focus:outline-none  focus:ring-offset-2  w-full text-base font-medium leading-4 bg-[#266c6b] hover:bg-[#0d423f] focus:ring-4 focus:ring-[#266c6b] text-white rounded-md"
@@ -186,7 +175,7 @@ export default function Modal({ setModalOn }) {
                   </button>
                 </div>
               ) : (
-                <div className="flex w-full justify-center items-center pt-1 md:pt-4  xl:pt-8 space-y-6 md:space-y-8 flex-col">
+                <div className="flex w-full justify-center mb-2 items-center pt-1 md:pt-4  xl:pt-2 space-y-6 md:space-y-8 flex-col">
                   <button
                     onClick={startVideo}
                     className="py-5 focus:outline-none  focus:ring-offset-2  w-full text-base font-medium leading-4 bg-[#266c6b] hover:bg-[#0d423f] focus:ring-4 focus:ring-[#266c6b] text-white rounded-md"
@@ -224,13 +213,11 @@ export default function Modal({ setModalOn }) {
             )}
           </div>
           <div className="h-1/6 w-full flex flex-col">
-            <div className="h-1/2 w-full flex justify-center items-center">
-              {btnPay()}
-            </div>
+            <div className="h-1/2 w-full flex mt-2 justify-center items-center">{btnPay()}</div>
             <div className="h-1/2 w-full flex justify-center items-center">
               <button
                 onClick={handleOKClick}
-                className="rounded px-4 py-2  text-white bg-green-400"
+                className="rounded px-4 py-2  text-white bg-[#a9b1b8]"
               >
                 Back
               </button>

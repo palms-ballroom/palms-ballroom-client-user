@@ -1,13 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const xenditPayment = gql`
-  mutation CreateInvoice($transactionId: ID!, $hotelApiId: Int, $accessToken: String, $price: Int) {
-    createInvoice(
-      transactionId: $transactionId
-      hotelApiId: $hotelApiId
-      access_token: $accessToken
-      price: $price
-    ) {
+  mutation CreateInvoice($transactionId: ID!, $accessToken: String, $price: Int) {
+    createInvoice(transactionId: $transactionId, access_token: $accessToken, price: $price) {
       message
       data {
         external_id
@@ -16,6 +11,25 @@ export const xenditPayment = gql`
         payer_email
         invoice_url
       }
+    }
+  }
+`;
+
+export const getLatestTransaction = gql`
+  query Query($accessToken: String) {
+    latestUserTransactions(access_token: $accessToken) {
+      id
+      hotelId
+      price
+      status
+      mainImg
+      bookDateStart
+      bookDateEnd
+      customerId
+      createdAt
+      updatedAt
+      hotelCity
+      hotelName
     }
   }
 `;
