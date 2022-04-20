@@ -20,6 +20,25 @@ export const xenditPayment = gql`
   }
 `;
 
+export const getLatestTransaction = gql`
+  query Query($accessToken: String) {
+    latestUserTransactions(access_token: $accessToken) {
+      id
+      hotelId
+      price
+      status
+      mainImg
+      bookDateStart
+      bookDateEnd
+      customerId
+      createdAt
+      updatedAt
+      hotelCity
+      hotelName
+    }
+  }
+`;
+
 export const createBooking = gql`
   mutation Mutation(
     $customerId: ID!

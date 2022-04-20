@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import HeaderComponent1 from "../components/HeaderComponent1";
-// import { useMutation } from "@apollo/client";
-// import { xenditPayment } from "../config/query";
+import { useQuery } from "@apollo/client";
+import { getLatestTransaction } from "../config/query";
 // import * as faceapi from "@vladmandic/face-api";
 
 import Modal from "../components/Modal";
@@ -16,7 +16,22 @@ const MyBookingPage = () => {
   //   window.open(data && data?.createInvoice.data?.invoice_url);
   // };
 
+  const { data, loading, error } = useQuery(getLatestTransaction, {
+    variables: {
+      accessToken: localStorage.getItem("token"),
+    },
+  });
+  console.log("data: ", data);
+
   const [modalOn, setModalOn] = useState(false);
+
+  const formattedPrice = () => {
+    return data?.latestUserTransactions.price.toLocaleString("id-ID", {
+      style: "currency",
+      currency: "IDR",
+      minimumFractionDigits: 0,
+    });
+  };
 
   // useEffect(() => {
   //   if (data && !loading) {
@@ -187,35 +202,35 @@ const MyBookingPage = () => {
               My booking page
             </h3>
             <p className="text-base leading-none mt-4 text-gray-800">
-              Paid using credit card ending with{" "}
-              <span className="font-semibold">8822</span>
+              Paid using credit or debit card using <span className="font-semibold">Xendit</span>
             </p>
             <div className="flex justify-center items-center w-full mt-8  flex-col space-y-4 ">
               <div className="flex md:flex-row justify-start items-start md:items-center  border border-gray-200 w-full">
                 <div className="w-40 md:w-32">
                   <img
                     className=""
-                    src="https://images.unsplash.com/photo-1549964336-96c968e00d5b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80"
+                    src={data.latestUserTransactions.mainImg}
                     alt="girl-in-red-dress"
                   />
                 </div>
                 <div className="flex justify-start md:justify-between items-start md:items-center  flex-col md:flex-row w-full p-4 md:px-8">
                   <div className="flex flex-col md:flex-shrink-0  justify-start items-start">
                     <h3 className="text-lg md:text-xl  w-full font-semibold leading-6 md:leading-5  text-gray-800">
-                      Ritz Carlton Hotel
+                      {data.latestUserTransactions.hotelName}
                     </h3>
                     <div className="flex flex-row justify-start  space-x-4 md:space-x-6 items-start mt-4 ">
                       <p className="text-sm leading-none text-gray-600">
-                        Size: <span className="text-gray-800"> Small</span>
+                        Status:{" "}
+                        <span className="text-gray-800"> {data.latestUserTransactions.status}</span>
                       </p>
                       <p className="text-sm leading-none text-gray-600">
-                        Days: <span className="text-gray-800"> 2 days</span>
+                        Days: <span className="text-gray-800"> 1 full day</span>
                       </p>
                     </div>
                   </div>
                   <div className="flex mt-4 md:mt-0 md:justify-end items-center w-full ">
                     <p className="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-gray-800">
-                      $28.00
+                      {formattedPrice()}
                     </p>
                     {/* {btnPay()} */}
                   </div>
@@ -228,38 +243,28 @@ const MyBookingPage = () => {
                   <p className="text-base font-semibold leading-4  text-gray-800">
                     Shipping Method
                   </p>
-                  <p className="text-sm leading-5 text-gray-600">
-                    Payment with xendit
-                  </p>
+                  <p className="text-sm leading-5 text-gray-600">Payment with xendit</p>
                 </div>
               </div>
               <div className="flex flex-col space-y-4 w-full">
                 <div className="flex justify-center items-center w-full space-y-4 flex-col border-gray-200 border-b pb-4">
                   <div className="flex justify-between  w-full">
-                    <p className="text-base leading-4 text-gray-800">
-                      Subtotal
-                    </p>
-                    <p className="text-base leading-4 text-gray-600">$56.00</p>
+                    <p className="text-base leading-4 text-gray-800">Subtotal</p>
+                    <p className="text-base leading-4 text-gray-600">{formattedPrice()}</p>
                   </div>
                   <div className="flex justify-between  w-full">
-                    <p className="text-base leading-4 text-gray-800">
-                      Discount{" "}
-                    </p>
+                    <p className="text-base leading-4 text-gray-800">Discount </p>
                     <p className="text-base leading-4 text-gray-600">-</p>
                   </div>
                   <div className="flex justify-between  w-full">
-                    <p className="text-base leading-4 text-gray-800">
-                      Shipping
-                    </p>
+                    <p className="text-base leading-4 text-gray-800">Shipping</p>
                     <p className="text-base leading-4 text-gray-600">-</p>
                   </div>
                 </div>
                 <div className="flex justify-between items-center w-full">
-                  <p className="text-base font-semibold leading-4 text-gray-800">
-                    Total
-                  </p>
+                  <p className="text-base font-semibold leading-4 text-gray-800">Total</p>
                   <p className="text-base font-semibold leading-4 text-gray-600">
-                    $36.00
+                    {formattedPrice()}
                   </p>
                 </div>
                 <div>
