@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import backGround from "./assets/hero-banner.png"
 export default function HeaderComponent1() {
   const [show, setShow] = useState(null);
   const [profile, setProfile] = useState(false);
-  const [product, setProduct] = useState(false);
-  const [deliverables, setDeliverables] = useState(false);
   const navigate = useNavigate();
   const doLogout = () => {
     localStorage.clear();
@@ -46,17 +43,6 @@ export default function HeaderComponent1() {
                     </span>
                     Become a partner
                   </div>
-                  {/* <Link to="/orderlist">
-                    <span
-                      an
-                      className="flex px-5 items-center py-6 text-sm leading-5 text-gray-800 hover:bg-opacity-100 focus:opacity-90 focus:outline-none transition duration-150 ease-in-out"
-                    >
-                      <span className="mr-2">
-                        <i className="fas fa-file-invoice-dollar"></i>
-                      </span>
-                      My booking
-                    </span>
-                  </Link> */}
                 </div>
                 {/* Start My profile */}
                 <div className="flex items-center">
@@ -68,11 +54,64 @@ export default function HeaderComponent1() {
                     >
                       {profile && (
                         <ul className="p-2 w-40 border-r bg-white absolute rounded right-0 shadow top-0 mt-16 ">
-                          <li className="cursor-pointer text-[#0d423f] text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
-                            <div className="flex items-center">
+                          {localStorage.getItem("token") && (
+                            <li className="cursor-pointer text-[#0d423f] text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                              <div className="flex items-center">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  className="icon icon-tabler icon-tabler-user"
+                                  width={20}
+                                  height={20}
+                                  viewBox="0 0 24 24"
+                                  strokeWidth="1.5"
+                                  stroke="currentColor"
+                                  fill="none"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                >
+                                  <path stroke="none" d="M0 0h24v24H0z" />
+                                  <circle cx={12} cy={7} r={4} />
+                                  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                </svg>
+                                <span className="ml-2 text-[#0d423f]">My Profile</span>
+                              </div>
+                            </li>
+                          )}
+                          {localStorage.getItem("token") && (
+                            <Link to="/orderlist">
+                              <li className="cursor-pointer text-[#0d423f] text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
+                                <div className="flex items-center ml-1">
+                                  <i className="fas fa-file-invoice-dollar text-[#0d423f]"></i>
+                                  <span className="ml-2 text-[#0d423f]">My Booking</span>
+                                </div>
+                              </li>
+                            </Link>
+                          )}
+                          {!localStorage.getItem("token") && (
+                            <Link to="/register">
+                              <li className="cursor-pointer text-[#0d423f] text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
+                                <div className="flex items-center ml-1">
+                                  <i className="far fa-registered"></i>
+                                  <span className="ml-2 text-[#0d423f]">Register</span>
+                                </div>
+                              </li>
+                            </Link>
+                          )}
+                          {!localStorage.getItem("token") && (
+                            <Link to="/login">
+                              <li className="cursor-pointer text-[#0d423f] text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
+                                <div className="flex items-center ml-1">
+                                  <i className="fas fa-sign-in-alt text-[#0d423f]"></i>
+                                  <span className="ml-2 text-[#0d423f]">Login</span>
+                                </div>
+                              </li>
+                            </Link>
+                          )}
+                          {localStorage.getItem("token") && (
+                            <li className="cursor-pointer text-[#0d423f] text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none">
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="icon icon-tabler icon-tabler-user"
+                                className="icon icon-tabler icon-tabler-settings"
                                 width={20}
                                 height={20}
                                 viewBox="0 0 24 24"
@@ -83,63 +122,22 @@ export default function HeaderComponent1() {
                                 strokeLinejoin="round"
                               >
                                 <path stroke="none" d="M0 0h24v24H0z" />
-                                <circle cx={12} cy={7} r={4} />
-                                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                                <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                <circle cx={12} cy={12} r={3} />
                               </svg>
-                              <span className="ml-2 text-[#0d423f]">My Profile</span>
-                            </div>
-                          </li>
-                          <Link to="/orderlist">
+                              <span className="ml-2 text-[#0d423f]">Account Settings</span>
+                            </li>
+                          )}
+                          {localStorage.getItem("token") && (
                             <li className="cursor-pointer text-[#0d423f] text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
                               <div className="flex items-center ml-1">
-                                <i className="fas fa-file-invoice-dollar text-[#0d423f]"></i>
-                                <span className="ml-2 text-[#0d423f]">My Booking</span>
+                                <i className="fas fa-sign-in-alt"></i>
+                                <button onClick={doLogout} className="ml-2 text-[#0d423f]">
+                                  Logout
+                                </button>
                               </div>
                             </li>
-                          </Link>
-                          <Link to="/register">
-                            <li className="cursor-pointer text-[#0d423f] text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
-                              <div className="flex items-center ml-1">
-                                <i className="far fa-registered"></i>
-                                <span className="ml-2 text-[#0d423f]">Register</span>
-                              </div>
-                            </li>
-                          </Link>
-                          <Link to="/login">
-                            <li className="cursor-pointer text-[#0d423f] text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
-                              <div className="flex items-center ml-1">
-                                <i className="fas fa-sign-in-alt text-[#0d423f]"></i>
-                                <span className="ml-2 text-[#0d423f]">Login</span>
-                              </div>
-                            </li>
-                          </Link>
-                          <li className="cursor-pointer text-[#0d423f] text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="icon icon-tabler icon-tabler-settings"
-                              width={20}
-                              height={20}
-                              viewBox="0 0 24 24"
-                              strokeWidth="1.5"
-                              stroke="currentColor"
-                              fill="none"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            >
-                              <path stroke="none" d="M0 0h24v24H0z" />
-                              <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                              <circle cx={12} cy={12} r={3} />
-                            </svg>
-                            <span className="ml-2 text-[#0d423f]">Account Settings</span>
-                          </li>
-                          <li className="cursor-pointer text-[#0d423f] text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
-                            <div className="flex items-center ml-1">
-                              <i className="fas fa-sign-in-alt"></i>
-                              <button onClick={doLogout} className="ml-2 text-[#0d423f]">
-                                Logout
-                              </button>
-                            </div>
-                          </li>
+                          )}
                         </ul>
                       )}
                       <div className="bg-[#cfd9df] p-3 flex flex-row rounded-full">

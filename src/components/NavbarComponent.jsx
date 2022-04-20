@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 export default function NavbarComponent() {
   let arr = [true, false, false, false, false, false];
   const [style, setStyle] = useState(arr);
@@ -24,76 +24,66 @@ export default function NavbarComponent() {
     <div className="2xl:container 2xl:mx-auto 2xl:w-full">
       <div className="bg-white rounded shadow-lg py-5 px-2">
         <nav className="flex justify-between items-center gap-3">
-          <Link to="/">
+          <NavLink to="/">
             <div className="flex justify-center items-center">
               <img src="/assets/img/Logo-Palms.jpg" className="2xl:w-36 xl:w-36" alt="logo" />
             </div>
-          </Link>
+          </NavLink>
           {/* For medium and plus sized devices */}
           <ul className="hidden sm:hidden md:hidden lg:hidden xl:flex 2xl:flex 2xl:space-x-2 xl:space-x-1 h-8">
-            <Link to="/hotels/Jakarta">
-              <li
-                onClick={() => selected(0)}
-                className={`${
-                  style[0]
-                    ? "text-white bg-[#0d423f]"
-                    : "text-gray-600 border border-white bg-gray-50"
-                }  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800  cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}
-              >
-                Jakarta
-              </li>
-            </Link>
-            <Link to="/hotels/Bandung">
-              <li
-                onClick={() => selected(1)}
-                className={`${
-                  style[1]
-                    ? "text-white bg-[#023d3a]"
-                    : "text-gray-600 border border-white bg-gray-50"
-                } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}
-              >
-                Bandung
-              </li>
-            </Link>
-            <Link to="/hotels/Bali">
-              <li
-                onClick={() => selected(2)}
-                className={`${
-                  style[2]
-                    ? "text-white bg-[#023d3a]"
-                    : "text-gray-600 border border-white bg-gray-50"
-                } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}
-              >
-                Bali
-              </li>
-            </Link>
-            <Link to="/hotels/Yogyakarta">
-              <li
-                onClick={() => selected(3)}
-                className={`${
-                  style[3]
-                    ? "text-white bg-[#023d3a]"
-                    : "text-gray-600 border border-white bg-gray-50"
-                } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}
-              >
-                Yogyakarta
-              </li>
-            </Link>
-            <Link to="/hotels/Surabaya">
-              <li
-                onClick={() => selected(4)}
-                className={`${
-                  style[4]
-                    ? "text-white bg-[#023d3a]"
-                    : "text-gray-600 border border-white bg-gray-50"
-                } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded`}
-              >
-                Surabaya
-              </li>
-            </Link>
+            <NavLink
+              className={({ isActive }) => {
+                return isActive
+                  ? "text-white bg-[#0d423f] cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded"
+                  : "text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded";
+              }}
+              to="/hotels/Jakarta"
+            >
+              <li className="">Jakarta</li>
+            </NavLink>
+            <NavLink
+              to="/hotels/Bandung"
+              className={({ isActive }) => {
+                return isActive
+                  ? "text-white bg-[#0d423f] cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded"
+                  : "text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded";
+              }}
+            >
+              <li>Bandung</li>
+            </NavLink>
+            <NavLink
+              className={({ isActive }) => {
+                return isActive
+                  ? "text-white bg-[#0d423f] cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded"
+                  : "text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded";
+              }}
+              to="/hotels/Bali"
+            >
+              <li>Bali</li>
+            </NavLink>
+            <NavLink
+              className={({ isActive }) => {
+                return isActive
+                  ? "text-white bg-[#0d423f] cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded"
+                  : "text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded";
+              }}
+              to="/hotels/Yogyakarta"
+            >
+              <li>Yogyakarta</li>
+            </NavLink>
+            <NavLink
+              className={({ isActive }) => {
+                return isActive
+                  ? "text-white bg-[#0d423f] cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded"
+                  : "text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded";
+              }}
+              to="/hotels/Surabaya"
+            >
+              <li>Surabaya</li>
+            </NavLink>
           </ul>
           <div className="flex space-x-5 justify-center items-center pl-2">
-            <div className="relative cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 ">
+            <div className="relative cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2">
               <svg
                 width={24}
                 height={24}
@@ -113,7 +103,7 @@ export default function NavbarComponent() {
               <div className=" w-1.5 h-1.5 bg-[#0d423f] rounded-full absolute -top-1 -right-1 m-auto shadow-lg" />
             </div>
             <svg
-              className="cursor-pointer  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 "
+              className="cursor-pointer  focus:outline-none focus:ring-2 focus:ring-offset-2"
               width={24}
               height={24}
               viewBox="0 0 24 24"
@@ -141,7 +131,7 @@ export default function NavbarComponent() {
         <div className="sm:block md:block lg:block xl:hidden 2xl:hidden w-full mt-5 ">
           <div
             onClick={() => setDropDown(!dropDown)}
-            className="cursor-pointer px-4 py-3 text-white bg-[#bb9e80] rounded flex justify-between items-center w-full"
+            className="cursor-pointer px-4 py-3 text-white bg-[#0d423f] rounded flex justify-between items-center w-full"
           >
             <div className="flex space-x-2">
               <span
