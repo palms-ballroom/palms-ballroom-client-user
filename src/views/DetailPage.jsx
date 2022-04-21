@@ -23,7 +23,6 @@ const DetailPage = () => {
 
   useEffect(() => {
     if (data && !loading && data.bookingBallroom === "create transaction complete") {
-      navigate(`/orderlist/${localStorage.getItem("userId")}`);
       Swal.fire({
         icon: "success",
         title: "Your reservation is complete",
@@ -31,6 +30,7 @@ const DetailPage = () => {
         showConfirmButton: false,
         timer: 1500,
       });
+      navigate(`/orderlist/${localStorage.getItem("userId")}`);
       localStorage.removeItem("price");
     } else if (data && !loading && data.bookingBallroom === "Hotel not registered yet") {
       Swal.fire({
@@ -55,6 +55,10 @@ const DetailPage = () => {
       "-" +
       new Date(date).getDate();
     return dateBooking;
+  };
+
+  const goToBallroom = () => {
+    window.open("https://palms-ballroom-3d.web.app");
   };
 
   const doCreateBooking = () => {
@@ -209,7 +213,10 @@ const DetailPage = () => {
                       <Calendar date={date} setDate={setDate}></Calendar>
                     </div>
                     <div className="py-5 w-full pl-2 mt-4">
-                      <button className="bg-[#e29566] shadow-lg py-2 w-full text-white font-semibold">
+                      <button
+                        onClick={() => goToBallroom()}
+                        className="bg-[#e29566] shadow-lg py-2 w-full text-white font-semibold"
+                      >
                         View 3D Ballroom
                       </button>
                     </div>

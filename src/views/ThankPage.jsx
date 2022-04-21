@@ -4,6 +4,11 @@ import { useNavigate } from "react-router-dom";
 export default function ThankPage() {
   const navigate = useNavigate();
 
+  const backToHome = () => {
+    navigate("/");
+    localStorage.removeItem("transactionId");
+  };
+
   return (
     <>
       <div className="w-full h-screen flex flex-col justify-center items-center">
@@ -18,7 +23,7 @@ export default function ThankPage() {
         </div>
         <div>
           <button
-            onClick={() => navigate("/")}
+            onClick={() => backToHome}
             className="bg-[#266c6b] py-2 mt-5 px-10 rounded-full text-slate-50"
           >
             Back to home page
