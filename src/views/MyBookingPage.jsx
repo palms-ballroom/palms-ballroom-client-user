@@ -5,16 +5,17 @@ import { getLatestTransaction } from "../config/query";
 import Modal from "../components/Modal";
 
 const MyBookingPage = () => {
-  const { data, loading } = useQuery(getLatestTransaction, {
+  const { data, loading, refetch } = useQuery(getLatestTransaction, {
     variables: {
       accessToken: localStorage.getItem("token"),
     },
   });
+  console.log("data 13 my booking page: ", data);
 
   const [modalOn, setModalOn] = useState(false);
 
   const formattedPrice = () => {
-    return data?.latestUserTransactions.price.toLocaleString("id-ID", {
+    return data?.latestUserTransactions?.price?.toLocaleString("id-ID", {
       style: "currency",
       currency: "IDR",
       minimumFractionDigits: 0,
@@ -22,10 +23,18 @@ const MyBookingPage = () => {
   };
 
   useEffect(() => {
+    refetch();
+  }, [refetch]);
+
+  useEffect(() => {
     if (data && !loading) {
-      localStorage.setItem("transactionId", data.latestUserTransactions.id);
+      localStorage.setItem("transactionId", data?.latestUserTransactions?.id);
     }
   }, [data, loading]);
+
+  if (!data && loading) {
+    return <h1>...loading</h1>;
+  }
 
   return (
     <>
@@ -44,21 +53,21 @@ const MyBookingPage = () => {
                 <div className="w-40 md:w-32">
                   <img
                     className=""
-                    src={data?.latestUserTransactions.mainImg}
+                    src={data?.latestUserTransactions?.mainImg}
                     alt="hotel-ballroom"
                   />
                 </div>
                 <div className="flex justify-start md:justify-between items-start md:items-center  flex-col md:flex-row w-full p-4 md:px-8">
                   <div className="flex flex-col md:flex-shrink-0  justify-start items-start">
                     <h3 className="text-lg md:text-xl  w-full font-semibold leading-6 md:leading-5  text-gray-800">
-                      {data?.latestUserTransactions.hotelName}
+                      {data?.latestUserTransactions?.hotelName}
                     </h3>
                     <div className="flex flex-row justify-start  space-x-4 md:space-x-6 items-start mt-4 ">
                       <p className="text-sm leading-none text-gray-600">
                         Status:{" "}
                         <span className="text-gray-800">
                           {" "}
-                          {data?.latestUserTransactions.status}
+                          {data?.latestUserTransactions?.status}
                         </span>
                       </p>
                       <p className="text-sm leading-none text-gray-600">

@@ -10,7 +10,7 @@ import { FaMoneyBillWave } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
 import { FaStreetView } from "react-icons/fa";
 import { useMutation } from "@apollo/client";
-import { createBooking } from "../config/query";
+import { createBooking, getLatestTransaction } from "../config/query";
 import HashLoader from "react-spinners/HashLoader";
 import Swal from "sweetalert2";
 
@@ -19,11 +19,34 @@ const DetailPage = () => {
   const [hotel, setHotel] = useState(null);
   const navigate = useNavigate();
   const [date, setDate] = React.useState(new Date());
-  const [createBookingMutation, { data, loading }] = useMutation(createBooking);
+  const [createBookingMutation, { data, loading }] = useMutation(createBooking, {
+    onCompleted: (data) => {
+      console.log("data oncompleted: ", data);
+      navigate(`/orderlist/${localStorage.getItem("userId")}`);
+    },
+    awaitRefetchQueries: true,
+    onQueryUpdated: (observableQuery, diff, lastDiff) => {
+      console.log("observableQuery: ", observableQuery);
+      console.log("diff: ", diff);
+      console.log("lastDiff: ", lastDiff);
+    },
+    refetchQueries: [
+      { query: getLatestTransaction, variables: { accessToken: localStorage.getItem("token") } },
+    ],
+  });
+
+  // const { data, loading } = useQuery(getLatestTransaction, {
+  //   variables: {
+  //     accessToken: localStorage.getItem("token"),
+  //   },
+  // });
+
+  // useMutaion ditaro dialem
+
+  console.log("data 24 detail page: ", data);
 
   useEffect(() => {
     if (data && !loading && data.bookingBallroom === "create transaction complete") {
-      navigate(`/orderlist/${localStorage.getItem("userId")}`);
       Swal.fire({
         icon: "success",
         title: "Your reservation is complete",
@@ -32,6 +55,7 @@ const DetailPage = () => {
         timer: 1500,
       });
       localStorage.removeItem("price");
+      // navigate(`/orderlist/${localStorage.getItem("userId")}`);
     } else if (data && !loading && data.bookingBallroom === "Hotel not registered yet") {
       Swal.fire({
         icon: "error",
